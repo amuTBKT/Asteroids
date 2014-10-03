@@ -1,6 +1,7 @@
 #include <jni.h>
+
 #include <GLES/gl.h>
-#include <android/log.h>
+#include "Transform.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -34,7 +35,13 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	glClearColor(0, 0, 0.1, 1);
+	Transform tr;
+	if (tr.position.x == 0){
+		glClearColor(0.3, 0, 0.1, 1);
+	}
+	else {
+		glClearColor(0, 1, 0, 1);
+	}
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
@@ -42,5 +49,5 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
-
+	glViewport(0, 0, width, height);
 }

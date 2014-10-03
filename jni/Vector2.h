@@ -43,8 +43,10 @@ class Vector2{
 		Vector2 operator /(float c);
 		Vector2& operator /=(float c);
 		bool operator ==(const Vector2&);
+		bool operator !=(const Vector2&);
 		float operator *(const Vector2&); // dot operation
 		void reverse();
+//		Vector2 reflect(const Vector2&);
 		void truncate(float);
 		void normalize();
 		bool isNormalized();

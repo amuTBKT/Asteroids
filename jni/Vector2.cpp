@@ -30,12 +30,37 @@ void Vector2::setY(float n){
 	y = n;
 }
 
+void Vector2::setLength(float length){
+	float angle = getAngle() * M_PI / 180;
+	x = cosf(angle) * length;
+	y = sinf(angle) * length;
+}
+
+void Vector2::setAngle(float angle){
+	float length = getLength();
+	angle *= M_PI / 180;
+	x = cosf(angle) * length;
+	y = sinf(angle) * length;
+}
+
 float Vector2::getX(){
 	return x;
 }
 
 float Vector2::getY(){
 	return y;
+}
+
+float Vector2::getLength(){
+	return sqrtf(getLengthSQR());
+}
+
+float Vector2::getLengthSQR(){
+	return *this * *this;
+}
+
+float Vector2::getAngle(){
+	return atan2(y, x) * 180 / M_PI;
 }
 /////////////////////////////
 
@@ -82,13 +107,17 @@ Vector2 Vector2::operator /(float c){
 }
 
 Vector2& Vector2::operator /=(float c){
-	x *= c;
-	y *= c;
+	x /= c;
+	y /= c;
 	return *this;
 }
 
 bool Vector2::operator ==(const Vector2& v){
 	return (x == v.x && y == v.y);
+}
+
+bool Vector2::operator !=(const Vector2& v){
+	return (x != v.x && y != v.y);
 }
 
 float Vector2::operator *(const Vector2& v){
@@ -105,37 +134,26 @@ void Vector2::reverse(){
 	*this *= -1;
 }
 
+//Vector2 Vector2::reflect(const Vector2& normal){
+//	Vector2 tmp(normal);
+//	tmp.normalize();
+//	tmp = *this - tmp * 2 * (tmp * *this);
+//	tmp.normalize();
+//	return tmp;
+//}
+
 void Vector2::normalize(){
-	*this = *this / getLength();
+	if (getLength() == 0){
+		x = 1;
+		y = 0;
+	}
+	else {
+		*this /= getLength();
+	}
 }
 
 bool Vector2::isNormalized(){
 	return getLength() == 1;
-}
-
-void Vector2::setLength(float length){
-	float angle = getAngle() * M_PI / 180;
-	x = cosf(angle) * length;
-	y = sinf(angle) * length;
-}
-
-void Vector2::setAngle(float angle){
-	float length = getLength();
-	angle *= M_PI / 180;
-	x = cosf(angle) * length;
-	y = sinf(angle) * length;
-}
-
-float Vector2::getLength(){
-	return sqrtf(getLengthSQR());
-}
-
-float Vector2::getLengthSQR(){
-	return *this * *this;
-}
-
-float Vector2::getAngle(){
-	return atan2(y, x) * 180 / M_PI;
 }
 
 float Vector2::angleBetween(const Vector2 v){
