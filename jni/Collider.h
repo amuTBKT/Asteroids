@@ -24,8 +24,8 @@ public:
 	} *bounds;
 	void setBounds(float, float, float, float);
 
-	bool inBounds(Vector2 point);
-	bool inBounds(float, float);
+	virtual bool inBounds(Vector2 point);
+	virtual bool inBounds(float, float);
 };
 
 #endif /* COLLIDER_H_ */

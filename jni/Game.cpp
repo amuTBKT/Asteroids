@@ -1,7 +1,7 @@
 #include <jni.h>
 
 #include <GLES/gl.h>
-#include "Collider.h"
+#include "BoxCollider.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -35,7 +35,8 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	Collider c;
+	BoxCollider c;
+	c.setBounds(0, 2, 0, 0.5);
 	if (c.inBounds(0.5, 0.5)){
 		glClearColor(0.3, 0, 0.1, 1);
 	}

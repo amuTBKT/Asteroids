@@ -20,14 +20,6 @@ void Collider::setBounds(float mX, float MX, float mY, float MY){
 	bounds->maxY = MY;
 }
 
-bool Collider::inBounds(Vector2 point){
-	return ((point.x >= bounds->minX && point.x <= bounds->maxX) & (point.y >= bounds->minY && point.y <= bounds->maxY));
-}
-
-bool Collider::inBounds(float x, float y){
-	return inBounds(Vector2(x, y));
-}
-
 Collider::~Collider() {
 	delete bounds;
 }

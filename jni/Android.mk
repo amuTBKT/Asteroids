@@ -7,7 +7,7 @@ LOCAL_MODULE := Asteroids
 #FILE_LIST += $(wildcard $(LOCAL_PATH)/**/**/*.cpp)
 #LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
 
-LOCAL_SRC_FILES := Game.cpp Vector2.cpp Transform.cpp Collider.cpp
+LOCAL_SRC_FILES := Game.cpp Vector2.cpp Transform.cpp Collider.cpp BoxCollider.cpp
 
 LOCAL_LDLIBS := -lGLESv2 -llog				# link libraries to use
 include $(BUILD_SHARED_LIBRARY)
