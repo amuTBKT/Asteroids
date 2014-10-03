@@ -19,6 +19,7 @@ public class CustomRenderer implements Renderer {
 		nativeSurfaceChanged(width, height);
 	}
 	
+	// native methods
 	private static native void nativeSurfaceCreated();
 	private static native void nativeDrawFrame();
 	private static native void nativeSurfaceChanged(int width, int height);
