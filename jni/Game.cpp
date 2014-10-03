@@ -1,7 +1,7 @@
 #include <jni.h>
 
 #include <GLES/gl.h>
-#include "Transform.h"
+#include "Collider.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -35,8 +35,8 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	Transform tr;
-	if (tr.position.x == 0){
+	Collider c;
+	if (c.inBounds(0.5, 0.5)){
 		glClearColor(0.3, 0, 0.1, 1);
 	}
 	else {
