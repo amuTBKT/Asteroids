@@ -1,6 +1,5 @@
 #include <jni.h>
 #include <GLES/gl.h>
-#include <math.h>
 #include <android/log.h>
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
@@ -35,7 +34,7 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	glClearColor(1, 1, 0, 1);
+	glClearColor(0, 0, 0.1, 1);
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){

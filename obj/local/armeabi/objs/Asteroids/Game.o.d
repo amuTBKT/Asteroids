@@ -1,86 +1,88 @@
-/cygdrive/c/Users/amu/Desktop/Asteroids/obj/local/armeabi/objs/Asteroids/Game.o: \
- /cygdrive/c/Users/amu/Desktop/Asteroids/jni/Game.cpp \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdint.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/posix_types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/stddef.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/compiler.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/posix_types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/limits.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/internal_types.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
- /cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/log.h
+obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdint.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/log.h \
+ jni/Vector2.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/posix_types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/stddef.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/compiler.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/posix_types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/kernel.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/internal_types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/api-level.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdint.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdint.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/log.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h:
+jni/Vector2.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/posix_types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/stddef.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/compiler.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/posix_types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/posix_types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/stddef.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/compiler.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/posix_types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/kernel.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/limits.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/kernel.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/sysmacros.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/limits.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/internal_types.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/internal_types.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h:
 
-/cygdrive/c/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/android/log.h:
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
