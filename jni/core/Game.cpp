@@ -1,5 +1,5 @@
 #include <jni.h>
-#include <GLES2/gl2.h>
+#include <GLES/gl.h>
 #include <math.h>
 #include <android/log.h>
 
@@ -35,8 +35,7 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	glDisable(GL_DITHER);
-	glClearColor(0, 1, 0.1, 1);
+	glClearColor(0, 0, 0.1, 1);
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
@@ -44,5 +43,5 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
-	glViewport(0, 0, width, height);
+
 }
