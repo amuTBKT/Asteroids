@@ -17,10 +17,6 @@ Collider::Collider(const Collider& c){
 	setBounds(c.bounds.width, c.bounds.height);
 }
 
-//void Collider::setParent(const GameObject& g){
-//	gParent = g;
-//}
-
 void Collider::setBounds(float w, float h){
 	bounds.width = w;
 	bounds.height = h;

@@ -5,10 +5,11 @@
  *      Author: amu
  */
 
-#include <GLES/gl.h>
 #include "GameObject.h"
 
 GameObject::GameObject() {
+	transform = Transform();
+	collider = Collider();
 }
 
 GameObject::GameObject(const GameObject& g) {

@@ -35,8 +35,8 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	GameObject gObj;
-	if (gObj.transform.position.x == 0){
+	GameObject gObj, g;
+	if (gObj.collider.inBounds(0, 0)){
 		glClearColor(0.3, 0, 0.1, 1);
 	}
 	else {

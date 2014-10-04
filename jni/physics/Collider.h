@@ -17,18 +17,16 @@ public:
 	virtual ~Collider();
 
 	// bounding rectangle
-//	GameObject parent;
 	Vector2 position;
 	struct aabb{
 		float width;
 		float height;
 	} bounds;
 
-//	void setParent(const GameObject&);
 	void setBounds(float, float);
 	void translate(const Vector2&);
 	void translate(float, float);
-	bool inBounds(const Vector2& point);
+	bool inBounds(const Vector2&);
 	bool inBounds(float, float);
 	bool testAABB(const Collider&);
 };
