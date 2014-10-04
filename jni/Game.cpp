@@ -1,7 +1,7 @@
 #include <jni.h>
 
 #include <GLES/gl.h>
-#include "BoxCollider.h"
+#include "core/Logger.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -35,15 +35,12 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	BoxCollider c1, c2;
-	c1.setBounds(0, 2, 0, 0.5);
-	c2.setBounds(3, 5, 0, 1);
-	if (c1.testAABB(c2)){
+//	if (c1.testAABB(c2) == 1){
 		glClearColor(0.3, 0, 0.1, 1);
-	}
-	else {
-		glClearColor(0, 1, 0, 1);
-	}
+//	}
+//	else {
+//		glClearColor(0, 1, 0, 1);
+//	}
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
