@@ -1,6 +1,7 @@
 #include <jni.h>
 
 #include <GLES/gl.h>
+#include "controller/GameObject.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -34,12 +35,13 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-//	if (c1.testAABB(c2) == 1){
-		glClearColor(0.3, 1, 0.1, 1);
-//	}
-//	else {
-//		glClearColor(0, 1, 0, 1);
-//	}
+	GameObject gObj;
+	if (gObj.transform.position.x == 0){
+		glClearColor(0.3, 0, 0.1, 1);
+	}
+	else {
+		glClearColor(0, 1, 0, 1);
+	}
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){

@@ -13,6 +13,7 @@
 class Transform {
 public:
 	Transform();
+	Transform(const Transform&);
 	Transform(Vector2, Vector2, float);
 	virtual ~Transform();
 

@@ -7,25 +7,23 @@
 
 #include "Collider.h"
 
-Collider::Collider(const Collider& c){
-	bounds = c.bounds;
+Collider::Collider() {
+	position = Vector2(0, 0);
+	setBounds(1, 1);
 }
 
-Collider::Collider() {
-	bounds = new aabb;
-	setBounds(0, 1, 0, 1);
+Collider::Collider(const Collider& c){
+	position = c.position;
+	setBounds(c.bounds.width, c.bounds.height);
 }
 
 //void Collider::setParent(const GameObject& g){
 //	gParent = g;
 //}
 
-void Collider::setBounds(float mX, float MX, float mY, float MY){
-	//	*bounds = {mX, MX, mY, MY};
-	bounds->minX = mX;
-	bounds->maxX = MX;
-	bounds->minY = mY;
-	bounds->maxY = MY;
+void Collider::setBounds(float w, float h){
+	bounds.width = w;
+	bounds.height = h;
 }
 
 void Collider::translate(float dx, float dy){
@@ -33,14 +31,11 @@ void Collider::translate(float dx, float dy){
 }
 
 void Collider::translate(const Vector2& dV){
-	bounds->maxX += dV.x;
-	bounds->minX += dV.x;
-	bounds->maxY += dV.y;
-	bounds->minY += dV.y;
+	position += dV;
 }
 
 bool Collider::inBounds(const Vector2& point){
-	return ((point.x >= bounds->minX && point.x <= bounds->maxX) & (point.y >= bounds->minY && point.y <= bounds->maxY));
+	return ((point.x >= position.x - bounds.width / 2 && point.x <= position.x + bounds.width / 2) & (point.y >= position.y - bounds.height / 2 && point.y <= position.y + bounds.height / 2));
 }
 
 bool Collider::inBounds(float x, float y){
@@ -48,16 +43,15 @@ bool Collider::inBounds(float x, float y){
 }
 
 bool Collider::testAABB(const Collider& collider){
-	if (bounds->maxX < collider.bounds->minX) return false;
-	if (bounds->minX > collider.bounds->maxX) return false;
-	if (bounds->maxY < collider.bounds->minY) return false;
-	if (bounds->minY > collider.bounds->maxY) return false;
+	if (position.x + bounds.width / 2 < collider.position.x - collider.bounds.width / 2) return false;
+	if (position.x - bounds.width / 2 > collider.position.x + collider.bounds.width / 2) return false;
+	if (position.y + bounds.height / 2  < collider.position.y - collider.bounds.height / 2) return false;
+	if (position.y - bounds.height / 2 > collider.position.y + collider.bounds.height / 2) return false;
 
 	// there is an overlap
 	return true;
 }
 
 Collider::~Collider() {
-	delete bounds;
 }
 

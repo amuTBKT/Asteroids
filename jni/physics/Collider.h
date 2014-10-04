@@ -18,15 +18,14 @@ public:
 
 	// bounding rectangle
 //	GameObject parent;
+	Vector2 position;
 	struct aabb{
-		float minX;
-		float maxX;
-		float minY;
-		float maxY;
-	} *bounds;
+		float width;
+		float height;
+	} bounds;
 
 //	void setParent(const GameObject&);
-	void setBounds(float, float, float, float);
+	void setBounds(float, float);
 	void translate(const Vector2&);
 	void translate(float, float);
 	bool inBounds(const Vector2& point);

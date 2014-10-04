@@ -5,14 +5,25 @@
  *      Author: amu
  */
 
+#include <GLES/gl.h>
 #include "GameObject.h"
 
 GameObject::GameObject() {
-	// TODO Auto-generated constructor stub
+}
 
+GameObject::GameObject(const GameObject& g) {
+	collider = g.collider;
+	transform = g.transform;
+}
+
+void GameObject::render(){
+	update();
+}
+
+void GameObject::update(){
+	collider.position = transform.position;
 }
 
 GameObject::~GameObject() {
-	// TODO Auto-generated destructor stub
 }
 
