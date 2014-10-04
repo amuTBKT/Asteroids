@@ -1,5 +1,6 @@
-obj/local/armeabi/objs/Asteroids/BoxCollider.o: jni/BoxCollider.cpp \
- jni/BoxCollider.h jni/Collider.h jni/Vector2.h \
+obj/local/armeabi/objs/Asteroids/physics/Collider.o: \
+ jni/physics/Collider.cpp jni/physics/Collider.h \
+ jni/physics/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,11 +25,9 @@ obj/local/armeabi/objs/Asteroids/BoxCollider.o: jni/BoxCollider.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h
 
-jni/BoxCollider.h:
+jni/physics/Collider.h:
 
-jni/Collider.h:
-
-jni/Vector2.h:
+jni/physics/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 

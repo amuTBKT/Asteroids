@@ -1,5 +1,5 @@
-obj/local/armeabi/objs/Asteroids/Collider.o: jni/Collider.cpp \
- jni/Collider.h jni/Vector2.h \
+obj/local/armeabi/objs/Asteroids/core/Vector2.o: jni/core/Vector2.cpp \
+ jni/core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,9 +24,7 @@ obj/local/armeabi/objs/Asteroids/Collider.o: jni/Collider.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h
 
-jni/Collider.h:
-
-jni/Vector2.h:
+jni/core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 

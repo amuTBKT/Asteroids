@@ -16,7 +16,6 @@
 class Logger {
 public:
 	Logger();
-	static void log();
 	virtual ~Logger();
 };
 

@@ -1,4 +1,6 @@
-obj/local/armeabi/objs/Asteroids/Vector2.o: jni/Vector2.cpp jni/Vector2.h \
+obj/local/armeabi/objs/Asteroids/controller/Transform.o: \
+ jni/controller/Transform.cpp jni/controller/Transform.h \
+ jni/controller/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -23,7 +25,9 @@ obj/local/armeabi/objs/Asteroids/Vector2.o: jni/Vector2.cpp jni/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h
 
-jni/Vector2.h:
+jni/controller/Transform.h:
+
+jni/controller/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 

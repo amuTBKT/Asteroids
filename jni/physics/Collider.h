@@ -29,9 +29,9 @@ public:
 	void setBounds(float, float, float, float);
 	void translate(const Vector2&);
 	void translate(float, float);
-	virtual bool inBounds(const Vector2& point);
-	virtual bool inBounds(float, float);
-	virtual bool testAABB(const Collider&);
+	bool inBounds(const Vector2& point);
+	bool inBounds(float, float);
+	bool testAABB(const Collider&);
 };
 
 #endif /* COLLIDER_H_ */

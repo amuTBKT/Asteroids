@@ -13,7 +13,3 @@ Logger::Logger() {
 Logger::~Logger() {
 }
 
-static void Logger::log(){
-	ALOG("hey");
-}
-

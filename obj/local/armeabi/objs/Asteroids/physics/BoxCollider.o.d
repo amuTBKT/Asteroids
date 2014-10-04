@@ -1,5 +1,6 @@
-obj/local/armeabi/objs/Asteroids/Transform.o: jni/Transform.cpp \
- jni/Transform.h jni/Vector2.h \
+obj/local/armeabi/objs/Asteroids/physics/BoxCollider.o: \
+ jni/physics/BoxCollider.cpp jni/physics/BoxCollider.h \
+ jni/physics/Collider.h jni/physics/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,9 +25,11 @@ obj/local/armeabi/objs/Asteroids/Transform.o: jni/Transform.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h
 
-jni/Transform.h:
+jni/physics/BoxCollider.h:
 
-jni/Vector2.h:
+jni/physics/Collider.h:
+
+jni/physics/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
