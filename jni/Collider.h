@@ -13,6 +13,7 @@
 class Collider {
 public:
 	Collider();
+	Collider (const Collider&);
 	virtual ~Collider();
 
 	// bounding rectangle
@@ -24,8 +25,9 @@ public:
 	} *bounds;
 	void setBounds(float, float, float, float);
 
-	virtual bool inBounds(Vector2 point);
+	virtual bool inBounds(const Vector2& point);
 	virtual bool inBounds(float, float);
+	virtual bool testAABB(const Collider&);
 };
 
 #endif /* COLLIDER_H_ */

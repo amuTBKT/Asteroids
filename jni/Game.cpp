@@ -35,9 +35,10 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
-	BoxCollider c;
-	c.setBounds(0, 2, 0, 0.5);
-	if (c.inBounds(0.5, 0.5)){
+	BoxCollider c1, c2;
+	c1.setBounds(0, 2, 0, 0.5);
+	c2.setBounds(3, 5, 0, 1);
+	if (c1.testAABB(c2)){
 		glClearColor(0.3, 0, 0.1, 1);
 	}
 	else {

@@ -7,6 +7,10 @@
 
 #include "Collider.h"
 
+Collider::Collider(const Collider& c){
+	bounds = c.bounds;
+}
+
 Collider::Collider() {
 	bounds = new aabb;
 	setBounds(0, 1, 0, 1);
