@@ -19,6 +19,7 @@ public class Asteroids extends ActionBarActivity {
 		
 		// opengl setup
 		glSurfaceView = new GLSurfaceView(this);
+//		glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 24, 8);
 		glSurfaceView.setRenderer(new CustomRenderer());
 		setContentView(glSurfaceView);
 		
