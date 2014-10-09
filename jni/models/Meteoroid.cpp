@@ -10,10 +10,20 @@
 
 Meteoroid::Meteoroid(float r) {
 	radius = r;
-	createMesh(10);
+	createMesh(4);
 }
 
 Meteoroid::~Meteoroid() {
+}
+
+void Meteoroid::update(){
+	GameObject::update();
+	move();
+
+	glPushMatrix();
+	glTranslatef(transform.position.x, transform.position.y, 0);
+	mesh->render();
+	glPopMatrix();
 }
 
 void Meteoroid::createMesh(int resolution) {

@@ -10,6 +10,7 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 Meteoroid* meteor;
+Collider screen_bounds[4];
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -41,18 +42,29 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
 	meteor = new Meteoroid(0.1);
+	meteor->velocity = Vector2(0.01, 0);
 
-//	mesh = new Mesh();
-//	float vert[] = {-1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1};
-//	mesh->setVertices(&vert[0], sizeof(vert) / sizeof(float), true);
+	Collider c;c.setBounds(0.1, 2);c.position.set(-1.2, 0);
+	screen_bounds[0] = c;
+	c.position.set(1.2, 0);
+	screen_bounds[1] = c;
+	c.setBounds(2, 0.1);c.position.set(0, 1.2);
+	screen_bounds[2] = c;
+	c.position.set(0, -1.2);
+	screen_bounds[3] = c;
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-//	mesh->render();
-	meteor->mesh->render();
+	if (meteor->collider.testAABB(screen_bounds[0]) || meteor->collider.testAABB(screen_bounds[1])){
+		meteor->velocity.x *= -1;
+		meteor->transform.position += meteor->velocity;
+		meteor->transform.position += meteor->velocity;
+	}
+
+	meteor->update();
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){

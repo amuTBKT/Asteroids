@@ -9,7 +9,8 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdint.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_types.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h \
- jni/models/Meteoroid.h jni/models/../controller/GameObject.h \
+ jni/models/Meteoroid.h jni/models/../controller/MovingEntity.h \
+ jni/models/../controller/GameObject.h \
  jni/models/../controller/Transform.h \
  jni/models/../controller/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
@@ -59,6 +60,8 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h:
 
 jni/models/Meteoroid.h:
+
+jni/models/../controller/MovingEntity.h:
 
 jni/models/../controller/GameObject.h:
 
