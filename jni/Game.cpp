@@ -42,7 +42,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
 	meteor = new Meteoroid(0.1);
-	meteor->velocity = Vector2(0.01, 0);
+	meteor->transform.setVelocity(Vector2(0.01, 0));
 
 	Collider c;c.setBounds(0.1, 2);c.position.set(-1.2, 0);
 	screen_bounds[0] = c;
@@ -59,9 +59,7 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	if (meteor->collider.testAABB(screen_bounds[0]) || meteor->collider.testAABB(screen_bounds[1])){
-		meteor->velocity.x *= -1;
-		meteor->transform.position += meteor->velocity;
-		meteor->transform.position += meteor->velocity;
+		meteor->transform.velocity.x *= -1;
 	}
 
 	meteor->update();

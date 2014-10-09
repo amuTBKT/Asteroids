@@ -7,14 +7,18 @@
 
 #include "Transform.h"
 
-Transform::Transform(): position(Vector2(0,0)), scale(Vector2(1, 1)), rotation(0){}
-Transform::Transform(Vector2 pos, Vector2 scl, float rot): position(pos), scale(scl), rotation(rot) {}
+Transform::Transform(): position(Vector2(0,0)), scale(Vector2(1, 1)), velocity(Vector2(0, 0)), rotation(0){}
+Transform::Transform(Vector2 pos, Vector2 scl, float rot): position(pos), scale(scl), velocity(Vector2(0, 0)), rotation(rot) {}
 Transform::Transform(const Transform& t){
 	Transform(t.position, t.scale, t.rotation);
 }
 
 void Transform::setPosition(const Vector2& pos){
 	position = Vector2(pos);
+}
+
+void Transform::setVelocity(const Vector2& pos){
+	velocity = Vector2(pos);
 }
 
 void Transform::translate(Vector2 dV){

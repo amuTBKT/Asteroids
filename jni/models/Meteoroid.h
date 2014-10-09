@@ -5,13 +5,13 @@
  *      Author: amu
  */
 
-#include "../controller/MovingEntity.h"
+#include "../controller/GameObject.h"
 #include "Mesh.h"
 
 #ifndef METEOROID_H_
 #define METEOROID_H_
 
-class Meteoroid : public MovingEntity{
+class Meteoroid : public GameObject{
 public:
 	// graphics
 	Mesh* mesh;

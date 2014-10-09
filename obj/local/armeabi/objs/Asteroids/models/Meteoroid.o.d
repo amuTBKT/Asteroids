@@ -23,8 +23,7 @@ obj/local/armeabi/objs/Asteroids/models/Meteoroid.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
- jni/models/Meteoroid.h jni/models/../controller/MovingEntity.h \
- jni/models/../controller/GameObject.h \
+ jni/models/Meteoroid.h jni/models/../controller/GameObject.h \
  jni/models/../controller/Transform.h \
  jni/models/../controller/../core/Vector2.h \
  jni/models/../controller/../physics/Collider.h \
@@ -86,8 +85,6 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/s
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
 jni/models/Meteoroid.h:
-
-jni/models/../controller/MovingEntity.h:
 
 jni/models/../controller/GameObject.h:
 

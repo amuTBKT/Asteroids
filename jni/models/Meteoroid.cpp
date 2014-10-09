@@ -18,7 +18,6 @@ Meteoroid::~Meteoroid() {
 
 void Meteoroid::update(){
 	GameObject::update();
-	move();
 
 	glPushMatrix();
 	glTranslatef(transform.position.x, transform.position.y, 0);

@@ -18,10 +18,11 @@ public:
 	virtual ~Transform();
 
 	// member variables
-	Vector2 position, scale;
+	Vector2 position, scale, velocity;
 	float rotation;
 
 	// methods
+	void setVelocity(const Vector2&);
 	void setPosition(const Vector2&);
 	void translate(Vector2);
 	void translate(float, float);

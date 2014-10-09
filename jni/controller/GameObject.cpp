@@ -22,6 +22,7 @@ void GameObject::render(){
 }
 
 void GameObject::update(){
+	transform.translate(transform.velocity);
 	collider.position = transform.position;
 }
 
