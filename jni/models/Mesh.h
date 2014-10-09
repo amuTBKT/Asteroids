@@ -15,12 +15,12 @@ class Mesh {
 public:
 	// member variables
 	GLuint vbo;
-	int draws;
+	int draws, stride;
 
 	Mesh();
 	virtual ~Mesh();
 
-	void setVertices(const float[]);
+	void setVertices(float*, int, bool);
 	void render();
 };
 

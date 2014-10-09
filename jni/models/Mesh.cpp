@@ -9,38 +9,52 @@
 
 Mesh::Mesh() {
 	draws = 0;
+	stride = 0;
 	vbo = 0;
+}
 
-	float data[] = {-1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1};
+void Mesh::setVertices(float* p, int length, bool hasColor){
+	float data[length];
+	for (int i = 0; i < length; i++){
+		data[i] = *p;
+		p++;
+	}
 
+	// generate vertex buffer for efficient rendering
 	glGenBuffers(1, &vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-}
 
-void Mesh::setVertices(const float data[]){
+	// initialize the draw counts
 	draws = sizeof(data) / sizeof(float);
-
-//	glGenBuffers(1, &vbo);
-//	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-//	glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
-//	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
+	if (hasColor) {
+		draws /= 7;
+		stride = 7;
+	}
+	else {
+		draws /= 3;
+		stride = 0;
+	}
 }
 
 void Mesh::render(){
 	glFrontFace(GL_CW);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+
 	glEnableClientState(GL_VERTEX_ARRAY);
-	glEnableClientState(GL_COLOR_ARRAY);
+	glVertexPointer(3, GL_FLOAT, stride * sizeof(float), 0);
 
-	glVertexPointer(3, GL_FLOAT, 7 * sizeof(float), 0);
-	glColorPointer(4, GL_FLOAT, 7 * sizeof(float), (void*)(3 * sizeof(float)));
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	// check whether vbo has color data
+	if (stride > 0) {
+		glEnableClientState(GL_COLOR_ARRAY);
+		glColorPointer(4, GL_FLOAT, stride * sizeof(float), (void*)(3 * sizeof(float)));
+	}
 
-	glDisableClientState(GL_COLOR_ARRAY);
+	glDrawArrays(GL_TRIANGLES, 0, draws);
+
+	if (stride > 0)	glDisableClientState(GL_COLOR_ARRAY); // disable color array if vbo has color data
 	glDisableClientState(GL_VERTEX_ARRAY);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

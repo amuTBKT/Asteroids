@@ -8,7 +8,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
 void nativeDrawFrame(JNIEnv* env, jclass clazz);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
-Mesh *mesh;
+Mesh* mesh;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -41,7 +41,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 
 	mesh = new Mesh();
 	float vert[] = {-1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1};
-	mesh->setVertices(vert);
+	mesh->setVertices(&vert[0], sizeof(vert) / sizeof(float), true);
 
 //	if (gObj.collider.inBounds(0, 0)){
 //		glClearColor(0.3, 0, 0.1, 1);
