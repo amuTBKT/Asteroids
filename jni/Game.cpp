@@ -1,14 +1,15 @@
 #include <jni.h>
 
 #include <GLES/gl.h>
-#include "models/Mesh.h"
+#include "models/Meteoroid.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
 void nativeDrawFrame(JNIEnv* env, jclass clazz);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
-Mesh* mesh;
+// gameplay variables
+Meteoroid* meteor;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -39,23 +40,19 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
-	mesh = new Mesh();
-	float vert[] = {-1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1};
-	mesh->setVertices(&vert[0], sizeof(vert) / sizeof(float), true);
+	meteor = new Meteoroid(0.1);
 
-//	if (gObj.collider.inBounds(0, 0)){
-//		glClearColor(0.3, 0, 0.1, 1);
-//	}
-//	else {
-//		glClearColor(0, 1, 0, 1);
-//	}
+//	mesh = new Mesh();
+//	float vert[] = {-1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1};
+//	mesh->setVertices(&vert[0], sizeof(vert) / sizeof(float), true);
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
-	glClearColor(0.3, 0, 0.1, 1);
+	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	mesh->render();
+//	mesh->render();
+	meteor->mesh->render();
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
