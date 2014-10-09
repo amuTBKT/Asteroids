@@ -8,7 +8,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
 void nativeDrawFrame(JNIEnv* env, jclass clazz);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
-Mesh mesh;
+Mesh *mesh;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -39,9 +39,9 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
-	float data[] = {-1, 0, 0, 0, 1, 0, 1, 0, 0};
-	float colors[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-	mesh.setVertices(data, colors);
+	mesh = new Mesh();
+	float vert[] = {-1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1};
+	mesh->setVertices(vert);
 
 //	if (gObj.collider.inBounds(0, 0)){
 //		glClearColor(0.3, 0, 0.1, 1);
@@ -55,7 +55,7 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClearColor(0.3, 0, 0.1, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	mesh.render();
+	mesh->render();
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){

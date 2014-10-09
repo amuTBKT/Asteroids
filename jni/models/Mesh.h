@@ -6,6 +6,7 @@
  */
 
 #include <GLES/gl.h>
+#include <stdlib.h>
 
 #ifndef MESH_H_
 #define MESH_H_
@@ -13,13 +14,13 @@
 class Mesh {
 public:
 	// member variables
-	GLuint vbo, color;
+	GLuint vbo;
 	int draws;
 
 	Mesh();
 	virtual ~Mesh();
 
-	void setVertices(float[], float[]);
+	void setVertices(const float[]);
 	void render();
 };
 
