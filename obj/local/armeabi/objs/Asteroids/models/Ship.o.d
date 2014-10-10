@@ -1,5 +1,6 @@
 obj/local/armeabi/objs/Asteroids/models/Ship.o: jni/models/Ship.cpp \
- jni/models/Ship.h jni/models/../controller/GameObject.h \
+ jni/models/Ship.h jni/models/../controller/MovingEntity.h \
+ jni/models/../controller/GameObject.h \
  jni/models/../controller/Transform.h \
  jni/models/../controller/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
@@ -26,7 +27,8 @@ obj/local/armeabi/objs/Asteroids/models/Ship.o: jni/models/Ship.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
  jni/models/../controller/../physics/Collider.h \
- jni/models/../controller/../physics/../core/Vector2.h jni/models/Mesh.h \
+ jni/models/../controller/../physics/../core/Vector2.h \
+ jni/models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
@@ -38,6 +40,8 @@ obj/local/armeabi/objs/Asteroids/models/Ship.o: jni/models/Ship.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h
 
 jni/models/Ship.h:
+
+jni/models/../controller/MovingEntity.h:
 
 jni/models/../controller/GameObject.h:
 
@@ -95,7 +99,7 @@ jni/models/../controller/../physics/Collider.h:
 
 jni/models/../controller/../physics/../core/Vector2.h:
 
-jni/models/Mesh.h:
+jni/models/../controller/../models/Mesh.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 

@@ -26,7 +26,17 @@ obj/local/armeabi/objs/Asteroids/controller/MovingEntity.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
  jni/controller/../physics/Collider.h \
- jni/controller/../physics/../core/Vector2.h
+ jni/controller/../physics/../core/Vector2.h \
+ jni/controller/../models/Mesh.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/string.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h
 
 jni/controller/MovingEntity.h:
 
@@ -85,3 +95,23 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/p
 jni/controller/../physics/Collider.h:
 
 jni/controller/../physics/../core/Vector2.h:
+
+jni/controller/../models/Mesh.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/string.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:

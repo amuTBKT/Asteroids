@@ -9,9 +9,7 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdint.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_types.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h \
- jni/models/Meteoroid.h jni/models/../controller/GameObject.h \
- jni/models/../controller/Transform.h \
- jni/models/../controller/../core/Vector2.h \
+ jni/models/Meteoroid.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/types.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/posix_types.h \
@@ -29,15 +27,21 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
+ jni/models/../controller/MovingEntity.h \
+ jni/models/../controller/GameObject.h \
+ jni/models/../controller/Transform.h \
+ jni/models/../controller/../core/Vector2.h \
  jni/models/../controller/../physics/Collider.h \
- jni/models/../controller/../physics/../core/Vector2.h jni/models/Mesh.h \
+ jni/models/../controller/../physics/../core/Vector2.h \
+ jni/models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/string.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
- jni/models/Ship.h jni/models/Camera.h
+ jni/models/Ship.h jni/models/Camera.h \
+ jni/models/../controller/GameObject.h
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h:
 
@@ -60,12 +64,6 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/_types.h:
 
 jni/models/Meteoroid.h:
-
-jni/models/../controller/GameObject.h:
-
-jni/models/../controller/Transform.h:
-
-jni/models/../controller/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/math.h:
 
@@ -101,11 +99,19 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/s
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:
 
+jni/models/../controller/MovingEntity.h:
+
+jni/models/../controller/GameObject.h:
+
+jni/models/../controller/Transform.h:
+
+jni/models/../controller/../core/Vector2.h:
+
 jni/models/../controller/../physics/Collider.h:
 
 jni/models/../controller/../physics/../core/Vector2.h:
 
-jni/models/Mesh.h:
+jni/models/../controller/../models/Mesh.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/stdlib.h:
 
@@ -122,3 +128,5 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memor
 jni/models/Ship.h:
 
 jni/models/Camera.h:
+
+jni/models/../controller/GameObject.h:

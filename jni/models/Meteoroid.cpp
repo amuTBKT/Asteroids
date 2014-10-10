@@ -5,7 +5,6 @@
  *      Author: amu
  */
 
-#include <math.h>
 #include "Meteoroid.h"
 
 Meteoroid::Meteoroid(float r) {
@@ -18,13 +17,7 @@ Meteoroid::~Meteoroid() {
 }
 
 void Meteoroid::update(){
-	GameObject::update();
-
-	glPushMatrix();
-	glRotatef(transform.rotation, 0, 0, 1);
-	glTranslatef(transform.position.x, transform.position.y, 0);
-	mesh->render();
-	glPopMatrix();
+	MovingEntity::update();
 }
 
 void Meteoroid::createMesh(int resolution) {
@@ -52,6 +45,5 @@ void Meteoroid::createMesh(int resolution) {
 		data[counter++] = y;
 		data[counter++] = 0;
 	}
-	mesh = new Mesh();
 	mesh->setVertices(&data[0], sizeof(data) / sizeof(float), false);
 }

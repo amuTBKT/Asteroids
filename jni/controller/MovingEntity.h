@@ -6,18 +6,22 @@
  */
 
 #include "GameObject.h"
+#include "../models/Mesh.h"
 
 #ifndef MOVINGENTITY_H_
 #define MOVINGENTITY_H_
 
 class MovingEntity : public GameObject {
 public:
-	Vector2 velocity, acceletaion;
+	// graphics
+	Mesh *mesh;
 
 	MovingEntity();
 	virtual ~MovingEntity();
+	void update();
 
-	void move();
+protected:
+	void createMesh(int);
 };
 
 #endif /* MOVINGENTITY_H_ */

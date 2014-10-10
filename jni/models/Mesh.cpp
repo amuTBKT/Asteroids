@@ -16,8 +16,7 @@ Mesh::Mesh() {
 void Mesh::setVertices(float* p, int length, bool hasColor){
 	float data[length];
 	for (int i = 0; i < length; i++){
-		data[i] = *p;
-		p++;
+		data[i] = *p++;
 	}
 
 	// generate vertex buffer for efficient rendering

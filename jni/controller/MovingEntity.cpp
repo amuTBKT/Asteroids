@@ -8,11 +8,17 @@
 #include "MovingEntity.h"
 
 MovingEntity::MovingEntity() {
+	mesh = new Mesh();
 }
 
-void MovingEntity::move(){
-	velocity += acceletaion;
-	transform.position += velocity;
+void MovingEntity::update(){
+	GameObject::update();
+
+	glPushMatrix();
+	glTranslatef(transform.position.x, transform.position.y, 0);
+	glRotatef(transform.rotation, 0, 0, 1);
+	mesh->render();
+	glPopMatrix();
 }
 
 MovingEntity::~MovingEntity() {

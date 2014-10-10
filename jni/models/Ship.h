@@ -5,22 +5,19 @@
  *      Author: amu
  */
 
-#include "../controller/GameObject.h"
-#include "Mesh.h"
+#include "../controller/MovingEntity.h"
 
 #ifndef SHIP_H_
 #define SHIP_H_
 
-class Ship : public GameObject {
+class Ship : public MovingEntity {
 public:
-	// graphics
-	Mesh *mesh;
-
 	Ship();
 	virtual ~Ship();
 
-	void createMesh();
 	void update();
+protected:
+	void createMesh(int);
 };
 
 #endif /* SHIP_H_ */
