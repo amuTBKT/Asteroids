@@ -2,6 +2,7 @@
 
 #include <GLES/gl.h>
 #include "models/Meteoroid.h"
+#include "models/Camera.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -10,6 +11,7 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 Meteoroid* meteor;
+Camera* camera;
 Collider screen_bounds[4];
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
@@ -41,16 +43,17 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
-	meteor = new Meteoroid(0.1);
-	meteor->transform.setVelocity(Vector2(0.01, 0));
+	meteor = new Meteoroid(10);
+	meteor->transform.setPosition(Vector2(400, 240));
+	meteor->transform.setVelocity(Vector2(1, 0));
 
-	Collider c;c.setBounds(0.1, 2);c.position.set(-1.2, 0);
+	Collider c;c.setBounds(5, 480);c.position.set(0, 240);
 	screen_bounds[0] = c;
-	c.position.set(1.2, 0);
+	c.position.set(800, 0);
 	screen_bounds[1] = c;
-	c.setBounds(2, 0.1);c.position.set(0, 1.2);
+	c.setBounds(800, 5);c.position.set(400, 480);
 	screen_bounds[2] = c;
-	c.position.set(0, -1.2);
+	c.position.set(400, 0);
 	screen_bounds[3] = c;
 }
 
@@ -58,17 +61,16 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	meteor->update();
+
 	if (meteor->collider.testAABB(screen_bounds[0]) || meteor->collider.testAABB(screen_bounds[1])){
 		meteor->transform.velocity.x *= -1;
 	}
-
-	meteor->update();
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
 	glViewport(0, 0, width, height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	float ratio = (float) width / (float) height;
-	glOrthof(-ratio, ratio, -1, 1, 0, 25);
+	camera = new Camera(width, height);
+	camera->transform.setPosition(Vector2(400, 240));
+	camera->update();
 }
