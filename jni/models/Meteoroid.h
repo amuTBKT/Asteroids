@@ -14,7 +14,7 @@
 class Meteoroid : public GameObject{
 public:
 	// graphics
-	Mesh* mesh;
+	Mesh *mesh;
 	float radius;
 
 	Meteoroid(float);

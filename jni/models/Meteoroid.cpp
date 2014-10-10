@@ -11,6 +11,7 @@
 Meteoroid::Meteoroid(float r) {
 	radius = r;
 	createMesh(8);
+	collider.setBounds(2 * r, 2 * r);
 }
 
 Meteoroid::~Meteoroid() {
@@ -20,6 +21,7 @@ void Meteoroid::update(){
 	GameObject::update();
 
 	glPushMatrix();
+	glRotatef(transform.rotation, 0, 0, 1);
 	glTranslatef(transform.position.x, transform.position.y, 0);
 	mesh->render();
 	glPopMatrix();

@@ -2,6 +2,7 @@
 
 #include <GLES/gl.h>
 #include "models/Meteoroid.h"
+#include "models/Ship.h"
 #include "models/Camera.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
@@ -10,7 +11,8 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
-Meteoroid* meteor;
+Meteoroid *meteor1, *meteor2;
+Ship *ship;
 Camera* camera;
 float SCREEN_WIDTH, SCREEN_HEIGHT;
 
@@ -43,23 +45,50 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
-	meteor = new Meteoroid(10);
-	meteor->transform.setPosition(Vector2(400, 240));
-	meteor->transform.setVelocity(Vector2(3, 5));
+	meteor1 = new Meteoroid(10);
+	meteor1->transform.setPosition(Vector2(50, 240));
+	meteor1->transform.setVelocity(Vector2(5, 0));
+
+	meteor2 = new Meteoroid(10);
+	meteor2->transform.setPosition(Vector2(750, 240));
+	meteor2->transform.setVelocity(Vector2(5, 0));
+
+	ship = new Ship();
+	ship->transform.setPosition(Vector2(100, 100));
+	ship->transform.setVelocity(Vector2(5, 2));
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	meteor->update();
+	meteor1->update();
+	meteor2->update();
 
-	if (meteor->collider.testAABB(camera->getTopBound()) || meteor->collider.testAABB(camera->getBottomBound())){
-		meteor->transform.velocity.y *= -1;
+	ship->update();
+
+	if (meteor1->collider.testAABB(camera->getTopBound()) || meteor1->collider.testAABB(camera->getBottomBound())){
+		meteor1->transform.velocity.y *= -1;
 	}
 
-	if (meteor->collider.testAABB(camera->getLeftBound()) || meteor->collider.testAABB(camera->getRightBound())){
-		meteor->transform.velocity.x *= -1;
+	if (meteor1->collider.testAABB(camera->getLeftBound()) || meteor1->collider.testAABB(camera->getRightBound())){
+		meteor1->transform.velocity.x *= -1;
+	}
+
+	if (meteor2->collider.testAABB(camera->getTopBound()) || meteor2->collider.testAABB(camera->getBottomBound())){
+		meteor2->transform.velocity.y *= -1;
+	}
+
+	if (meteor2->collider.testAABB(camera->getLeftBound()) || meteor2->collider.testAABB(camera->getRightBound())){
+		meteor2->transform.velocity.x *= -1;
+	}
+
+	if (ship->collider.testAABB(camera->getTopBound()) || ship->collider.testAABB(camera->getBottomBound())){
+		ship->transform.velocity.y *= -1;
+	}
+
+	if (ship->collider.testAABB(camera->getLeftBound()) || ship->collider.testAABB(camera->getRightBound())){
+		ship->transform.velocity.x *= -1;
 	}
 }
 
