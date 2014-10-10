@@ -12,7 +12,7 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 // gameplay variables
 Meteoroid* meteor;
 Camera* camera;
-Collider screen_bounds[4];
+float SCREEN_WIDTH, SCREEN_HEIGHT;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -45,16 +45,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 
 	meteor = new Meteoroid(10);
 	meteor->transform.setPosition(Vector2(400, 240));
-	meteor->transform.setVelocity(Vector2(1, 0));
-
-	Collider c;c.setBounds(5, 480);c.position.set(0, 240);
-	screen_bounds[0] = c;
-	c.position.set(800, 0);
-	screen_bounds[1] = c;
-	c.setBounds(800, 5);c.position.set(400, 480);
-	screen_bounds[2] = c;
-	c.position.set(400, 0);
-	screen_bounds[3] = c;
+	meteor->transform.setVelocity(Vector2(3, 5));
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
@@ -63,12 +54,18 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 
 	meteor->update();
 
-	if (meteor->collider.testAABB(screen_bounds[0]) || meteor->collider.testAABB(screen_bounds[1])){
+	if (meteor->collider.testAABB(camera->getTopBound()) || meteor->collider.testAABB(camera->getBottomBound())){
+		meteor->transform.velocity.y *= -1;
+	}
+
+	if (meteor->collider.testAABB(camera->getLeftBound()) || meteor->collider.testAABB(camera->getRightBound())){
 		meteor->transform.velocity.x *= -1;
 	}
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
+	SCREEN_WIDTH = width;
+	SCREEN_HEIGHT = height;
 	glViewport(0, 0, width, height);
 	camera = new Camera(width, height);
 	camera->transform.setPosition(Vector2(400, 240));

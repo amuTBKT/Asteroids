@@ -10,7 +10,7 @@
 
 Meteoroid::Meteoroid(float r) {
 	radius = r;
-	createMesh(4);
+	createMesh(8);
 }
 
 Meteoroid::~Meteoroid() {

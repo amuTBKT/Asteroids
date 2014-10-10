@@ -18,6 +18,12 @@ public:
 	Camera(float, float);
 	virtual ~Camera();
 	void update();
+	Collider getLeftBound();
+	Collider getRightBound();
+	Collider getBottomBound();
+	Collider getTopBound();
+private:
+	Collider screen_bounds[4];
 };
 
 #endif /* CAMERA_H_ */
