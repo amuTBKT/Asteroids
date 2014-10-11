@@ -17,7 +17,7 @@ void MovingEntity::update(){
 	glPushMatrix();
 	glTranslatef(transform.position.x, transform.position.y, 0);
 	glRotatef(transform.rotation, 0, 0, 1);
-	mesh->render();
+	mesh->render(GL_LINE_LOOP);
 	glPopMatrix();
 }
 

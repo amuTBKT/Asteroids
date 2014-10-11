@@ -37,7 +37,7 @@ void Mesh::setVertices(float* p, int length, bool hasColor){
 	}
 }
 
-void Mesh::render(){
+void Mesh::render(int render_type){
 	glFrontFace(GL_CW);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -51,7 +51,7 @@ void Mesh::render(){
 		glColorPointer(4, GL_FLOAT, stride * sizeof(float), (void*)(3 * sizeof(float)));
 	}
 
-	glDrawArrays(GL_LINE_LOOP, 0, draws);
+	glDrawArrays(render_type, 0, draws);
 
 	if (stride > 0)	glDisableClientState(GL_COLOR_ARRAY); // disable color array if vbo has color data
 	glDisableClientState(GL_VERTEX_ARRAY);

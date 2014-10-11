@@ -1,6 +1,8 @@
-obj/local/armeabi/objs/Asteroids/controller/Transform.o: \
- jni/controller/Transform.cpp jni/controller/Transform.h \
- jni/controller/../core/Vector2.h \
+obj/local/armeabi/objs/Asteroids/models/Bullet.o: jni/models/Bullet.cpp \
+ jni/models/Bullet.h jni/models/../controller/MovingEntity.h \
+ jni/models/../controller/GameObject.h \
+ jni/models/../controller/Transform.h \
+ jni/models/../controller/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/math.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cprolog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/config/features.h \
@@ -39,11 +41,31 @@ obj/local/armeabi/objs/Asteroids/controller/Transform.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_epilog.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
+ jni/models/../controller/../physics/Collider.h \
+ jni/models/../controller/../physics/../core/Vector2.h \
+ jni/models/../controller/../models/Mesh.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h
 
-jni/controller/Transform.h:
+jni/models/Bullet.h:
 
-jni/controller/../core/Vector2.h:
+jni/models/../controller/MovingEntity.h:
+
+jni/models/../controller/GameObject.h:
+
+jni/models/../controller/Transform.h:
+
+jni/models/../controller/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/math.h:
 
@@ -122,3 +144,31 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/p
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_epilog.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h:
+
+jni/models/../controller/../physics/Collider.h:
+
+jni/models/../controller/../physics/../core/Vector2.h:
+
+jni/models/../controller/../models/Mesh.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:

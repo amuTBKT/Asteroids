@@ -53,7 +53,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	meteor2->transform.setPosition(Vector2(750, 240));
 	meteor2->transform.setVelocity(Vector2(5, 0));
 
-	ship = new Ship();
+	ship = new Ship(10);
 	ship->transform.setPosition(Vector2(100, 100));
 	ship->transform.setVelocity(Vector2(5, 2));
 }

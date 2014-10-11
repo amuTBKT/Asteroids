@@ -12,10 +12,11 @@
 
 class Ship : public MovingEntity {
 public:
-	Ship();
+	Ship(int);
 	virtual ~Ship();
 
 	void update();
+	void shoot();
 protected:
 	void createMesh(int);
 };

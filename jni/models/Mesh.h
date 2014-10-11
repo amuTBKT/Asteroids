@@ -21,7 +21,7 @@ public:
 	virtual ~Mesh();
 
 	void setVertices(float*, int, bool);
-	void render();
+	void render(int);
 };
 
 #endif /* MESH_H_ */

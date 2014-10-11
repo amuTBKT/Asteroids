@@ -7,14 +7,18 @@
 
 #include "Ship.h"
 
-Ship::Ship() {
-	createMesh(10);
-	collider.setBounds(20, 20);
+Ship::Ship(int scale) {
+	createMesh(scale);
+	collider.setBounds(2 * scale, 2 * scale);
 }
 
 void Ship::update(){
 	transform.setRotation(180 * atan2f(transform.velocity.y, transform.velocity.x) / M_PI);
 	MovingEntity::update();
+}
+
+void Ship::shoot(){
+
 }
 
 void Ship::createMesh(int scale){
