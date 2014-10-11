@@ -8,6 +8,12 @@
 #include "Camera.h"
 
 Camera::Camera(float w, float h) : width(w), height(h), zNear(0), zFar(5){}
+Camera::Camera(const Camera& c){
+	width = c.width;
+	height = c.height;
+	zNear = c.zNear;
+	zFar = c.zFar;
+}
 
 void Camera::update(){
 	GameObject::update();

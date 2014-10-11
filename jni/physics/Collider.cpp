@@ -10,11 +10,13 @@
 Collider::Collider() {
 	position = Vector2(0, 0);
 	setBounds(1, 1);
+	checkForCollision = true;
 }
 
 Collider::Collider(const Collider& c){
 	position = c.position;
 	setBounds(c.bounds.width, c.bounds.height);
+	checkForCollision = true;
 }
 
 void Collider::setBounds(float w, float h){

@@ -5,11 +5,11 @@
  *      Author: amu
  */
 
-#include <math.h>
-#include "../controller/MovingEntity.h"
-
 #ifndef METEOROID_H_
 #define METEOROID_H_
+
+#include <math.h>
+#include "../controller/MovingEntity.h"
 
 class Meteoroid : public MovingEntity{
 public:

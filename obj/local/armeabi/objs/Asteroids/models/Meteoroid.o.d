@@ -48,15 +48,7 @@ obj/local/armeabi/objs/Asteroids/models/Meteoroid.o: \
  jni/models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h
 
 jni/models/Meteoroid.h:
 
@@ -157,19 +149,3 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:

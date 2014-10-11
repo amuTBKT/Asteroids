@@ -5,18 +5,21 @@
  *      Author: amu
  */
 
-#include "../controller/MovingEntity.h"
-
 #ifndef BULLET_H_
 #define BULLET_H_
+
+#include "../controller/MovingEntity.h"
 
 class Bullet : public MovingEntity{
 public:
 	float radius;
 
 	Bullet(float);
+	Bullet(float, const Vector2&);
 	virtual ~Bullet();
 
+	void upate();
+	void reset();
 protected:
 	void createMesh(int);
 };

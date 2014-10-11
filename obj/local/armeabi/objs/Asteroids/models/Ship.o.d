@@ -48,14 +48,11 @@ obj/local/armeabi/objs/Asteroids/models/Ship.o: jni/models/Ship.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h
+ jni/models/../controller/BulletManager.h \
+ jni/models/../controller/../models/Bullet.h \
+ jni/models/../controller/../models/../controller/MovingEntity.h \
+ jni/models/../controller/../models/../controller/GameObject.h \
+ jni/models/../controller/../models/../controller/../models/Mesh.h
 
 jni/models/Ship.h:
 
@@ -157,18 +154,12 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
+jni/models/../controller/BulletManager.h:
 
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h:
+jni/models/../controller/../models/Bullet.h:
 
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h:
+jni/models/../controller/../models/../controller/MovingEntity.h:
 
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h:
+jni/models/../controller/../models/../controller/GameObject.h:
 
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
+jni/models/../controller/../models/../controller/../models/Mesh.h:

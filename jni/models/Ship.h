@@ -5,10 +5,11 @@
  *      Author: amu
  */
 
-#include "../controller/MovingEntity.h"
-
 #ifndef SHIP_H_
 #define SHIP_H_
+
+#include "../controller/MovingEntity.h"
+#include "../controller/BulletManager.h"
 
 class Ship : public MovingEntity {
 public:

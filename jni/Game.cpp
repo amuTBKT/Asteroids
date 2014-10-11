@@ -2,8 +2,8 @@
 
 #include <GLES/gl.h>
 #include "models/Meteoroid.h"
-#include "models/Ship.h"
-#include "models/Camera.h"
+#include "models/Bullet.h"
+#include "controller/GameController.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -11,10 +11,10 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
-Meteoroid *meteor1, *meteor2;
-Ship *ship;
-Camera* camera;
 float SCREEN_WIDTH, SCREEN_HEIGHT;
+Camera* GameController::camera;
+Ship* GameController::ship;
+std::vector<MovingEntity> GameController::objects;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -45,58 +45,39 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
-	meteor1 = new Meteoroid(10);
-	meteor1->transform.setPosition(Vector2(50, 240));
-	meteor1->transform.setVelocity(Vector2(5, 0));
+	Meteoroid meteor1(10);
+	meteor1.transform.setPosition(Vector2(50, 240));
+	meteor1.transform.setVelocity(Vector2(5, 0));
 
-	meteor2 = new Meteoroid(10);
-	meteor2->transform.setPosition(Vector2(750, 240));
-	meteor2->transform.setVelocity(Vector2(5, 0));
+	Meteoroid meteor2(10);
+	meteor2.transform.setPosition(Vector2(750, 240));
+	meteor2.transform.setVelocity(Vector2(5, 0));
 
-	ship = new Ship(10);
-	ship->transform.setPosition(Vector2(100, 100));
-	ship->transform.setVelocity(Vector2(5, 2));
+	Ship ship(10);
+	ship.transform.setPosition(Vector2(100, 100));
+	ship.transform.setVelocity(Vector2(5, 2));
+
+	Bullet bullet(4, Vector2(5, 0));
+	bullet.transform.setPosition(Vector2(10, 240));
+
+	GameController::addBody(meteor1);
+	GameController::addBody(meteor2);
+	GameController::addBody(ship);
+	GameController::addBody(bullet);
+
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	meteor1->update();
-	meteor2->update();
+	GameController::update();
 
-	ship->update();
-
-	if (meteor1->collider.testAABB(camera->getTopBound()) || meteor1->collider.testAABB(camera->getBottomBound())){
-		meteor1->transform.velocity.y *= -1;
-	}
-
-	if (meteor1->collider.testAABB(camera->getLeftBound()) || meteor1->collider.testAABB(camera->getRightBound())){
-		meteor1->transform.velocity.x *= -1;
-	}
-
-	if (meteor2->collider.testAABB(camera->getTopBound()) || meteor2->collider.testAABB(camera->getBottomBound())){
-		meteor2->transform.velocity.y *= -1;
-	}
-
-	if (meteor2->collider.testAABB(camera->getLeftBound()) || meteor2->collider.testAABB(camera->getRightBound())){
-		meteor2->transform.velocity.x *= -1;
-	}
-
-	if (ship->collider.testAABB(camera->getTopBound()) || ship->collider.testAABB(camera->getBottomBound())){
-		ship->transform.velocity.y *= -1;
-	}
-
-	if (ship->collider.testAABB(camera->getLeftBound()) || ship->collider.testAABB(camera->getRightBound())){
-		ship->transform.velocity.x *= -1;
-	}
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
 	SCREEN_WIDTH = width;
 	SCREEN_HEIGHT = height;
 	glViewport(0, 0, width, height);
-	camera = new Camera(width, height);
-	camera->transform.setPosition(Vector2(400, 240));
-	camera->update();
+	GameController::updateCamera(width, height);
 }

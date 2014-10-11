@@ -18,7 +18,7 @@ public:
 
 	MovingEntity();
 	virtual ~MovingEntity();
-	void update();
+	virtual void update();
 
 protected:
 	void createMesh(int);

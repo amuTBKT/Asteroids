@@ -5,11 +5,10 @@
  *      Author: amu
  */
 
-#include <GLES/gl.h>
-#include <stdlib.h>
-
 #ifndef MESH_H_
 #define MESH_H_
+
+#include <GLES/gl.h>
 
 class Mesh {
 public:

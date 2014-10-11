@@ -5,17 +5,18 @@
  *      Author: amu
  */
 
-#include "../controller/GameObject.h"
-#include <GLES/gl.h>
-
 #ifndef CAMERA_H_
 #define CAMERA_H_
+
+#include "../controller/GameObject.h"
+#include <GLES/gl.h>
 
 class Camera : public GameObject{
 public:
 	float width, height, zNear, zFar;
 
 	Camera(float, float);
+	Camera(const Camera&);
 	virtual ~Camera();
 	void update();
 	Collider getLeftBound();

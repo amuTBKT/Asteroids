@@ -5,10 +5,10 @@
  *      Author: amu
  */
 
-#include "../models/Bullet.h"
-
 #ifndef BULLETMANAGER_H_
 #define BULLETMANAGER_H_
+
+#include "../models/Bullet.h"
 
 class BulletManager {
 public:

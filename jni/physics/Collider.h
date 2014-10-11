@@ -5,10 +5,10 @@
  *      Author: amu
  */
 
-#include "../core/Vector2.h"
-
 #ifndef COLLIDER_H_
 #define COLLIDER_H_
+
+#include "../core/Vector2.h"
 
 class Collider {
 public:
@@ -22,6 +22,7 @@ public:
 		float width;
 		float height;
 	} bounds;
+	bool checkForCollision;
 
 	void setBounds(float, float);
 	void translate(const Vector2&);

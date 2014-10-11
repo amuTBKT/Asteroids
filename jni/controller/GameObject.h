@@ -5,11 +5,11 @@
  *      Author: amu
  */
 
-#include "Transform.h"
-#include "../physics/Collider.h"
-
 #ifndef GAMEOBJECT_H_
 #define GAMEOBJECT_H_
+
+#include "Transform.h"
+#include "../physics/Collider.h"
 
 class GameObject {
 public:
@@ -21,7 +21,7 @@ public:
 	virtual ~GameObject();
 
 	void render();
-	void update();
+	virtual void update();
 };
 
 #endif /* GAMEOBJECT_H_ */

@@ -9,7 +9,24 @@
 
 Bullet::Bullet(float r) {
 	radius = r;
-	createMesh(5);
+	createMesh(8);
+	collider.setBounds(2 * r, 2 * r);
+	transform.setVelocity(Vector2(0, 0));
+}
+
+Bullet::Bullet(float r, const Vector2& v){
+	radius = r;
+	createMesh(8);
+	collider.setBounds(2 * r, 2 * r);
+	transform.setVelocity(v);
+}
+
+void Bullet::reset(){
+	transform.setVelocity(Vector2(0, 0));
+}
+
+void Bullet::upate(){
+	MovingEntity::update();
 }
 
 void Bullet::createMesh(int resolution) {
