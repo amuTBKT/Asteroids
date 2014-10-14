@@ -9,36 +9,36 @@
 
 BulletManager::BulletManager() {
 	radius = 2;
-	speed = 4;
-	for (int i = 0; i < 60; i++){
+	speed = 20;
+	capacity = 20;
+	for (int i = 0; i < capacity; i++){
 		Bullet b(radius);
+		b.isActive = false;
 		bVector.push_back(b);
 	}
 }
 
-void BulletManager::update(Camera& camera){
-	for (int i = 0; i < bVector.size(); i++){
+void BulletManager::update(){
+	for (int i = 0; i < capacity; i++){
 		if (bVector[i].isActive){
-			bVector[i].update();
 
-			if (CollisionEngine::checkForCameraBounds(bVector[i], camera)){
-				bVector[i].isActive = false;
-			}
+			bVector[i].update();
+			Vector2 *pos = &bVector[i].transform.position;
+			if (pos->x > 800 || pos->x < 0 || pos->y > 480 || pos->y < 0) bVector[i].isActive = false;
 		}
 	}
 }
 
 void BulletManager::shoot(const Vector2& pos, float angle){
 	angle *= M_PI / 180;
-	Bullet *tmp;
-	for (int i = 0; i < bVector.size(); i++){
+	for (int i = 0; i < capacity; i++){
 		if (!bVector[i].isActive){
-			tmp = &bVector[i];
+			bVector[i].isActive = true;
+			bVector[i].transform.setPosition(pos);
+			bVector[i].transform.setVelocity(Vector2(cosf(angle), sinf(angle)) * speed);
+			return;
 		}
 	}
-	tmp->isActive = true;
-	tmp->transform.setPosition(pos);
-	tmp->transform.setVelocity(Vector2(cosf(angle), sinf(angle)) * speed);
 }
 
 BulletManager::~BulletManager() {

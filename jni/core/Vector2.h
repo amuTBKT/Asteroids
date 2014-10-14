@@ -50,6 +50,7 @@ class Vector2{
 		void truncate(float);
 		void normalize();
 		bool isNormalized();
+		void rotate(float);
 		float angleBetween(const Vector2);
 		float distanceBetween(const Vector2);
 };

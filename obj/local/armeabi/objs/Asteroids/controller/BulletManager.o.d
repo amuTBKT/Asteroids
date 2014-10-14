@@ -50,11 +50,6 @@ obj/local/armeabi/objs/Asteroids/controller/BulletManager.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- jni/controller/../models/Camera.h \
- jni/controller/../models/../controller/GameObject.h \
- jni/controller/../physics/CollisionEngine.h \
- jni/controller/../physics/../controller/MovingEntity.h \
- jni/controller/../physics/../models/Camera.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
@@ -204,16 +199,6 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
-
-jni/controller/../models/Camera.h:
-
-jni/controller/../models/../controller/GameObject.h:
-
-jni/controller/../physics/CollisionEngine.h:
-
-jni/controller/../physics/../controller/MovingEntity.h:
-
-jni/controller/../physics/../models/Camera.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector:
 

@@ -105,9 +105,7 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  jni/controller/../models/../controller/MovingEntity.h \
  jni/controller/../models/../controller/BulletManager.h \
  jni/controller/../models/../controller/../models/Bullet.h \
- jni/controller/../models/../controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/../models/Camera.h \
- jni/controller/../models/../controller/../physics/CollisionEngine.h
+ jni/controller/../models/../controller/../models/../controller/MovingEntity.h
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h:
 
@@ -326,7 +324,3 @@ jni/controller/../models/../controller/BulletManager.h:
 jni/controller/../models/../controller/../models/Bullet.h:
 
 jni/controller/../models/../controller/../models/../controller/MovingEntity.h:
-
-jni/controller/../models/../controller/../models/Camera.h:
-
-jni/controller/../models/../controller/../physics/CollisionEngine.h:

@@ -50,10 +50,12 @@ void GameController::addBody(MovingEntity g){
 
 void GameController::update(){
 	ship->update();
-	ship->bulletManager.update(*camera);
 	if (CollisionEngine::checkForCameraBounds(*ship, *camera)){
-		ship->transform.position.x += ship->collider.cWCameraBound.h * SCREEN_WIDTH;
-		ship->transform.position.y += ship->collider.cWCameraBound.v * SCREEN_HEIGHT;
+		Vector2 *pos = &ship->transform.position;
+		if (pos->x > SCREEN_WIDTH) pos->x -= SCREEN_WIDTH;
+		if (pos->x < 0) pos->x += SCREEN_WIDTH;
+		if (pos->y > SCREEN_HEIGHT) pos->y -= SCREEN_HEIGHT;
+		if (pos->y < 0) pos->y += SCREEN_HEIGHT;
 	}
 
 	for (int i = 0; i < objects.size(); i++){

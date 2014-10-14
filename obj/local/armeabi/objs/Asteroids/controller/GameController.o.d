@@ -102,9 +102,7 @@ obj/local/armeabi/objs/Asteroids/controller/GameController.o: \
  jni/controller/../models/../controller/MovingEntity.h \
  jni/controller/../models/../controller/BulletManager.h \
  jni/controller/../models/../controller/../models/Bullet.h \
- jni/controller/../models/../controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/../models/Camera.h \
- jni/controller/../models/../controller/../physics/CollisionEngine.h
+ jni/controller/../models/../controller/../models/../controller/MovingEntity.h
 
 jni/controller/GameController.h:
 
@@ -317,7 +315,3 @@ jni/controller/../models/../controller/BulletManager.h:
 jni/controller/../models/../controller/../models/Bullet.h:
 
 jni/controller/../models/../controller/../models/../controller/MovingEntity.h:
-
-jni/controller/../models/../controller/../models/Camera.h:
-
-jni/controller/../models/../controller/../physics/CollisionEngine.h:

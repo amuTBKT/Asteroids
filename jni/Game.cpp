@@ -7,7 +7,7 @@
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
 void nativeDrawFrame(JNIEnv* env, jclass clazz);
-void nativeOnTouchEvent(JNIEnv* env, jclass clazz);
+void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
@@ -36,7 +36,7 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	nm[2].signature = "(II)V";
 	nm[2].fnPtr = (void*)nativeSurfaceChanged;
 	nm[3].name = "nativeOnTouchEvent";
-	nm[3].signature = "()V";
+	nm[3].signature = "(I)V";
 	nm[3].fnPtr = (void*)nativeOnTouchEvent;
 
 	jclass cls = env->FindClass("com/amu/asteroids/CustomRenderer");
@@ -46,8 +46,10 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	return JNI_VERSION_1_6;
 }
 
-void nativeOnTouchEvent(JNIEnv* env, jclass clazz){
-	GameController::ship->shoot();
+void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
+	if (i == 3) GameController::ship->shoot();
+	if (i == 1) GameController::ship->transform.velocity.rotate(3);
+	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
@@ -63,7 +65,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 
 	Ship ship(10);
 	ship.transform.setPosition(Vector2(100, 100));
-	ship.transform.setVelocity(Vector2(5, 2));
+	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
 	GameController::addBody(meteor1);

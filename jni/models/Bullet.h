@@ -21,7 +21,7 @@ public:
 	virtual ~Bullet();
 
 	bool checkForCameraBounds();
-	void upate();
+	void update();
 	void reset();
 protected:
 	void createMesh(int);

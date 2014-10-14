@@ -11,11 +11,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class Asteroids extends ActionBarActivity implements OnTouchListener {
+public class Asteroids extends ActionBarActivity implements android.view.View.OnClickListener, OnTouchListener {
 
 	GLSurfaceView glSurfaceView;
 	CustomRenderer renderer;
-	Button lButton;
+	Button fireButton, rCWButton, rCCWButton;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,19 +30,41 @@ public class Asteroids extends ActionBarActivity implements OnTouchListener {
 		glSurfaceView.setRenderer(renderer);
 		setContentView(glSurfaceView);
 		
-		lButton = new Button(this);
-		lButton.setText(" X ");
-		lButton.setOnTouchListener(this);
-		lButton.setId(4);
-		lButton.setX(800 - 100);
-		lButton.setY(480 - 80);
-		addContentView(lButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		setButtons();
+	}
+	
+	private void setButtons(){
+		rCWButton = new Button(this);
+		rCWButton.setText(" > ");
+		rCWButton.setOnTouchListener(this);
+		rCWButton.setId(2);
+		rCWButton.setX(160);
+		rCWButton.setY(480 - 80);
+		addContentView(rCWButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		
+		rCCWButton = new Button(this);
+		rCCWButton.setText(" < ");
+		rCCWButton.setOnTouchListener(this);
+		rCCWButton.setId(1);
+		rCCWButton.setX(40);
+		rCCWButton.setY(480 - 80);
+		addContentView(rCCWButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		
+		fireButton = new Button(this);
+		fireButton.setText(" X ");
+		fireButton.setOnClickListener(this);
+		fireButton.setId(3);
+		fireButton.setX(800 - 100);
+		fireButton.setY(480 - 80);
+		addContentView(fireButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+	}
+
+	public void onClick(View view) {
+		renderer.OnTouchEvent(view.getId());
 	}
 
 	public boolean onTouch(View view, MotionEvent event) {
-		if (view.getId() == 4){
-			renderer.OnTouchEvent();
-		}
+		renderer.OnTouchEvent(view.getId());
 		return false;
 	}
 

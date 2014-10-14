@@ -134,6 +134,11 @@ void Vector2::reverse(){
 	*this *= -1;
 }
 
+void Vector2::rotate(float dA){
+	float angle = getAngle();
+	setAngle(angle + dA);
+}
+
 //Vector2 Vector2::reflect(const Vector2& normal){
 //	Vector2 tmp(normal);
 //	tmp.normalize();

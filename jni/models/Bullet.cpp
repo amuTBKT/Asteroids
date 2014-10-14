@@ -29,7 +29,7 @@ bool Bullet::checkForCameraBounds(){
 	return false;//CollisionEngine::checkForCameraBounds(*this);
 }
 
-void Bullet::upate(){
+void Bullet::update(){
 	MovingEntity::update();
 }
 
