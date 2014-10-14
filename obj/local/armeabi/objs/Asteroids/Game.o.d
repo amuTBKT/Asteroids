@@ -50,7 +50,7 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  jni/models/../controller/../core/Vector2.h \
  jni/models/../controller/../physics/Collider.h \
  jni/models/../controller/../physics/../core/Vector2.h \
- jni/models/../controller/../models/Mesh.h jni/models/Bullet.h \
+ jni/models/../controller/../models/Mesh.h \
  jni/controller/GameController.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
@@ -100,17 +100,14 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_relops_cont.h \
  jni/controller/../models/Camera.h \
  jni/controller/../models/../controller/GameObject.h \
- jni/controller/../controller/MovingEntity.h \
- jni/controller/../controller/GameObject.h \
- jni/controller/../controller/../models/Mesh.h \
- jni/physics/CollisionEngine.h jni/physics/../controller/GameObject.h \
- jni/physics/../controller/GameController.h \
- jni/controller/../models/Ship.h \
+ jni/physics/CollisionEngine.h jni/physics/../controller/MovingEntity.h \
+ jni/physics/../models/Camera.h jni/controller/../models/Ship.h \
  jni/controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/GameObject.h \
- jni/controller/../models/../controller/../models/Mesh.h \
  jni/controller/../models/../controller/BulletManager.h \
- jni/controller/../models/../controller/../models/Bullet.h
+ jni/controller/../models/../controller/../models/Bullet.h \
+ jni/controller/../models/../controller/../models/../controller/MovingEntity.h \
+ jni/controller/../models/../controller/../models/Camera.h \
+ jni/controller/../models/../controller/../physics/CollisionEngine.h
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h:
 
@@ -216,8 +213,6 @@ jni/models/../controller/../physics/../core/Vector2.h:
 
 jni/models/../controller/../models/Mesh.h:
 
-jni/models/Bullet.h:
-
 jni/controller/GameController.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector:
@@ -316,26 +311,22 @@ jni/controller/../models/Camera.h:
 
 jni/controller/../models/../controller/GameObject.h:
 
-jni/controller/../controller/MovingEntity.h:
-
-jni/controller/../controller/GameObject.h:
-
-jni/controller/../controller/../models/Mesh.h:
-
 jni/physics/CollisionEngine.h:
 
-jni/physics/../controller/GameObject.h:
+jni/physics/../controller/MovingEntity.h:
 
-jni/physics/../controller/GameController.h:
+jni/physics/../models/Camera.h:
 
 jni/controller/../models/Ship.h:
 
 jni/controller/../models/../controller/MovingEntity.h:
 
-jni/controller/../models/../controller/GameObject.h:
-
-jni/controller/../models/../controller/../models/Mesh.h:
-
 jni/controller/../models/../controller/BulletManager.h:
 
 jni/controller/../models/../controller/../models/Bullet.h:
+
+jni/controller/../models/../controller/../models/../controller/MovingEntity.h:
+
+jni/controller/../models/../controller/../models/Camera.h:
+
+jni/controller/../models/../controller/../physics/CollisionEngine.h:

@@ -19,10 +19,15 @@ public class CustomRenderer implements Renderer {
 		nativeSurfaceChanged(width, height);
 	}
 	
+	public void OnTouchEvent(){
+		nativeOnTouchEvent();
+	}
+	
 	// native methods
 	private static native void nativeSurfaceCreated();
 	private static native void nativeDrawFrame();
 	private static native void nativeSurfaceChanged(int width, int height);
+	private static native void nativeOnTouchEvent();
 
 	static {
 		System.loadLibrary("Asteroids");

@@ -5,11 +5,11 @@
  *      Author: amu
  */
 
-#include "GameObject.h"
-#include "../models/Mesh.h"
-
 #ifndef MOVINGENTITY_H_
 #define MOVINGENTITY_H_
+
+#include "GameObject.h"
+#include "../models/Mesh.h"
 
 class MovingEntity : public GameObject {
 public:

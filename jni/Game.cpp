@@ -2,19 +2,20 @@
 
 #include <GLES/gl.h>
 #include "models/Meteoroid.h"
-#include "models/Bullet.h"
 #include "controller/GameController.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
 void nativeDrawFrame(JNIEnv* env, jclass clazz);
+void nativeOnTouchEvent(JNIEnv* env, jclass clazz);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
-float SCREEN_WIDTH, SCREEN_HEIGHT;
+float GameController::SCREEN_WIDTH, GameController::SCREEN_HEIGHT;
 Camera* GameController::camera;
 Ship* GameController::ship;
 std::vector<MovingEntity> GameController::objects;
+
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -24,7 +25,7 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	}
 
 	// native methods
-	JNINativeMethod nm[3];
+	JNINativeMethod nm[4];
 	nm[0].name = "nativeSurfaceCreated";
 	nm[0].signature = "()V";
 	nm[0].fnPtr = (void*)nativeSurfaceCreated;
@@ -34,12 +35,19 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	nm[2].name = "nativeSurfaceChanged";
 	nm[2].signature = "(II)V";
 	nm[2].fnPtr = (void*)nativeSurfaceChanged;
+	nm[3].name = "nativeOnTouchEvent";
+	nm[3].signature = "()V";
+	nm[3].fnPtr = (void*)nativeOnTouchEvent;
 
 	jclass cls = env->FindClass("com/amu/asteroids/CustomRenderer");
 	// Register methods with env->RegisterNatives.
-	env->RegisterNatives(cls, nm, 3);
+	env->RegisterNatives(cls, nm, 4);
 
 	return JNI_VERSION_1_6;
+}
+
+void nativeOnTouchEvent(JNIEnv* env, jclass clazz){
+	GameController::ship->shoot();
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
@@ -56,14 +64,10 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	Ship ship(10);
 	ship.transform.setPosition(Vector2(100, 100));
 	ship.transform.setVelocity(Vector2(5, 2));
-
-	Bullet bullet(4, Vector2(5, 0));
-	bullet.transform.setPosition(Vector2(10, 240));
+	GameController::setShip(ship);
 
 	GameController::addBody(meteor1);
 	GameController::addBody(meteor2);
-	GameController::addBody(ship);
-	GameController::addBody(bullet);
 
 }
 
@@ -72,12 +76,8 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	GameController::update();
-
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
-	SCREEN_WIDTH = width;
-	SCREEN_HEIGHT = height;
-	glViewport(0, 0, width, height);
 	GameController::updateCamera(width, height);
 }

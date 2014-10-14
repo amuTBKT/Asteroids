@@ -13,11 +13,14 @@
 
 class Ship : public MovingEntity {
 public:
+	BulletManager bulletManager;
+
 	Ship(int);
 	virtual ~Ship();
 
 	void update();
 	void shoot();
+
 protected:
 	void createMesh(int);
 };

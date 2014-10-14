@@ -8,15 +8,15 @@
 #ifndef COLLISIONENGINE_H_
 #define COLLISIONENGINE_H_
 
-#include "../controller/GameObject.h"
-#include "../controller/GameController.h"
+#include "../controller/MovingEntity.h"
+#include "../models/Camera.h"
 
 class CollisionEngine {
 public:
 	CollisionEngine();
 	virtual ~CollisionEngine();
 
-	static void update();
+	static bool checkForCameraBounds(MovingEntity&, Camera&);
 };
 
 #endif /* COLLISIONENGINE_H_ */

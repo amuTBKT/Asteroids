@@ -25,6 +25,10 @@ void Bullet::reset(){
 	transform.setVelocity(Vector2(0, 0));
 }
 
+bool Bullet::checkForCameraBounds(){
+	return false;//CollisionEngine::checkForCameraBounds(*this);
+}
+
 void Bullet::upate(){
 	MovingEntity::update();
 }

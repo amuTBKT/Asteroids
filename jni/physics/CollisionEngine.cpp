@@ -11,16 +11,34 @@ CollisionEngine::CollisionEngine() {
 
 }
 
-void CollisionEngine::update(){
-	for (int i = 0; i < GameController::objects.size(); i++){
-		MovingEntity *tmp = &GameController::objects[i];
-		if (tmp->collider.testAABB(GameController::camera->getTopBound()) || tmp->collider.testAABB(GameController::camera->getBottomBound())){
-			tmp->transform.velocity.y *= -1;
-		}
-		if (tmp->collider.testAABB(GameController::camera->getLeftBound()) || tmp->collider.testAABB(GameController::camera->getRightBound())){
-			tmp->transform.velocity.x *= -1;
-		}
+bool CollisionEngine::checkForCameraBounds(MovingEntity& me, Camera& camera){
+	me.collider.cWCameraBound.h = 0;
+	me.collider.cWCameraBound.v = 0;
+
+	MovingEntity *tmp = &me;
+	if (tmp->collider.testAABB(camera.getTopBound())){
+//		tmp->transform.velocity.y *= -1; // tmp
+		me.collider.cWCameraBound.v = -1;
+		return true;
 	}
+
+	if (tmp->collider.testAABB(camera.getBottomBound())){
+		me.collider.cWCameraBound.v = 1;
+		return true;
+	}
+
+	if (tmp->collider.testAABB(camera.getLeftBound())){
+//		tmp->transform.velocity.x *= -1; // tmp
+		me.collider.cWCameraBound.h = 1;
+		return true;
+	}
+
+	if (tmp->collider.testAABB(camera.getRightBound())){
+		me.collider.cWCameraBound.h = -1;
+		return true;
+	}
+
+	return false;
 }
 
 CollisionEngine::~CollisionEngine() {

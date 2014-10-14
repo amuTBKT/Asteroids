@@ -95,20 +95,16 @@ obj/local/armeabi/objs/Asteroids/controller/GameController.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- jni/controller/../controller/MovingEntity.h \
- jni/controller/../controller/GameObject.h \
- jni/controller/../controller/../models/Mesh.h \
- jni/physics/CollisionEngine.h jni/physics/../controller/GameObject.h \
- jni/physics/../controller/GameController.h \
- jni/controller/../models/Ship.h \
+ jni/physics/CollisionEngine.h jni/physics/../controller/MovingEntity.h \
+ jni/physics/../controller/GameObject.h \
+ jni/physics/../controller/../models/Mesh.h \
+ jni/physics/../models/Camera.h jni/controller/../models/Ship.h \
  jni/controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/GameObject.h \
- jni/controller/../models/../controller/../models/Mesh.h \
  jni/controller/../models/../controller/BulletManager.h \
  jni/controller/../models/../controller/../models/Bullet.h \
  jni/controller/../models/../controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/../models/../controller/GameObject.h \
- jni/controller/../models/../controller/../models/../controller/../models/Mesh.h
+ jni/controller/../models/../controller/../models/Camera.h \
+ jni/controller/../models/../controller/../physics/CollisionEngine.h
 
 jni/controller/GameController.h:
 
@@ -302,25 +298,19 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
-jni/controller/../controller/MovingEntity.h:
-
-jni/controller/../controller/GameObject.h:
-
-jni/controller/../controller/../models/Mesh.h:
-
 jni/physics/CollisionEngine.h:
+
+jni/physics/../controller/MovingEntity.h:
 
 jni/physics/../controller/GameObject.h:
 
-jni/physics/../controller/GameController.h:
+jni/physics/../controller/../models/Mesh.h:
+
+jni/physics/../models/Camera.h:
 
 jni/controller/../models/Ship.h:
 
 jni/controller/../models/../controller/MovingEntity.h:
-
-jni/controller/../models/../controller/GameObject.h:
-
-jni/controller/../models/../controller/../models/Mesh.h:
 
 jni/controller/../models/../controller/BulletManager.h:
 
@@ -328,6 +318,6 @@ jni/controller/../models/../controller/../models/Bullet.h:
 
 jni/controller/../models/../controller/../models/../controller/MovingEntity.h:
 
-jni/controller/../models/../controller/../models/../controller/GameObject.h:
+jni/controller/../models/../controller/../models/Camera.h:
 
-jni/controller/../models/../controller/../models/../controller/../models/Mesh.h:
+jni/controller/../models/../controller/../physics/CollisionEngine.h:

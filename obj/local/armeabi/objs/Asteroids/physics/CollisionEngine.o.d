@@ -1,5 +1,6 @@
 obj/local/armeabi/objs/Asteroids/physics/CollisionEngine.o: \
  jni/physics/CollisionEngine.cpp jni/physics/CollisionEngine.h \
+ jni/physics/../controller/MovingEntity.h \
  jni/physics/../controller/GameObject.h \
  jni/physics/../controller/Transform.h \
  jni/physics/../controller/../core/Vector2.h \
@@ -44,73 +45,16 @@ obj/local/armeabi/objs/Asteroids/physics/CollisionEngine.o: \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
  jni/physics/../controller/../physics/Collider.h \
  jni/physics/../controller/../physics/../core/Vector2.h \
- jni/physics/../controller/GameController.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_algobase.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstddef.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstring.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/using/cstring \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/climits \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cmath.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_pair.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/type_traits.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/type_manips.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_move_construct_fwk.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iterator_base.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ptrs_specialize.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_algobase.c \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_function_base.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iterator.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_vector.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_alloc.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_new.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/new \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/cstddef \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/cstddef \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/exception \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/exception \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/gabixx_config.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdio.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdio.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdio.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdarg.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_construct.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_alloc.c \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_uninitialized.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_vector.c \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_range_errors.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_bvector.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_relops_cont.h \
- jni/physics/../controller/../models/Camera.h \
- jni/physics/../controller/../models/../controller/GameObject.h \
+ jni/physics/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- jni/physics/../controller/../controller/MovingEntity.h \
- jni/physics/../controller/../controller/GameObject.h \
- jni/physics/../controller/../controller/../models/Mesh.h \
- jni/physics/CollisionEngine.h jni/physics/../controller/../models/Ship.h \
- jni/physics/../controller/../models/../controller/MovingEntity.h \
- jni/physics/../controller/../models/../controller/GameObject.h \
- jni/physics/../controller/../models/../controller/../models/Mesh.h \
- jni/physics/../controller/../models/../controller/BulletManager.h \
- jni/physics/../controller/../models/../controller/../models/Bullet.h \
- jni/physics/../controller/../models/../controller/../models/../controller/MovingEntity.h \
- jni/physics/../controller/../models/../controller/../models/../controller/GameObject.h \
- jni/physics/../controller/../models/../controller/../models/../controller/../models/Mesh.h
+ jni/physics/../models/Camera.h \
+ jni/physics/../models/../controller/GameObject.h
 
 jni/physics/CollisionEngine.h:
+
+jni/physics/../controller/MovingEntity.h:
 
 jni/physics/../controller/GameObject.h:
 
@@ -200,105 +144,7 @@ jni/physics/../controller/../physics/Collider.h:
 
 jni/physics/../controller/../physics/../core/Vector2.h:
 
-jni/physics/../controller/GameController.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_algobase.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstddef.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstring.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/using/cstring:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/climits:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cmath.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_pair.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/type_traits.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/type_manips.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_move_construct_fwk.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iterator_base.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ptrs_specialize.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_algobase.c:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_function_base.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iterator.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_vector.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_alloc.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_new.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/new:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/cstddef:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/cstddef:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/exception:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/exception:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/../../gabi++/include/gabixx_config.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdio.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdio.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdio.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdarg.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_construct.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_alloc.c:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_uninitialized.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_vector.c:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_range_errors.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_bvector.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_relops_cont.h:
-
-jni/physics/../controller/../models/Camera.h:
-
-jni/physics/../controller/../models/../controller/GameObject.h:
+jni/physics/../controller/../models/Mesh.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 
@@ -306,28 +152,6 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
-jni/physics/../controller/../controller/MovingEntity.h:
+jni/physics/../models/Camera.h:
 
-jni/physics/../controller/../controller/GameObject.h:
-
-jni/physics/../controller/../controller/../models/Mesh.h:
-
-jni/physics/CollisionEngine.h:
-
-jni/physics/../controller/../models/Ship.h:
-
-jni/physics/../controller/../models/../controller/MovingEntity.h:
-
-jni/physics/../controller/../models/../controller/GameObject.h:
-
-jni/physics/../controller/../models/../controller/../models/Mesh.h:
-
-jni/physics/../controller/../models/../controller/BulletManager.h:
-
-jni/physics/../controller/../models/../controller/../models/Bullet.h:
-
-jni/physics/../controller/../models/../controller/../models/../controller/MovingEntity.h:
-
-jni/physics/../controller/../models/../controller/../models/../controller/GameObject.h:
-
-jni/physics/../controller/../models/../controller/../models/../controller/../models/Mesh.h:
+jni/physics/../models/../controller/GameObject.h:

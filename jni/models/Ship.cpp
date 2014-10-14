@@ -10,6 +10,7 @@
 Ship::Ship(int scale) {
 	createMesh(scale);
 	collider.setBounds(2 * scale, 2 * scale);
+	bulletManager = BulletManager();
 }
 
 void Ship::update(){
@@ -18,7 +19,7 @@ void Ship::update(){
 }
 
 void Ship::shoot(){
-
+	bulletManager.shoot(transform.position, transform.rotation);
 }
 
 void Ship::createMesh(int scale){

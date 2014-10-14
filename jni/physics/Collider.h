@@ -23,6 +23,9 @@ public:
 		float height;
 	} bounds;
 	bool checkForCollision;
+	struct collidedWithCameraBound{
+		int h, v;
+	} cWCameraBound;
 
 	void setBounds(float, float);
 	void translate(const Vector2&);
