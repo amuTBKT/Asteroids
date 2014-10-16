@@ -20,6 +20,7 @@ public:
 	GameController();
 	virtual ~GameController();
 
+	static void init();
 	static void setCamera(const Camera&);
 	static Camera& getCamera();
 	static void setShip(const Ship&);

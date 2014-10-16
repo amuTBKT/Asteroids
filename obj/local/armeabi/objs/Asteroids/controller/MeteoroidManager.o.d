@@ -53,6 +53,7 @@ obj/local/armeabi/objs/Asteroids/controller/MeteoroidManager.o: \
  jni/controller/../models/../controller/MovingEntity.h \
  jni/controller/../models/../controller/GameObject.h \
  jni/controller/../models/../controller/../models/Mesh.h \
+ jni/controller/../models/Bullet.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
@@ -208,6 +209,8 @@ jni/controller/../models/../controller/MovingEntity.h:
 jni/controller/../models/../controller/GameObject.h:
 
 jni/controller/../models/../controller/../models/Mesh.h:
+
+jni/controller/../models/Bullet.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector:
 

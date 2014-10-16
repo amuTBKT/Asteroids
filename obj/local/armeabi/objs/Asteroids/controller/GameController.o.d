@@ -104,7 +104,7 @@ obj/local/armeabi/objs/Asteroids/controller/GameController.o: \
  jni/controller/../models/../controller/../core/../models/Camera.h \
  jni/controller/../models/../controller/../core/../models/../controller/GameObject.h \
  jni/controller/MeteoroidManager.h jni/controller/../core/GLOBALVAR.h \
- jni/controller/../models/Meteoroid.h
+ jni/controller/../models/Meteoroid.h jni/controller/../models/Bullet.h
 
 jni/controller/GameController.h:
 
@@ -319,3 +319,5 @@ jni/controller/MeteoroidManager.h:
 jni/controller/../core/GLOBALVAR.h:
 
 jni/controller/../models/Meteoroid.h:
+
+jni/controller/../models/Bullet.h:

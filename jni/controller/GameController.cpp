@@ -11,6 +11,11 @@ GameController::GameController(){
 	GLOBAL_VAR::camera = 0;
 }
 
+void GameController::init(){
+	meteoroidManager = new MeteoroidManager();
+	meteoroidManager->init();
+}
+
 void GameController::setCamera(const Camera& c){
 	GLOBAL_VAR::camera = new Camera(c);
 }
@@ -20,8 +25,6 @@ void GameController::updateCamera(float width, float height){
 	GLOBAL_VAR::SCREEN_HEIGHT = height;
 	glViewport(0, 0, width, height);
 	if (GLOBAL_VAR::camera == 0){
-		meteoroidManager = new MeteoroidManager();
-		meteoroidManager->init();
 		GLOBAL_VAR::camera = new Camera(width, height);
 		GLOBAL_VAR::camera->transform.setPosition(Vector2(width / 2, height / 2));
 		GLOBAL_VAR::camera->update();
@@ -49,6 +52,7 @@ Ship& GameController::getShip(){
 void GameController::update(){
 	ship->update();
 	meteoroidManager->update();
+	meteoroidManager->checkForCollison(ship->bulletManager.bVector);
 }
 
 GameController::~GameController() {
