@@ -14,6 +14,7 @@
 class Bullet : public MovingEntity{
 public:
 	float radius;
+	bool isActive;
 
 	Bullet(float);
 	Bullet(float, const Vector2&);

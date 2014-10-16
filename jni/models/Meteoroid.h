@@ -15,6 +15,7 @@ class Meteoroid : public MovingEntity{
 public:
 	// graphics
 	float radius;
+	bool isActive;
 
 	Meteoroid(float);
 	virtual ~Meteoroid();

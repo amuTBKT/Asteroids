@@ -48,7 +48,7 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 	if (i == 3) {
 		GameController::ship->shoot();
-		GameController::meteoroidManager->genNewMeteoroid();
+		GameController::meteoroidManager->genCirclePattern(Vector2(400, 240));
 	}
 	if (i == 1) GameController::ship->transform.velocity.rotate(3);
 	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
@@ -62,10 +62,10 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
+	glClearColor(0, 0, 0, 1);
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
-	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	GameController::update();

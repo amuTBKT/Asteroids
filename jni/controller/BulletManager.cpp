@@ -13,6 +13,7 @@ BulletManager::BulletManager() {
 	capacity = 20;
 	for (int i = 0; i < capacity; i++){
 		Bullet b(radius);
+		b.transform.setPosition(Vector2(100, 240));
 		b.isActive = false;
 		bVector.push_back(b);
 	}

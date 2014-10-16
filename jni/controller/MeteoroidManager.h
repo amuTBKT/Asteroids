@@ -15,14 +15,15 @@
 class MeteoroidManager {
 public:
 	int capacity;
-	std::vector<Meteoroid> meteoroids;
+	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
 
 	MeteoroidManager();
 	virtual ~MeteoroidManager();
 
 	void init();
 	void update();
-	void genNewMeteoroid();
+	void genNewMeteoroid(int, Vector2, Vector2);
+	void genCirclePattern(Vector2);
 };
 
 #endif /* METEOROIDMANAGER_H_ */
