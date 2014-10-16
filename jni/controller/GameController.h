@@ -9,16 +9,13 @@
 #define GAMECONTROLLER_H_
 
 #include <vector>
-#include "../models/Camera.h"
-#include "physics/CollisionEngine.h"
 #include "../models/Ship.h"
+#include "MeteoroidManager.h"
 
 class GameController {
 public:
-	static float SCREEN_WIDTH, SCREEN_HEIGHT;
-	static Camera* camera;
 	static Ship* ship;
-	static std::vector<MovingEntity> objects;
+	static MeteoroidManager *meteoroidManager;
 
 	GameController();
 	virtual ~GameController();
@@ -28,7 +25,6 @@ public:
 	static void setShip(const Ship&);
 	static Ship& getShip();
 	static void updateCamera(float, float);
-	static void addBody(MovingEntity);
 	static void update();
 };
 

@@ -15,6 +15,7 @@ class GameObject {
 public:
 	Transform transform;
 	Collider collider;
+	bool isActive;
 
 	GameObject();
 	GameObject(const GameObject&);

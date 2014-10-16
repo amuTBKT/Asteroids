@@ -1,8 +1,8 @@
 #include <jni.h>
 
 #include <GLES/gl.h>
-#include "models/Meteoroid.h"
 #include "controller/GameController.h"
+#include "core/GLOBALVAR.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -11,11 +11,10 @@ void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int);
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
-float GameController::SCREEN_WIDTH, GameController::SCREEN_HEIGHT;
-Camera* GameController::camera;
+int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
+Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
-std::vector<MovingEntity> GameController::objects;
-
+MeteoroidManager* GameController::meteoroidManager;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -47,7 +46,10 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
-	if (i == 3) GameController::ship->shoot();
+	if (i == 3) {
+		GameController::ship->shoot();
+		GameController::meteoroidManager->genNewMeteoroid();
+	}
 	if (i == 1) GameController::ship->transform.velocity.rotate(3);
 	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
 }
@@ -55,21 +57,10 @@ void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
 
-	Meteoroid meteor1(10);
-	meteor1.transform.setPosition(Vector2(50, 240));
-	meteor1.transform.setVelocity(Vector2(5, 0));
-
-	Meteoroid meteor2(10);
-	meteor2.transform.setPosition(Vector2(750, 240));
-	meteor2.transform.setVelocity(Vector2(5, 0));
-
 	Ship ship(10);
 	ship.transform.setPosition(Vector2(100, 100));
 	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
-
-	GameController::addBody(meteor1);
-	GameController::addBody(meteor2);
 
 }
 

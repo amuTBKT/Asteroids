@@ -8,32 +8,34 @@
 #include "GameController.h"
 
 GameController::GameController(){
-	camera = 0;
+	GLOBAL_VAR::camera = 0;
 }
 
 void GameController::setCamera(const Camera& c){
-	camera = new Camera(c);
+	GLOBAL_VAR::camera = new Camera(c);
 }
 
 void GameController::updateCamera(float width, float height){
-	SCREEN_WIDTH = width;
-	SCREEN_HEIGHT = height;
+	GLOBAL_VAR::SCREEN_WIDTH = width;
+	GLOBAL_VAR::SCREEN_HEIGHT = height;
 	glViewport(0, 0, width, height);
-	if (camera == 0){
-		camera = new Camera(width, height);
-		camera->transform.setPosition(Vector2(width / 2, height / 2));
-		camera->update();
+	if (GLOBAL_VAR::camera == 0){
+		meteoroidManager = new MeteoroidManager();
+		meteoroidManager->init();
+		GLOBAL_VAR::camera = new Camera(width, height);
+		GLOBAL_VAR::camera->transform.setPosition(Vector2(width / 2, height / 2));
+		GLOBAL_VAR::camera->update();
 	}
 	else {
-		camera->width = width;
-		camera->height = height;
-		camera->transform.setPosition(Vector2(width / 2, height / 2));
-		camera->update();
+		GLOBAL_VAR::camera->width = width;
+		GLOBAL_VAR::camera->height = height;
+		GLOBAL_VAR::camera->transform.setPosition(Vector2(width / 2, height / 2));
+		GLOBAL_VAR::camera->update();
 	}
 }
 
 Camera& GameController::getCamera(){
-	return *camera;
+	return *GLOBAL_VAR::camera;
 }
 
 void GameController::setShip(const Ship& s){
@@ -44,24 +46,9 @@ Ship& GameController::getShip(){
 	return *ship;
 }
 
-void GameController::addBody(MovingEntity g){
-	objects.push_back(g);
-}
-
 void GameController::update(){
 	ship->update();
-	if (CollisionEngine::checkForCameraBounds(*ship, *camera)){
-		Vector2 *pos = &ship->transform.position;
-		if (pos->x > SCREEN_WIDTH) pos->x -= SCREEN_WIDTH;
-		if (pos->x < 0) pos->x += SCREEN_WIDTH;
-		if (pos->y > SCREEN_HEIGHT) pos->y -= SCREEN_HEIGHT;
-		if (pos->y < 0) pos->y += SCREEN_HEIGHT;
-	}
-
-	for (int i = 0; i < objects.size(); i++){
-		objects[i].update();
-		CollisionEngine::checkForCameraBounds(objects[i], *camera);
-	}
+	meteoroidManager->update();
 }
 
 GameController::~GameController() {

@@ -51,6 +51,9 @@ obj/local/armeabi/objs/Asteroids/models/Ship.o: jni/models/Ship.cpp \
  jni/models/../controller/BulletManager.h \
  jni/models/../controller/../models/Bullet.h \
  jni/models/../controller/../models/../controller/MovingEntity.h \
+ jni/models/../controller/../core/GLOBALVAR.h \
+ jni/models/../controller/../core/../models/Camera.h \
+ jni/models/../controller/../core/../models/../controller/GameObject.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
@@ -204,6 +207,12 @@ jni/models/../controller/BulletManager.h:
 jni/models/../controller/../models/Bullet.h:
 
 jni/models/../controller/../models/../controller/MovingEntity.h:
+
+jni/models/../controller/../core/GLOBALVAR.h:
+
+jni/models/../controller/../core/../models/Camera.h:
+
+jni/models/../controller/../core/../models/../controller/GameObject.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector:
 

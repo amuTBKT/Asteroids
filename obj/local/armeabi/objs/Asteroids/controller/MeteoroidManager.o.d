@@ -1,10 +1,10 @@
-obj/local/armeabi/objs/Asteroids/controller/BulletManager.o: \
- jni/controller/BulletManager.cpp jni/controller/BulletManager.h \
- jni/controller/../models/Bullet.h \
- jni/controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/GameObject.h \
- jni/controller/../models/../controller/Transform.h \
- jni/controller/../models/../controller/../core/Vector2.h \
+obj/local/armeabi/objs/Asteroids/controller/MeteoroidManager.o: \
+ jni/controller/MeteoroidManager.cpp jni/controller/MeteoroidManager.h \
+ jni/controller/../core/GLOBALVAR.h \
+ jni/controller/../core/../models/Camera.h \
+ jni/controller/../core/../models/../controller/GameObject.h \
+ jni/controller/../core/../models/../controller/Transform.h \
+ jni/controller/../core/../models/../controller/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/math.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cprolog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/config/features.h \
@@ -44,15 +44,15 @@ obj/local/armeabi/objs/Asteroids/controller/BulletManager.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_epilog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
- jni/controller/../models/../controller/../physics/Collider.h \
- jni/controller/../models/../controller/../physics/../core/Vector2.h \
- jni/controller/../models/../controller/../models/Mesh.h \
+ jni/controller/../core/../models/../controller/../physics/Collider.h \
+ jni/controller/../core/../models/../controller/../physics/../core/Vector2.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- jni/controller/../core/GLOBALVAR.h \
- jni/controller/../core/../models/Camera.h \
- jni/controller/../core/../models/../controller/GameObject.h \
+ jni/controller/../models/Meteoroid.h \
+ jni/controller/../models/../controller/MovingEntity.h \
+ jni/controller/../models/../controller/GameObject.h \
+ jni/controller/../models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
@@ -101,17 +101,17 @@ obj/local/armeabi/objs/Asteroids/controller/BulletManager.o: \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_bvector.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_relops_cont.h
 
-jni/controller/BulletManager.h:
+jni/controller/MeteoroidManager.h:
 
-jni/controller/../models/Bullet.h:
+jni/controller/../core/GLOBALVAR.h:
 
-jni/controller/../models/../controller/MovingEntity.h:
+jni/controller/../core/../models/Camera.h:
 
-jni/controller/../models/../controller/GameObject.h:
+jni/controller/../core/../models/../controller/GameObject.h:
 
-jni/controller/../models/../controller/Transform.h:
+jni/controller/../core/../models/../controller/Transform.h:
 
-jni/controller/../models/../controller/../core/Vector2.h:
+jni/controller/../core/../models/../controller/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/math.h:
 
@@ -191,11 +191,9 @@ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_epilog.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h:
 
-jni/controller/../models/../controller/../physics/Collider.h:
+jni/controller/../core/../models/../controller/../physics/Collider.h:
 
-jni/controller/../models/../controller/../physics/../core/Vector2.h:
-
-jni/controller/../models/../controller/../models/Mesh.h:
+jni/controller/../core/../models/../controller/../physics/../core/Vector2.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 
@@ -203,11 +201,13 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
-jni/controller/../core/GLOBALVAR.h:
+jni/controller/../models/Meteoroid.h:
 
-jni/controller/../core/../models/Camera.h:
+jni/controller/../models/../controller/MovingEntity.h:
 
-jni/controller/../core/../models/../controller/GameObject.h:
+jni/controller/../models/../controller/GameObject.h:
+
+jni/controller/../models/../controller/../models/Mesh.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/vector:
 

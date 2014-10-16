@@ -17,11 +17,12 @@ void Ship::update(){
 	transform.setRotation(180 * atan2f(transform.velocity.y, transform.velocity.x) / M_PI);
 	MovingEntity::update();
 
-//	Vector2 *pos = &transform.position;
-//	if (pos->x > GameController::SCREEN_WIDTH) pos->x -= GameController::SCREEN_WIDTH;
-//	if (pos->x < 0) pos->x += GameController::SCREEN_WIDTH;
-//	if (pos->y > GameController::SCREEN_HEIGHT) pos->y -= GameController::SCREEN_HEIGHT;
-//	if (pos->y < 0) pos->y += GameController::SCREEN_HEIGHT;
+	Vector2 *pos = &transform.position;
+	if (pos->x > GLOBAL_VAR::SCREEN_WIDTH) pos->x -= GLOBAL_VAR::SCREEN_WIDTH;
+	if (pos->x < 0) pos->x += GLOBAL_VAR::SCREEN_WIDTH;
+	if (pos->y > GLOBAL_VAR::SCREEN_HEIGHT) pos->y -= GLOBAL_VAR::SCREEN_HEIGHT;
+	if (pos->y < 0) pos->y += GLOBAL_VAR::SCREEN_HEIGHT;
+	delete pos;
 
 	bulletManager.update();
 }

@@ -21,10 +21,10 @@ BulletManager::BulletManager() {
 void BulletManager::update(){
 	for (int i = 0; i < capacity; i++){
 		if (bVector[i].isActive){
-
 			bVector[i].update();
 			Vector2 *pos = &bVector[i].transform.position;
-			if (pos->x > 800 || pos->x < 0 || pos->y > 480 || pos->y < 0) bVector[i].isActive = false;
+			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH || pos->x < 0 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT || pos->y < 0) bVector[i].isActive = false;
+			delete pos;
 		}
 	}
 }

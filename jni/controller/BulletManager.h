@@ -9,6 +9,7 @@
 #define BULLETMANAGER_H_
 
 #include "../models/Bullet.h"
+#include "../core/GLOBALVAR.h"
 #include <vector>
 
 class BulletManager {
