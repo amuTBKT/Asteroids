@@ -103,6 +103,76 @@ obj/local/armeabi/objs/Asteroids/controller/GameController.o: \
  jni/controller/../models/../controller/../core/GLOBALVAR.h \
  jni/controller/../models/../controller/../core/../models/Camera.h \
  jni/controller/../models/../controller/../core/../models/../controller/GameObject.h \
+ jni/controller/../models/../core/FileLoader.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_fwd.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iosfwd.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/char_traits.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cwchar.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/wchar.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/siginfo.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_wchar_limits.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_mbstate_t.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_base.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_npos.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_operators.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ctraits_fns.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_function.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_function_adaptors.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_hash.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_hash_fun.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_io.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ostream.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ios.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ios_base.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_stdexcept_base.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_exception.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_locale.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_threads.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/pthread.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/pthread.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/signal.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/signal.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/signal.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/signal.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/sigcontext.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sched.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_threads.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ctime.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_facets_fwd.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ctype.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/c_locale.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_numpunct.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ios.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_streambuf.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_streambuf.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ostreambuf_iterator.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ostream.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_put.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iostream_string.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_put.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_limits.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/cfloat \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/float.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_limits.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_istream.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_istreambuf_iterator.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_istream.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_get.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_get.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_io.c \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/fstream \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ioserr.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_codecvt.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.c \
  jni/controller/MeteoroidManager.h jni/controller/../core/GLOBALVAR.h \
  jni/controller/../models/Meteoroid.h jni/controller/../models/Bullet.h
 
@@ -313,6 +383,146 @@ jni/controller/../models/../controller/../core/GLOBALVAR.h:
 jni/controller/../models/../controller/../core/../models/Camera.h:
 
 jni/controller/../models/../controller/../core/../models/../controller/GameObject.h:
+
+jni/controller/../models/../core/FileLoader.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_fwd.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iosfwd.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/char_traits.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cwchar.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/wchar.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/siginfo.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/_wchar_limits.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_mbstate_t.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_base.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_npos.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_operators.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ctraits_fns.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_function.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_function_adaptors.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_hash.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_hash_fun.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_io.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ostream.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ios.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ios_base.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_stdexcept_base.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_exception.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_locale.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_threads.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/pthread.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/pthread.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/signal.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/signal.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/signal.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/signal.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/sigcontext.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sched.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_threads.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ctime.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_facets_fwd.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ctype.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/c_locale.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_numpunct.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ios.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_streambuf.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_streambuf.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ostreambuf_iterator.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ostream.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_put.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_iostream_string.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_put.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_limits.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/cfloat:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/float.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_limits.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_istream.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_istreambuf_iterator.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_istream.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_get.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_num_get.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string_io.c:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/fstream:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ioserr.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_codecvt.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.c:
 
 jni/controller/MeteoroidManager.h:
 

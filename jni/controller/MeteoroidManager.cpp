@@ -55,14 +55,14 @@ void MeteoroidManager::update(){
 	}
 }
 
-bool MeteoroidManager::checkForCollison(std::vector<Bullet> bVector){
+bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			for (int j = 0; j < bVector.size(); j++){
-				if (bVector[i].isActive){
+				if (bVector[j].isActive){
 					if (sMeteoroids[i].collider.testAABB(bVector[j].collider)){
 						sMeteoroids[i].isActive = false;
-						bVector[i].isActive = false;
+						bVector[j].isActive = false;
 					}
 				}
 			}
@@ -72,12 +72,12 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> bVector){
 	for (int i = 0; i < capacity / 2; i++){
 		if (bMeteoroids[i].isActive){
 			for (int j = 0; j < bVector.size(); j++){
-				if (bVector[i].isActive){
+				if (bVector[j].isActive){
 					if (bMeteoroids[i].collider.testAABB(bVector[j].collider)){
 						bMeteoroids[i].isActive = false;
-						genNewMeteoroid(0, bMeteoroids[i].transform.position, Vector2()); 	//TODO: random velocity
-						genNewMeteoroid(0, bMeteoroids[i].transform.position, Vector2()); 	//TODO: random velocity
-						bVector[i].isActive = false;
+						genNewMeteoroid(0, bMeteoroids[i].transform.position, Vector2(1, 0)); 	//TODO: random velocity
+						genNewMeteoroid(0, bMeteoroids[i].transform.position, Vector2(0, 1)); 	//TODO: random velocity
+						bVector[j].isActive = false;
 					}
 				}
 			}

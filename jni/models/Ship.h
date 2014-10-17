@@ -10,6 +10,7 @@
 
 #include "../controller/MovingEntity.h"
 #include "../controller/BulletManager.h"
+#include "../core/FileLoader.h"
 
 class Ship : public MovingEntity {
 public:

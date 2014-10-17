@@ -38,6 +38,11 @@ void Ship::createMesh(int scale){
 	data[3] = -scaleX;			data[4]  = scaleY;		data[5]  = 0;
 	data[6] = -scaleX / 2;		data[7]  = 0;			data[8]  = 0;
 	data[9] = -scaleX;			data[10] = -scaleY;		data[11] = 0;
+
+//	char file[] = "../res/ship.txt";
+//	std::string dataString = FileLoader::loadFile(file);
+//	if (dataString == "") glClearColor(1, 0, 0, 1);
+
 	mesh->setVertices(&data[0], sizeof(data) / sizeof(float), false);
 }
 

@@ -26,7 +26,7 @@ public:
 	void genNewMeteoroid(int, Vector2, Vector2);
 	void genCirclePattern(Vector2);
 
-	bool checkForCollison(std::vector<Bullet>);
+	bool checkForCollison(std::vector<Bullet>&);
 private:
 	int activeSMeteors(){
 		int counter = 0;

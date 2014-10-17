@@ -56,16 +56,21 @@ void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	glDisable(GL_DITHER);
+	glClearColor(0, 0, 0, 1);
 
 	Ship ship(10);
-	ship.transform.setPosition(Vector2(100, 100));
-	ship.transform.setVelocity(Vector2(5, 0));
+	ship.transform.setPosition(Vector2(50, 240));
+//	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
 	GameController::init();
-	GameController::meteoroidManager->genNewMeteoroid(1, Vector2(400, 240), Vector2(0, 0));
-
-	glClearColor(0, 0, 0, 1);
+	GameController::meteoroidManager->genNewMeteoroid(1, Vector2(100, 240), Vector2(0, 0));
+	GameController::meteoroidManager->genNewMeteoroid(1, Vector2(140, 240), Vector2(0, 0));
+	GameController::meteoroidManager->genNewMeteoroid(1, Vector2(180, 240), Vector2(0, 0));
+	GameController::meteoroidManager->genNewMeteoroid(1, Vector2(220, 240), Vector2(0, 0));
+	GameController::meteoroidManager->genNewMeteoroid(1, Vector2(260, 240), Vector2(0, 0));
+	GameController::meteoroidManager->genNewMeteoroid(0, Vector2(290, 240), Vector2(0, 0));
+	GameController::meteoroidManager->genNewMeteoroid(0, Vector2(310, 240), Vector2(0, 0));
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
