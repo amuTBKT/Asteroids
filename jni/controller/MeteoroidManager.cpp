@@ -31,28 +31,32 @@ void MeteoroidManager::init(){
 }
 
 void MeteoroidManager::update(){
-	if (activeBMeteors() < 1) spawnMeteoroid(1);
+	if (bActiveMeteors < 5) spawnMeteoroid(1);
 
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			sMeteoroids[i].update();
 			Vector2 *pos = &sMeteoroids[i].transform.position;
-			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH + 30 || pos->x < 0 - 30 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT + 30 || pos->y < 0 - 30) {
+			Vector2 *vel = &sMeteoroids[i].transform.velocity;
+			if (checkForBounds(pos, vel)) {
 				sMeteoroids[i].isActive = false;
 				sActiveMeteors--;
 			}
 			delete pos;
+			delete vel;
 		}
 	}
 	for (int i = 0; i < capacity / 2; i++){
 		if (bMeteoroids[i].isActive){
 			bMeteoroids[i].update();
 			Vector2 *pos = &bMeteoroids[i].transform.position;
-			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH + 30 || pos->x < 0 - 30 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT + 30 || pos->y < 0 - 30) {
+			Vector2 *vel = &bMeteoroids[i].transform.velocity;
+			if (checkForBounds(pos, vel)) {
 				bMeteoroids[i].isActive = false;
 				bActiveMeteors--;
 			}
 			delete pos;
+			delete vel;
 		}
 	}
 }
@@ -64,8 +68,10 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 				if (bVector[j].isActive){
 					if (bMeteoroids[i].collider.testAABB(bVector[j].collider)){
 						bMeteoroids[i].isActive = false;
+						bActiveMeteors--;
 						genNewMeteoroid(0, bMeteoroids[i].transform.position, Random::genRandomVector2(2)); 	//TODO: random velocity
 						genNewMeteoroid(0, bMeteoroids[i].transform.position, Random::genRandomVector2(2)); 	//TODO: random velocity
+						sActiveMeteors += 2;
 						bVector[j].isActive = false;
 					}
 				}
@@ -79,6 +85,7 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 				if (bVector[j].isActive){
 					if (sMeteoroids[i].collider.testAABB(bVector[j].collider)){
 						sMeteoroids[i].isActive = false;
+						sActiveMeteors--;
 						bVector[j].isActive = false;
 					}
 				}
@@ -107,19 +114,19 @@ void MeteoroidManager::spawnMeteoroid(int t){
 	if (r < 0.5){
 		r = Random::genRandomFloat();
 		if (r < 0.5){
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(-20, 2), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(10, 0));
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(-20, 2), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(3, 0));
 		}
 		else {
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT + 10, GLOBAL_VAR::SCREEN_HEIGHT + 20)), Vector2(0, -10));
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT + 10, GLOBAL_VAR::SCREEN_HEIGHT + 20)), Vector2(0, -3));
 		}
 	}
 	else {
 		r = Random::genRandomFloat();
 		if (r < 0.5){
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(GLOBAL_VAR::SCREEN_WIDTH + 10, GLOBAL_VAR::SCREEN_WIDTH + 20), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(-10, 0));
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(GLOBAL_VAR::SCREEN_WIDTH + 10, GLOBAL_VAR::SCREEN_WIDTH + 20), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(-3, 0));
 		}
 		else {
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(-20, 2)), Vector2(0, 10));
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(-20, 2)), Vector2(0, 3));
 		}
 	}
 }

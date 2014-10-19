@@ -44,6 +44,21 @@ private:
 		}
 		return counter;
 	}
+	bool checkForBounds(Vector2 *pos, Vector2 *vel){
+		if (pos->x > GLOBAL_VAR::SCREEN_WIDTH && vel->x > 0) {
+			return true;
+		}
+		if (pos->x < 0 && vel->x < 0) {
+			return true;
+		}
+		if (pos->y > GLOBAL_VAR::SCREEN_HEIGHT && vel->y > 0) {
+			return true;
+		}
+		if (pos->y < 0 && vel->y < 0) {
+			return true;
+		}
+		return false;
+	}
 };
 
 #endif /* METEOROIDMANAGER_H_ */
