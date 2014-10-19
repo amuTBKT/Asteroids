@@ -66,7 +66,8 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 
 	GameController::init();
 	float x, y;
-	for (int i = 0; i < 20; i++){
+
+	for (int i = 0; i < 0; i++){
 		x = Random::genRandomFloat() * 800;	y = Random::genRandomFloat() * 480;
 		GameController::meteoroidManager->genNewMeteoroid((int) Random::genRandomNumber(1, 2) / 1.5, Vector2(x, y), Random::genRandomVector2(0.5));
 	}

@@ -31,11 +31,13 @@ void MeteoroidManager::init(){
 }
 
 void MeteoroidManager::update(){
+	if (activeBMeteors() < 1) spawnMeteoroid(1);
+
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			sMeteoroids[i].update();
 			Vector2 *pos = &sMeteoroids[i].transform.position;
-			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH || pos->x < 0 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT || pos->y < 0) {
+			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH + 30 || pos->x < 0 - 30 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT + 30 || pos->y < 0 - 30) {
 				sMeteoroids[i].isActive = false;
 				sActiveMeteors--;
 			}
@@ -46,7 +48,7 @@ void MeteoroidManager::update(){
 		if (bMeteoroids[i].isActive){
 			bMeteoroids[i].update();
 			Vector2 *pos = &bMeteoroids[i].transform.position;
-			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH || pos->x < 0 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT || pos->y < 0) {
+			if (pos->x > GLOBAL_VAR::SCREEN_WIDTH + 30 || pos->x < 0 - 30 || pos->y > GLOBAL_VAR::SCREEN_HEIGHT + 30 || pos->y < 0 - 30) {
 				bMeteoroids[i].isActive = false;
 				bActiveMeteors--;
 			}
@@ -96,6 +98,29 @@ void MeteoroidManager::genCirclePattern(Vector2 pos){
 		Vector2 speed = Vector2(pos.x - x, pos.y - y);
 		speed.normalize();
 		genNewMeteoroid(1, Vector2(x, y), speed * 2);
+	}
+}
+
+void MeteoroidManager::spawnMeteoroid(int t){
+	float r = Random::genRandomFloat();
+
+	if (r < 0.5){
+		r = Random::genRandomFloat();
+		if (r < 0.5){
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(-20, 2), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(10, 0));
+		}
+		else {
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT + 10, GLOBAL_VAR::SCREEN_HEIGHT + 20)), Vector2(0, -10));
+		}
+	}
+	else {
+		r = Random::genRandomFloat();
+		if (r < 0.5){
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(GLOBAL_VAR::SCREEN_WIDTH + 10, GLOBAL_VAR::SCREEN_WIDTH + 20), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(-10, 0));
+		}
+		else {
+			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(-20, 2)), Vector2(0, 10));
+		}
 	}
 }
 
