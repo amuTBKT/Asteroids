@@ -10,6 +10,7 @@
 
 #include <math.h>
 #include "../controller/MovingEntity.h"
+#include "../core/Random.h"
 
 class Meteoroid : public MovingEntity{
 public:

@@ -14,6 +14,7 @@ class GLOBAL_VAR {
 public:
 	static int SCREEN_WIDTH, SCREEN_HEIGHT;
 	static Camera* camera;
+
 };
 
 #endif /* GLOBALVAR_H_ */

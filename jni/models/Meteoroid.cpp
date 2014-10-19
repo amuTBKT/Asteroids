@@ -9,8 +9,8 @@
 
 Meteoroid::Meteoroid(float r) {
 	radius = r;
-	createMesh(8);
-	collider.setBounds(2 * r, 2 * r);
+	createMesh(16);
+	collider.setBounds(2 * r + r / 2, 2 * r + r / 2);
 }
 
 Meteoroid::~Meteoroid() {
@@ -24,8 +24,8 @@ void Meteoroid::createMesh(int resolution) {
 	float data[resolution * 3];
 	int counter = 0;
 	for (int i = 0; i < resolution; i++){
-		float x = radius * cosf(2 * M_PI * i / resolution);
-		float y = radius * sinf(2 * M_PI * i / resolution);
+		float x = radius * cosf(2 * M_PI * i / resolution) + Random::genRandomNumber(radius / 4, radius / 2);
+		float y = radius * sinf(2 * M_PI * i / resolution) + Random::genRandomNumber(radius / 4, radius / 2);
 
 		// for rendering using GL_LINES
 		// not required for now

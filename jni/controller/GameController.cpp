@@ -51,7 +51,7 @@ Ship& GameController::getShip(){
 
 void GameController::update(){
 	ship->update();
-	meteoroidManager->update();
+	meteoroidManager->update(*ship);
 	meteoroidManager->checkForCollison(ship->bulletManager.bVector);
 }
 

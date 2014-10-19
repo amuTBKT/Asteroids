@@ -11,6 +11,7 @@ MeteoroidManager::MeteoroidManager() {
 	capacity = 20;
 	sActiveMeteors = 0;
 	bActiveMeteors = 0;
+	proxyShip = new pShip();
 }
 
 void MeteoroidManager::init(){
@@ -30,9 +31,16 @@ void MeteoroidManager::init(){
 	}
 }
 
-void MeteoroidManager::update(){
-	if (bActiveMeteors < 5) spawnMeteoroid(1);
+void MeteoroidManager::update(Ship& ship){
+	proxyShip->pos = ship.transform.position;
+	proxyShip->vel = ship.transform.velocity;
 
+	//// spawning new meteoroids ////
+	if (bActiveMeteors < 3) spawnMeteoroid(1);
+	if (sActiveMeteors < 4) spawnMeteoroid(0);
+	/////////////////////////////////
+
+	//// destroying meteoroid if it goes off the screen ////
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			sMeteoroids[i].update();
@@ -59,6 +67,7 @@ void MeteoroidManager::update(){
 			delete vel;
 		}
 	}
+	////////////////////////////////////////////////////////
 }
 
 bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
@@ -110,23 +119,35 @@ void MeteoroidManager::genCirclePattern(Vector2 pos){
 
 void MeteoroidManager::spawnMeteoroid(int t){
 	float r = Random::genRandomFloat();
-
+	float speed = 1.5;
 	if (r < 0.5){
 		r = Random::genRandomFloat();
 		if (r < 0.5){
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(-20, 2), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(3, 0));
+			float x = Random::genRandomNumber(-20, 2);
+			float y = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20);
+			Vector2 vel = proxyShip->pos - Vector2(x, y);	vel.normalize();	vel *= speed;
+			genNewMeteoroid(t, Vector2(x, y), vel);
 		}
 		else {
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT + 10, GLOBAL_VAR::SCREEN_HEIGHT + 20)), Vector2(0, -3));
+			float x = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20);
+			float y = Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT + 10, GLOBAL_VAR::SCREEN_HEIGHT + 20);
+			Vector2 vel = proxyShip->pos - Vector2(x, y);	vel.normalize();	vel *= speed;
+			genNewMeteoroid(t, Vector2(x, y), vel);
 		}
 	}
 	else {
 		r = Random::genRandomFloat();
 		if (r < 0.5){
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(GLOBAL_VAR::SCREEN_WIDTH + 10, GLOBAL_VAR::SCREEN_WIDTH + 20), Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20)), Vector2(-3, 0));
+			float x = Random::genRandomNumber(GLOBAL_VAR::SCREEN_WIDTH + 10, GLOBAL_VAR::SCREEN_WIDTH + 20);
+			float y = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20);
+			Vector2 vel = proxyShip->pos - Vector2(x, y);	vel.normalize();	vel *= speed;
+			genNewMeteoroid(t, Vector2(x, y), vel);
 		}
 		else {
-			genNewMeteoroid(t, Vector2(Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20), Random::genRandomNumber(-20, 2)), Vector2(0, 3));
+			float x = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20);
+			float y = Random::genRandomNumber(-20, 2);
+			Vector2 vel = proxyShip->pos - Vector2(x, y);	vel.normalize();	vel *= speed;
+			genNewMeteoroid(t, Vector2(x, y), vel);
 		}
 	}
 }

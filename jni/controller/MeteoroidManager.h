@@ -12,18 +12,23 @@
 #include "../core/Random.h"
 #include "../models/Meteoroid.h"
 #include "../models/Bullet.h"
+#include "../models/Ship.h"
 #include <vector>
 
 class MeteoroidManager {
 public:
 	int capacity, sActiveMeteors, bActiveMeteors;
 	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
+	struct pShip{
+		Vector2 pos;
+		Vector2 vel;
+	} *proxyShip;
 
 	MeteoroidManager();
 	virtual ~MeteoroidManager();
 
 	void init();
-	void update();
+	void update(Ship&);
 	void genNewMeteoroid(int, Vector2, Vector2);
 	void genCirclePattern(Vector2);
 	void spawnMeteoroid(int);
