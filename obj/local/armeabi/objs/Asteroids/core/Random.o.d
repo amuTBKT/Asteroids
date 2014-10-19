@@ -42,7 +42,18 @@ obj/local/armeabi/objs/Asteroids/core/Random.o: jni/core/Random.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/time.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/time.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/siginfo.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h \
+ jni/core/Vector2.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/math.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/math.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/internal_types.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h
 
 jni/core/Random.h:
 
@@ -131,3 +142,25 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/siginfo.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h:
+
+jni/core/Vector2.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/math.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/math.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/limits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/limits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/limits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/limits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/internal_types.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/machine/limits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/syslimits.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/page.h:

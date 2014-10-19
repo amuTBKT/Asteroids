@@ -10,14 +10,16 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include "Vector2.h"
 
 class Random {
 public:
 	Random();
 	virtual ~Random();
 
-	static float genRandomNumber();
 	static float genRandomNumber(int, int);
+	static float genRandomFloat();
+	static Vector2 genRandomVector2(float);
 };
 
 #endif /* RANDOM_H_ */

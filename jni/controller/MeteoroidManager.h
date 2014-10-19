@@ -9,6 +9,7 @@
 #define METEOROIDMANAGER_H_
 
 #include "../core/GLOBALVAR.h"
+#include "../core/Random.h"
 #include "../models/Meteoroid.h"
 #include "../models/Bullet.h"
 #include <vector>

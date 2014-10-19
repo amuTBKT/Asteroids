@@ -49,7 +49,22 @@ obj/local/armeabi/objs/Asteroids/controller/MeteoroidManager.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- jni/controller/../models/Meteoroid.h \
+ jni/controller/../core/Random.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/time.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/siginfo.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h \
+ jni/controller/../core/Vector2.h jni/controller/../models/Meteoroid.h \
  jni/controller/../models/../controller/MovingEntity.h \
  jni/controller/../models/../controller/GameObject.h \
  jni/controller/../models/../controller/../models/Mesh.h \
@@ -60,17 +75,9 @@ obj/local/armeabi/objs/Asteroids/controller/MeteoroidManager.o: \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_algobase.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstddef.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstring.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/using/cstring \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/climits \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cmath.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_pair.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/type_traits.h \
@@ -202,6 +209,38 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
+jni/controller/../core/Random.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
+
+C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/sys/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/linux/time.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm/siginfo.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/asm-generic/siginfo.h:
+
+jni/controller/../core/Vector2.h:
+
 jni/controller/../models/Meteoroid.h:
 
 jni/controller/../models/../controller/MovingEntity.h:
@@ -224,27 +263,11 @@ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstddef.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstring.h:
 
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/string.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/malloc.h:
-
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/using/cstring:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/climits:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h:
-
-C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/alloca.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/strings.h:
-
-C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/memory.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_cmath.h:
 
