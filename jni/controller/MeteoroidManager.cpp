@@ -36,8 +36,8 @@ void MeteoroidManager::update(Ship& ship){
 	proxyShip->vel = ship.transform.velocity;
 
 	//// spawning new meteoroids ////
-	if (bActiveMeteors < 3) spawnMeteoroid(1);
-	if (sActiveMeteors < 4) spawnMeteoroid(0);
+//	if (bActiveMeteors < 3) spawnMeteoroid(1);
+//	if (sActiveMeteors < 4) spawnMeteoroid(0);
 	/////////////////////////////////
 
 	//// destroying meteoroid if it goes off the screen ////
@@ -107,11 +107,12 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 
 void MeteoroidManager::genCirclePattern(Vector2 pos){
 	float radius = GLOBAL_VAR::SCREEN_HEIGHT / 2;
-	float numMeteors = 8;
+	float numMeteors = 5;
 	for (int i = 0; i < numMeteors; i++){
 		float x = GLOBAL_VAR::SCREEN_WIDTH / 2 + radius * cosf(2 * M_PI * i / numMeteors);
 		float y = GLOBAL_VAR::SCREEN_HEIGHT / 2 + radius * sinf(2 * M_PI * i / numMeteors);
 		Vector2 speed = Vector2(pos.x - x, pos.y - y);
+		speed.rotate(Random::genRandomFloat() * 10);
 		speed.normalize();
 		genNewMeteoroid(1, Vector2(x, y), speed * 2);
 	}

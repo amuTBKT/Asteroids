@@ -13,7 +13,7 @@ std::string FileLoader::loadFile(char* file){
 	std::string line;
 	std::string output = "";
 
-	if (!fin.is_open()) return "";
+	if (!fin.is_open()) return "ERROR";
 
 	while (std::getline(fin, line)){
 		output.append(line);
