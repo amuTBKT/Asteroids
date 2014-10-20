@@ -17,7 +17,7 @@
 
 class MeteoroidManager {
 public:
-	int capacity, sActiveMeteors, bActiveMeteors;
+	int capacity, sActiveMeteors, bActiveMeteors, speed;
 	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
 	struct pShip{
 		Vector2 pos;

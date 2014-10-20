@@ -9,6 +9,7 @@
 
 MeteoroidManager::MeteoroidManager() {
 	capacity = 20;
+	speed = 5;
 	sActiveMeteors = 0;
 	bActiveMeteors = 0;
 	proxyShip = new pShip();
@@ -36,8 +37,8 @@ void MeteoroidManager::update(Ship& ship){
 	proxyShip->vel = ship.transform.velocity;
 
 	//// spawning new meteoroids ////
-//	if (bActiveMeteors < 3) spawnMeteoroid(1);
-//	if (sActiveMeteors < 4) spawnMeteoroid(0);
+	if (bActiveMeteors < 3) spawnMeteoroid(1);
+	if (sActiveMeteors < 4) spawnMeteoroid(0);
 	/////////////////////////////////
 
 	//// destroying meteoroid if it goes off the screen ////
@@ -78,10 +79,15 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 					if (bMeteoroids[i].collider.testAABB(bVector[j].collider)){
 						bMeteoroids[i].isActive = false;
 						bActiveMeteors--;
-						genNewMeteoroid(0, bMeteoroids[i].transform.position, Random::genRandomVector2(2)); 	//TODO: random velocity
-						genNewMeteoroid(0, bMeteoroids[i].transform.position, Random::genRandomVector2(2)); 	//TODO: random velocity
-						sActiveMeteors += 2;
+
+						Vector2 *vel = &bMeteoroids[i].transform.velocity;
+						vel->rotate(20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed;
+						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
+						*vel = bMeteoroids[i].transform.velocity;
+						vel->rotate(-20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed;
+						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
 						bVector[j].isActive = false;
+						delete vel;
 					}
 				}
 			}
@@ -120,7 +126,7 @@ void MeteoroidManager::genCirclePattern(Vector2 pos){
 
 void MeteoroidManager::spawnMeteoroid(int t){
 	float r = Random::genRandomFloat();
-	float speed = 1.5;
+
 	if (r < 0.5){
 		r = Random::genRandomFloat();
 		if (r < 0.5){

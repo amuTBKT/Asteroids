@@ -61,9 +61,9 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 
 	GameController::init();
 
-	Ship ship(30);
+	Ship ship(10);
 	ship.transform.setPosition(Vector2(50, 240));
-//	ship.transform.setVelocity(Vector2(5, 0));
+	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
 	float x, y;

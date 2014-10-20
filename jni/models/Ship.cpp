@@ -32,28 +32,29 @@ void Ship::shoot(){
 }
 
 void Ship::createMesh(int scale){
-//	float data[4 * 3];
-//	float scaleX = scale, scaleY = scale;
-//	data[0] =  scaleX;			data[1]  = 0;			data[2]  = 0;
-//	data[3] = -scaleX;			data[4]  = scaleY;		data[5]  = 0;
-//	data[6] = -scaleX / 2;		data[7]  = 0;			data[8]  = 0;
-//	data[9] = -scaleX;			data[10] = -scaleY;		data[11] = 0;
+	float data[4 * 3];
+	float scaleX = scale, scaleY = scale;
+	data[0] =  scaleX;			data[1]  = 0;			data[2]  = 0;
+	data[3] = -scaleX;			data[4]  = scaleY;		data[5]  = 0;
+	data[6] = -scaleX / 2;		data[7]  = 0;			data[8]  = 0;
+	data[9] = -scaleX;			data[10] = -scaleY;		data[11] = 0;
 
-	char file[] = "/sdcard/ship.txt";
-	std::string dataString = FileLoader::loadFile(file);
-	char* p = std::strtok(&dataString[0], " ");
-	p = std::strtok(NULL, " "); 		// skip #vertices
-	int numVert = strtol(p, NULL, 0);	// number of vertices
-	p = std::strtok(NULL, " "); 		// move to next line
-	float data[numVert * 3];
-	int counter = 0;
-	while(p != NULL){
-		data[counter++] = scale * strtof(p, NULL); 	// x
-		p = std::strtok(NULL, " "); 				// next line
-		data[counter++] = scale * strtof(p, NULL);	// y
-		p = std::strtok(NULL, " "); 				// next line
-		data[counter++] = 0; 						// z, always = 0
-	}
+//	char file[] = "/sdcard/ship.txt";
+//	std::string dataString = FileLoader::loadFile(file);
+//	if (dataString != "ERROR") glClearColor(1, 0, 0, 1);
+//	char* p = std::strtok(&dataString[0], " ");
+//	p = std::strtok(NULL, " "); 					// skip #vertices
+//	int numVert = strtol(p, NULL, 0);				// number of vertices
+//	p = std::strtok(NULL, " "); 					// move to next line
+//	float data[numVert * 3];
+//	int counter = 0;
+//	while(p != NULL){
+//		data[counter++] = scale * strtof(p, NULL); 	// x
+//		p = std::strtok(NULL, " "); 				// next line
+//		data[counter++] = scale * strtof(p, NULL);	// y
+//		p = std::strtok(NULL, " "); 				// next line
+//		data[counter++] = 0; 						// z, always = 0
+//	}
 
 	mesh->setVertices(&data[0], sizeof(data) / sizeof(float), false);
 }
