@@ -8,7 +8,7 @@
 #include "Explosion.h"
 
 Explosion::Explosion() {
-	numParticles = 20;
+	numParticles = sizeof(particles) / sizeof(Vector2);
 	time = 0;
 	rotation = 0;
 	isActive = false;
@@ -19,15 +19,21 @@ Explosion::Explosion() {
 }
 
 void Explosion::render(){
+	if (!isActive) return;
+
 	time += 0.05;
+
+	if (time > 2.5) {
+		reset();
+	}
 
 	GLfloat data[numParticles * 6];
 	for (int i = 0; i < numParticles; i++){
-		data[i * 6 + 0] = (particles[i] * Vector2(1, 0)) * time * 2;							// x1
-		data[i * 6 + 1] = (particles[i] * Vector2(0, 1)) * time * 2;							// y1
+		data[i * 6 + 0] = (particles[i] * Vector2(1, 0)) * time * 5;							// x1
+		data[i * 6 + 1] = (particles[i] * Vector2(0, 1)) * time * 5;							// y1
 		data[i * 6 + 2] = 0;																	// z1, always = 0
-		data[i * 6 + 3] = (particles[i] * Vector2(1, 0)) * time * 2 + particles[i].x;			// x2
-		data[i * 6 + 4] = (particles[i] * Vector2(0, 1)) * time * 2 + particles[i].y;			// y2
+		data[i * 6 + 3] = (particles[i] * Vector2(1, 0)) * time * 5 + particles[i].x;			// x2
+		data[i * 6 + 4] = (particles[i] * Vector2(0, 1)) * time * 5 + particles[i].y;			// y2
 		data[i * 6 + 5] = 0;																	// z2, always = 0
 	}
 
@@ -47,6 +53,7 @@ void Explosion::render(){
 }
 
 void Explosion::reset(){
+	isActive = false;
 	time = 0;
 	rotation = -1 + 2 * (Random::genRandomFloat()) * 30;
 }

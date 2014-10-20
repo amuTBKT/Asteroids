@@ -15,6 +15,7 @@ int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
 MeteoroidManager* GameController::meteoroidManager;
+ExplosionManager* MeteoroidManager::expManager;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;

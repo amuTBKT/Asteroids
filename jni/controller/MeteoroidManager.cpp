@@ -30,6 +30,7 @@ void MeteoroidManager::init(){
 		m.isActive = false;
 		bMeteoroids.push_back(m);
 	}
+	expManager = new ExplosionManager();
 }
 
 void MeteoroidManager::update(Ship& ship){
@@ -69,6 +70,8 @@ void MeteoroidManager::update(Ship& ship){
 		}
 	}
 	////////////////////////////////////////////////////////
+
+	expManager->update();
 }
 
 bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
@@ -80,6 +83,8 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 						bMeteoroids[i].isActive = false;
 						bActiveMeteors--;
 						bVector[j].isActive = false;
+
+						expManager->addExplosion(bVector[j].transform.position);
 
 						Vector2 *vel = &bMeteoroids[i].transform.velocity;
 						vel->rotate(20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 1.5;
@@ -102,6 +107,8 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 						sMeteoroids[i].isActive = false;
 						sActiveMeteors--;
 						bVector[j].isActive = false;
+
+						expManager->addExplosion(bVector[j].transform.position);
 					}
 				}
 			}

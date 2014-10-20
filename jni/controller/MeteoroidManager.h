@@ -13,6 +13,7 @@
 #include "../models/Meteoroid.h"
 #include "../models/Bullet.h"
 #include "../models/Ship.h"
+#include "ExplosionManager.h"
 #include <vector>
 
 class MeteoroidManager {
@@ -23,6 +24,7 @@ public:
 		Vector2 pos;
 		Vector2 vel;
 	} *proxyShip;
+	static ExplosionManager *expManager;
 
 	MeteoroidManager();
 	virtual ~MeteoroidManager();

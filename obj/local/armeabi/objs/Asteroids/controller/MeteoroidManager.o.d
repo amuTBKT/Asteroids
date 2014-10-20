@@ -175,7 +175,11 @@ obj/local/armeabi/objs/Asteroids/controller/MeteoroidManager.o: \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_ioserr.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_codecvt.h \
- C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.c
+ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.c \
+ jni/controller/ExplosionManager.h \
+ jni/controller/../particles/Explosion.h \
+ jni/controller/../particles/../core/Vector2.h \
+ jni/controller/../particles/../core/Random.h
 
 jni/controller/MeteoroidManager.h:
 
@@ -534,3 +538,11 @@ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.h:
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_codecvt.h:
 
 C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_fstream.c:
+
+jni/controller/ExplosionManager.h:
+
+jni/controller/../particles/Explosion.h:
+
+jni/controller/../particles/../core/Vector2.h:
+
+jni/controller/../particles/../core/Random.h:
