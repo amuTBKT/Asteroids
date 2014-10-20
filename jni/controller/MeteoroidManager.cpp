@@ -9,7 +9,7 @@
 
 MeteoroidManager::MeteoroidManager() {
 	capacity = 20;
-	speed = 5;
+	speed = 1.5;
 	sActiveMeteors = 0;
 	bActiveMeteors = 0;
 	proxyShip = new pShip();
@@ -79,14 +79,14 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 					if (bMeteoroids[i].collider.testAABB(bVector[j].collider)){
 						bMeteoroids[i].isActive = false;
 						bActiveMeteors--;
+						bVector[j].isActive = false;
 
 						Vector2 *vel = &bMeteoroids[i].transform.velocity;
-						vel->rotate(20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed;
+						vel->rotate(20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 1.5;
 						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
 						*vel = bMeteoroids[i].transform.velocity;
-						vel->rotate(-20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed;
+						vel->rotate(-20 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 1.5;
 						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
-						bVector[j].isActive = false;
 						delete vel;
 					}
 				}

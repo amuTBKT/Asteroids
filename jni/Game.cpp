@@ -3,7 +3,6 @@
 #include <GLES/gl.h>
 #include "controller/GameController.h"
 #include "core/GLOBALVAR.h"
-#include "core/Random.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -66,14 +65,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
-	float x, y;
-
 	GameController::meteoroidManager-> genNewMeteoroid(1, Vector2(-100, 240), Vector2(10, 0));
-
-	for (int i = 0; i < 0; i++){
-		x = Random::genRandomFloat() * 800;	y = Random::genRandomFloat() * 480;
-		GameController::meteoroidManager->genNewMeteoroid((int) Random::genRandomNumber(1, 2) / 1.5, Vector2(x, y), Random::genRandomVector2(0.5));
-	}
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
