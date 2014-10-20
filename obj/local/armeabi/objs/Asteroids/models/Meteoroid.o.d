@@ -45,11 +45,10 @@ obj/local/armeabi/objs/Asteroids/models/Meteoroid.o: \
  jni/models/../controller/../core/Vector2.h \
  jni/models/../controller/../physics/Collider.h \
  jni/models/../controller/../physics/../core/Vector2.h \
- jni/models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
- jni/models/../core/Random.h \
+ jni/models/../controller/../models/Mesh.h jni/models/../core/Random.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stdlib.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/../include/stdlib.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string.h \
@@ -158,13 +157,13 @@ jni/models/../controller/../physics/Collider.h:
 
 jni/models/../controller/../physics/../core/Vector2.h:
 
-jni/models/../controller/../models/Mesh.h:
-
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+jni/models/../controller/../models/Mesh.h:
 
 jni/models/../core/Random.h:
 

@@ -50,6 +50,22 @@ bool Collider::testAABB(const Collider& collider){
 	return true;
 }
 
+void Collider::render(){
+	GLfloat points[] =	{
+							position.x - bounds.width / 2, position.y - bounds.height / 2, 0, 1, 0, 0, 1,
+							position.x - bounds.width / 2, position.y + bounds.height / 2, 0, 1, 0, 0, 1,
+							position.x + bounds.width / 2, position.y + bounds.height / 2, 0, 1, 0, 0, 1,
+							position.x + bounds.width / 2, position.y - bounds.height / 2, 0, 1, 0, 0, 1
+					 	 };
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glVertexPointer(3, GL_FLOAT, 7 * sizeof(float), &points[0]);
+	glEnableClientState(GL_COLOR_ARRAY);
+	glColorPointer(4, GL_FLOAT, 7 * sizeof(float), &points[3]);
+	glDrawArrays(GL_LINE_LOOP, 0, 4);
+	glDisableClientState(GL_VERTEX_ARRAY);
+	glDisableClientState(GL_COLOR_ARRAY);
+}
+
 Collider::~Collider() {
 }
 

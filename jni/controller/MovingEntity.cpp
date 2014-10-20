@@ -19,6 +19,9 @@ void MovingEntity::update(){
 	glRotatef(transform.rotation, 0, 0, 1);
 	mesh->render(GL_LINE_LOOP);
 	glPopMatrix();
+
+	// render collider
+	collider.render();
 }
 
 MovingEntity::~MovingEntity() {

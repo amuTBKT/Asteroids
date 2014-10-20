@@ -46,10 +46,10 @@ obj/local/armeabi/objs/Asteroids/controller/BulletManager.o: \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
  jni/controller/../models/../controller/../physics/Collider.h \
  jni/controller/../models/../controller/../physics/../core/Vector2.h \
- jni/controller/../models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ jni/controller/../models/../controller/../models/Mesh.h \
  jni/controller/../core/GLOBALVAR.h \
  jni/controller/../core/../models/Camera.h \
  jni/controller/../core/../models/../controller/GameObject.h \
@@ -195,13 +195,13 @@ jni/controller/../models/../controller/../physics/Collider.h:
 
 jni/controller/../models/../controller/../physics/../core/Vector2.h:
 
-jni/controller/../models/../controller/../models/Mesh.h:
-
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+jni/controller/../models/../controller/../models/Mesh.h:
 
 jni/controller/../core/GLOBALVAR.h:
 

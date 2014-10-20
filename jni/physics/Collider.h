@@ -9,6 +9,7 @@
 #define COLLIDER_H_
 
 #include "../core/Vector2.h"
+#include <GLES/gl.h>
 
 class Collider {
 public:
@@ -26,6 +27,8 @@ public:
 	struct collidedWithCameraBound{
 		int h, v;
 	} cWCameraBound;
+
+	void render();
 
 	void setBounds(float, float);
 	void translate(const Vector2&);

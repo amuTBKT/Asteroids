@@ -41,7 +41,10 @@ obj/local/armeabi/objs/Asteroids/controller/GameObject.o: \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_epilog.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
  jni/controller/../physics/Collider.h \
- jni/controller/../physics/../core/Vector2.h
+ jni/controller/../physics/../core/Vector2.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h
 
 jni/controller/GameObject.h:
 
@@ -130,3 +133,9 @@ C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_com
 jni/controller/../physics/Collider.h:
 
 jni/controller/../physics/../core/Vector2.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
+
+C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:

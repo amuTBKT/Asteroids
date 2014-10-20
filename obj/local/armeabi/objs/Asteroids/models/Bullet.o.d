@@ -44,10 +44,10 @@ obj/local/armeabi/objs/Asteroids/models/Bullet.o: jni/models/Bullet.cpp \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
  jni/models/../controller/../physics/Collider.h \
  jni/models/../controller/../physics/../core/Vector2.h \
- jni/models/../controller/../models/Mesh.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
- C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h
+ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ jni/models/../controller/../models/Mesh.h
 
 jni/models/Bullet.h:
 
@@ -141,10 +141,10 @@ jni/models/../controller/../physics/Collider.h:
 
 jni/models/../controller/../physics/../core/Vector2.h:
 
-jni/models/../controller/../models/Mesh.h:
-
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+jni/models/../controller/../models/Mesh.h:
