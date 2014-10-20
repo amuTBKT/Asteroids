@@ -24,8 +24,8 @@ void Meteoroid::createMesh(int resolution) {
 	float data[resolution * 3];
 	int counter = 0;
 	for (int i = 0; i < resolution; i++){
-		float x = radius * cosf(2 * M_PI * i / resolution) + Random::genRandomNumber(radius / 4, radius / 2);
-		float y = radius * sinf(2 * M_PI * i / resolution) + Random::genRandomNumber(radius / 4, radius / 2);
+		float x = radius * cosf(2 * M_PI * i / resolution) + (radius / 4) * (1 - 2 * Random::genRandomFloat());
+		float y = radius * sinf(2 * M_PI * i / resolution) + (radius / 4) * (1 - 2 * Random::genRandomFloat());
 
 		data[counter++] = x;
 		data[counter++] = y;

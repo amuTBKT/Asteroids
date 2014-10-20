@@ -35,20 +35,6 @@ public:
 
 	bool checkForCollison(std::vector<Bullet>&);
 private:
-	int activeSMeteors(){
-		int counter = 0;
-		for (int i = 0; i < counter; i++){
-			if (sMeteoroids[i].isActive) ++counter;
-		}
-		return counter;
-	}
-	int activeBMeteors(){
-		int counter = 0;
-		for (int i = 0; i < counter / 2; i++){
-			if (bMeteoroids[i].isActive) ++counter;
-		}
-		return counter;
-	}
 	bool checkForBounds(Vector2 *pos, Vector2 *vel){
 		if (pos->x > GLOBAL_VAR::SCREEN_WIDTH && vel->x > 0) {
 			return true;
