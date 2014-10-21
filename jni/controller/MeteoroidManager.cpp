@@ -12,6 +12,7 @@ MeteoroidManager::MeteoroidManager() {
 	speed = 1.5;
 	sActiveMeteors = 0;
 	bActiveMeteors = 0;
+	pShip = 0;
 }
 
 void MeteoroidManager::init(){
@@ -75,6 +76,12 @@ void MeteoroidManager::update(Ship& ship){
 bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity / 2; i++){
 		if (bMeteoroids[i].isActive){
+			//// checking for collision with ship ////
+			if (bMeteoroids[i].collider.testAABB(pShip->collider)){
+				glClearColor(0.4, 0, 0, 1);
+			}
+
+			//// checking for collision with bullets ////
 			for (int j = 0; j < bVector.size(); j++){
 				if (bVector[j].isActive){
 					if (bMeteoroids[i].collider.testAABB(bVector[j].collider)){
@@ -99,6 +106,12 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
+			//// checking for collision with ship ////
+			if (sMeteoroids[i].collider.testAABB(pShip->collider)){
+				glClearColor(0.4, 0, 0, 1);
+			}
+
+			//// checking for collision with bullets ////
 			for (int j = 0; j < bVector.size(); j++){
 				if (bVector[j].isActive){
 					if (sMeteoroids[i].collider.testAABB(bVector[j].collider)){
