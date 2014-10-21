@@ -46,6 +46,9 @@ obj/local/armeabi/objs/Asteroids/controller/MovingEntity.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ jni/controller/../core/GLOBALVAR.h \
+ jni/controller/../core/../models/Camera.h \
+ jni/controller/../core/../models/../controller/GameObject.h \
  jni/controller/../models/Mesh.h
 
 jni/controller/MovingEntity.h:
@@ -143,5 +146,11 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+jni/controller/../core/GLOBALVAR.h:
+
+jni/controller/../core/../models/Camera.h:
+
+jni/controller/../core/../models/../controller/GameObject.h:
 
 jni/controller/../models/Mesh.h:

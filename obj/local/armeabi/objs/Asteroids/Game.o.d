@@ -97,13 +97,13 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  jni/controller/../models/../controller/../core/Vector2.h \
  jni/controller/../models/../controller/../physics/Collider.h \
  jni/controller/../models/../controller/../physics/../core/Vector2.h \
+ jni/controller/../models/../controller/../core/GLOBALVAR.h \
+ jni/controller/../models/../controller/../core/../models/Camera.h \
+ jni/controller/../models/../controller/../core/../models/../controller/GameObject.h \
  jni/controller/../models/../controller/../models/Mesh.h \
  jni/controller/../models/../controller/BulletManager.h \
  jni/controller/../models/../controller/../models/Bullet.h \
  jni/controller/../models/../controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/../core/GLOBALVAR.h \
- jni/controller/../models/../controller/../core/../models/Camera.h \
- jni/controller/../models/../controller/../core/../models/../controller/GameObject.h \
  jni/controller/../models/../core/FileLoader.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string.h \
@@ -379,6 +379,12 @@ jni/controller/../models/../controller/../physics/Collider.h:
 
 jni/controller/../models/../controller/../physics/../core/Vector2.h:
 
+jni/controller/../models/../controller/../core/GLOBALVAR.h:
+
+jni/controller/../models/../controller/../core/../models/Camera.h:
+
+jni/controller/../models/../controller/../core/../models/../controller/GameObject.h:
+
 jni/controller/../models/../controller/../models/Mesh.h:
 
 jni/controller/../models/../controller/BulletManager.h:
@@ -386,12 +392,6 @@ jni/controller/../models/../controller/BulletManager.h:
 jni/controller/../models/../controller/../models/Bullet.h:
 
 jni/controller/../models/../controller/../models/../controller/MovingEntity.h:
-
-jni/controller/../models/../controller/../core/GLOBALVAR.h:
-
-jni/controller/../models/../controller/../core/../models/Camera.h:
-
-jni/controller/../models/../controller/../core/../models/../controller/GameObject.h:
 
 jni/controller/../models/../core/FileLoader.h:
 

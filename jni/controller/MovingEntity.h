@@ -9,6 +9,7 @@
 #define MOVINGENTITY_H_
 
 #include "GameObject.h"
+#include "../core/GLOBALVAR.h"
 #include "../models/Mesh.h"
 
 class MovingEntity : public GameObject {

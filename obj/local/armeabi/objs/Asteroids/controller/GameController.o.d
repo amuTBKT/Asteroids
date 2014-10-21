@@ -96,13 +96,13 @@ obj/local/armeabi/objs/Asteroids/controller/GameController.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ jni/controller/../models/../controller/../core/GLOBALVAR.h \
+ jni/controller/../models/../controller/../core/../models/Camera.h \
+ jni/controller/../models/../controller/../core/../models/../controller/GameObject.h \
  jni/controller/../models/../controller/../models/Mesh.h \
  jni/controller/../models/../controller/BulletManager.h \
  jni/controller/../models/../controller/../models/Bullet.h \
  jni/controller/../models/../controller/../models/../controller/MovingEntity.h \
- jni/controller/../models/../controller/../core/GLOBALVAR.h \
- jni/controller/../models/../controller/../core/../models/Camera.h \
- jni/controller/../models/../controller/../core/../models/../controller/GameObject.h \
  jni/controller/../models/../core/FileLoader.h \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/string \
  C:/Android_Development_Tools/ndk/sources/cxx-stl/stlport/stlport/stl/_string.h \
@@ -376,6 +376,12 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
+jni/controller/../models/../controller/../core/GLOBALVAR.h:
+
+jni/controller/../models/../controller/../core/../models/Camera.h:
+
+jni/controller/../models/../controller/../core/../models/../controller/GameObject.h:
+
 jni/controller/../models/../controller/../models/Mesh.h:
 
 jni/controller/../models/../controller/BulletManager.h:
@@ -383,12 +389,6 @@ jni/controller/../models/../controller/BulletManager.h:
 jni/controller/../models/../controller/../models/Bullet.h:
 
 jni/controller/../models/../controller/../models/../controller/MovingEntity.h:
-
-jni/controller/../models/../controller/../core/GLOBALVAR.h:
-
-jni/controller/../models/../controller/../core/../models/Camera.h:
-
-jni/controller/../models/../controller/../core/../models/../controller/GameObject.h:
 
 jni/controller/../models/../core/FileLoader.h:
 

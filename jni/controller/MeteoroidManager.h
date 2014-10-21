@@ -20,10 +20,7 @@ class MeteoroidManager {
 public:
 	int capacity, sActiveMeteors, bActiveMeteors, speed;
 	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
-	struct pShip{
-		Vector2 pos;
-		Vector2 vel;
-	} *proxyShip;
+	Ship* pShip;
 	static ExplosionManager *expManager;
 
 	MeteoroidManager();

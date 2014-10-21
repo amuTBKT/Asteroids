@@ -12,6 +12,7 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
+bool GLOBAL_VAR::debugPhysics = true;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
 MeteoroidManager* GameController::meteoroidManager;
@@ -66,7 +67,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
-	GameController::meteoroidManager-> genNewMeteoroid(1, Vector2(-100, 240), Vector2(10, 0));
+	GameController::meteoroidManager-> genNewMeteoroid(1, Vector2(-100, 240), Vector2(1.5, 0));
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){

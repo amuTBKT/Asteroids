@@ -48,9 +48,11 @@ obj/local/armeabi/objs/Asteroids/physics/CollisionEngine.o: \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ jni/physics/../controller/../core/GLOBALVAR.h \
+ jni/physics/../controller/../core/../models/Camera.h \
+ jni/physics/../controller/../core/../models/../controller/GameObject.h \
  jni/physics/../controller/../models/Mesh.h \
- jni/physics/../models/Camera.h \
- jni/physics/../models/../controller/GameObject.h
+ jni/physics/../models/Camera.h
 
 jni/physics/CollisionEngine.h:
 
@@ -150,8 +152,12 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
 
+jni/physics/../controller/../core/GLOBALVAR.h:
+
+jni/physics/../controller/../core/../models/Camera.h:
+
+jni/physics/../controller/../core/../models/../controller/GameObject.h:
+
 jni/physics/../controller/../models/Mesh.h:
 
 jni/physics/../models/Camera.h:
-
-jni/physics/../models/../controller/GameObject.h:

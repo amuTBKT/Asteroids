@@ -21,7 +21,9 @@ void MovingEntity::update(){
 	glPopMatrix();
 
 	// render collider
-	collider.render();
+	if (GLOBAL_VAR::debugPhysics){
+		collider.render();
+	}
 }
 
 MovingEntity::~MovingEntity() {

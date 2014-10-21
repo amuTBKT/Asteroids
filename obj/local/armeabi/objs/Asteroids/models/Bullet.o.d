@@ -47,6 +47,9 @@ obj/local/armeabi/objs/Asteroids/models/Bullet.o: jni/models/Bullet.cpp \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/gl.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h \
  C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h \
+ jni/models/../controller/../core/GLOBALVAR.h \
+ jni/models/../controller/../core/../models/Camera.h \
+ jni/models/../controller/../core/../models/../controller/GameObject.h \
  jni/models/../controller/../models/Mesh.h
 
 jni/models/Bullet.h:
@@ -146,5 +149,11 @@ C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/GLES/glplatform.h:
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/KHR/khrplatform.h:
+
+jni/models/../controller/../core/GLOBALVAR.h:
+
+jni/models/../controller/../core/../models/Camera.h:
+
+jni/models/../controller/../core/../models/../controller/GameObject.h:
 
 jni/models/../controller/../models/Mesh.h:
