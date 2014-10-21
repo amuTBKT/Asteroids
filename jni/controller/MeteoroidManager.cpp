@@ -17,14 +17,14 @@ MeteoroidManager::MeteoroidManager() {
 
 void MeteoroidManager::init(){
 	for (int i = 0; i < capacity; i++){
-		Meteoroid m(10);
+		Meteoroid m(15);
 		m.transform.setPosition(Vector2(400, 240));
 		m.transform.setVelocity(Vector2(1, 0));
 		m.isActive = false;
 		sMeteoroids.push_back(m);
 	}
 	for (int i = 0; i < capacity / 2; i++){
-		Meteoroid m(20);
+		Meteoroid m(25);
 		m.transform.setPosition(Vector2(400, 240));
 		m.transform.setVelocity(Vector2(0, 1));
 		m.isActive = false;
@@ -92,10 +92,10 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 						expManager->addExplosion(bVector[j].transform.position);
 
 						Vector2 *vel = &bMeteoroids[i].transform.velocity;
-						vel->rotate(60 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
+						vel->rotate(20 + 40 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
 						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
 						*vel = bMeteoroids[i].transform.velocity;
-						vel->rotate(-60 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
+						vel->rotate(-20 - 40 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
 						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
 						delete vel;
 					}

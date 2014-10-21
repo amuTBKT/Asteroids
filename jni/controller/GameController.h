@@ -14,6 +14,7 @@
 
 class GameController {
 public:
+	static float shipNSpeed, shipBSpeed;
 	static Ship* ship;
 	static MeteoroidManager *meteoroidManager;
 
@@ -25,6 +26,8 @@ public:
 	static Camera& getCamera();
 	static void setShip(const Ship&);
 	static Ship& getShip();
+	static void slowShip();
+	static void accelerateShip();
 	static void updateCamera(float, float);
 	static void update();
 };

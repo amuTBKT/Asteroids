@@ -49,6 +49,16 @@ Ship& GameController::getShip(){
 	return *ship;
 }
 
+void GameController::slowShip(){
+	ship->transform.velocity.normalize();
+	ship->transform.velocity *= shipBSpeed;
+}
+
+void GameController::accelerateShip(){
+	ship->transform.velocity.normalize();
+	ship->transform.velocity *= shipNSpeed;
+}
+
 void GameController::update(){
 	ship->update();
 	meteoroidManager->update(*ship);

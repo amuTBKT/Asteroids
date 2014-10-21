@@ -15,7 +15,7 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 
 	GLSurfaceView glSurfaceView;
 	CustomRenderer renderer;
-	Button fireButton, rCWButton, rCCWButton;
+	Button fireButton, rCWButton, rCCWButton, brakeButton;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,6 +57,14 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 		fireButton.setX(800 - 100);
 		fireButton.setY(480 - 80);
 		addContentView(fireButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+		brakeButton = new Button(this);
+		brakeButton.setText(" () ");
+		brakeButton.setOnTouchListener(this);
+		brakeButton.setId(4);
+		brakeButton.setX(800 - 100);
+		brakeButton.setY(480 - 160);
+		addContentView(brakeButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 	}
 
 	public void onClick(View view) {
@@ -64,7 +72,13 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 	}
 
 	public boolean onTouch(View view, MotionEvent event) {
-		renderer.OnTouchEvent(view.getId());
+		if (view.getId() == 4){
+			if (event.getAction() == MotionEvent.ACTION_DOWN) renderer.OnTouchEvent(view.getId());
+			if (event.getAction() == MotionEvent.ACTION_UP) renderer.OnTouchEvent(5);
+		}
+		else {
+			renderer.OnTouchEvent(view.getId());
+		}
 		return false;
 	}
 

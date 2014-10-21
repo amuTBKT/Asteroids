@@ -12,9 +12,10 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
-bool GLOBAL_VAR::debugPhysics = true;
+bool GLOBAL_VAR::debugPhysics = false;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
+float GameController::shipNSpeed = 5, GameController::shipBSpeed = 1.5;
 MeteoroidManager* GameController::meteoroidManager;
 ExplosionManager* MeteoroidManager::expManager;
 
@@ -54,6 +55,12 @@ void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 	}
 	if (i == 1) GameController::ship->transform.velocity.rotate(3);
 	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
+	if (i == 4) {
+		GameController::slowShip();
+	}
+	if (i == 5) {
+		GameController::accelerateShip();
+	}
 }
 
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
