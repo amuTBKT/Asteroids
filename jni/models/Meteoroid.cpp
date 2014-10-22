@@ -10,13 +10,14 @@
 Meteoroid::Meteoroid(float r) {
 	radius = r;
 	createMesh(16);
-	collider.setBounds(2 * r + r / 2, 2 * r + r / 2);
+	collider.setBounds(2 * r + r / 4, 2 * r + r / 4);
 }
 
 Meteoroid::~Meteoroid() {
 }
 
 void Meteoroid::update(){
+	transform.rotation += 0.5;
 	MovingEntity::update();
 }
 

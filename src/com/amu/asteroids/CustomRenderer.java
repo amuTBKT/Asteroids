@@ -6,7 +6,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLSurfaceView.Renderer;
 
 public class CustomRenderer implements Renderer {
-
+	
 	public void onSurfaceCreated(GL10 gl, EGLConfig egl) {
 		nativeSurfaceCreated();
 	}

@@ -12,7 +12,7 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
-bool GLOBAL_VAR::debugPhysics = false;
+bool GLOBAL_VAR::debugPhysics = true;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
 float GameController::shipNSpeed = 5, GameController::shipBSpeed = 1.5;

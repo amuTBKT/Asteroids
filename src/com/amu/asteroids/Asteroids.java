@@ -3,9 +3,12 @@ package com.amu.asteroids;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.Display;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -34,12 +37,18 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 	}
 	
 	private void setButtons(){
+//		Display display = getWindowManager().getDefaultDisplay();
+//		int width = display.getWidth(), height = display.getHeight();
+		
+		DisplayMetrics metrics = getResources().getDisplayMetrics();
+		int width = metrics.widthPixels, height = metrics.heightPixels;
+		
 		rCWButton = new Button(this);
 		rCWButton.setText(" > ");
 		rCWButton.setOnTouchListener(this);
 		rCWButton.setId(2);
 		rCWButton.setX(160);
-		rCWButton.setY(480 - 80);
+		rCWButton.setY(height - 80);
 		addContentView(rCWButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		
 		rCCWButton = new Button(this);
@@ -47,23 +56,23 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 		rCCWButton.setOnTouchListener(this);
 		rCCWButton.setId(1);
 		rCCWButton.setX(40);
-		rCCWButton.setY(480 - 80);
+		rCCWButton.setY(height - 80);
 		addContentView(rCCWButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		
 		fireButton = new Button(this);
 		fireButton.setText(" X ");
 		fireButton.setOnClickListener(this);
 		fireButton.setId(3);
-		fireButton.setX(800 - 100);
-		fireButton.setY(480 - 80);
+		fireButton.setX(width - 100);
+		fireButton.setY(height - 80);
 		addContentView(fireButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
 		brakeButton = new Button(this);
 		brakeButton.setText(" () ");
 		brakeButton.setOnTouchListener(this);
 		brakeButton.setId(4);
-		brakeButton.setX(800 - 100);
-		brakeButton.setY(480 - 160);
+		brakeButton.setX(width - 100);
+		brakeButton.setY(height - 160);
 		addContentView(brakeButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 	}
 

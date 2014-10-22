@@ -78,7 +78,7 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 		if (bMeteoroids[i].isActive){
 			//// checking for collision with ship ////
 			if (bMeteoroids[i].collider.testAABB(pShip->collider)){
-				glClearColor(0.4, 0, 0, 1);
+				glClearColor(Random::genRandomFloat(), 0, 0, 1);
 			}
 
 			//// checking for collision with bullets ////
@@ -89,7 +89,7 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 						bActiveMeteors--;
 						bVector[j].isActive = false;
 
-						expManager->addExplosion(bVector[j].transform.position);
+						expManager->addExplosion(bMeteoroids[i].transform.position);
 
 						Vector2 *vel = &bMeteoroids[i].transform.velocity;
 						vel->rotate(20 + 40 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
@@ -108,7 +108,7 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 		if (sMeteoroids[i].isActive){
 			//// checking for collision with ship ////
 			if (sMeteoroids[i].collider.testAABB(pShip->collider)){
-				glClearColor(0.4, 0, 0, 1);
+				glClearColor(Random::genRandomFloat(), 0, 0, 1);
 			}
 
 			//// checking for collision with bullets ////
@@ -119,7 +119,7 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 						sActiveMeteors--;
 						bVector[j].isActive = false;
 
-						expManager->addExplosion(bVector[j].transform.position);
+						expManager->addExplosion(sMeteoroids[i].transform.position);
 					}
 				}
 			}
@@ -147,13 +147,13 @@ void MeteoroidManager::spawnMeteoroid(int t){
 
 	if (r < 0.5){
 		r = Random::genRandomFloat();
-		if (r < 0.5){
+		if (r < 0.5){ 					// from left side
 			float x = Random::genRandomNumber(-20, 2);
 			float y = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20);
 			Vector2 vel = pShip->transform.position - Vector2(x, y);	vel.normalize();	vel *= speed;
 			genNewMeteoroid(t, Vector2(x, y), vel);
 		}
-		else {
+		else { 							// from top
 			float x = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20);
 			float y = Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT + 10, GLOBAL_VAR::SCREEN_HEIGHT + 20);
 			Vector2 vel = pShip->transform.position - Vector2(x, y);	vel.normalize();	vel *= speed;
@@ -162,13 +162,13 @@ void MeteoroidManager::spawnMeteoroid(int t){
 	}
 	else {
 		r = Random::genRandomFloat();
-		if (r < 0.5){
+		if (r < 0.5){ 					// from right side
 			float x = Random::genRandomNumber(GLOBAL_VAR::SCREEN_WIDTH + 10, GLOBAL_VAR::SCREEN_WIDTH + 20);
 			float y = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_HEIGHT - 20);
 			Vector2 vel = pShip->transform.position - Vector2(x, y);	vel.normalize();	vel *= speed;
 			genNewMeteoroid(t, Vector2(x, y), vel);
 		}
-		else {
+		else { 							// from bottom
 			float x = Random::genRandomNumber(20, GLOBAL_VAR::SCREEN_WIDTH - 20);
 			float y = Random::genRandomNumber(-20, 2);
 			Vector2 vel = pShip->transform.position - Vector2(x, y);	vel.normalize();	vel *= speed;
@@ -184,6 +184,7 @@ void MeteoroidManager::genNewMeteoroid(int t, Vector2 pos, Vector2 vel){
 				bMeteoroids[i].isActive = true;
 				bMeteoroids[i].transform.setPosition(pos);
 				bMeteoroids[i].transform.setVelocity(vel);
+				bMeteoroids[i].transform.setRotation(Random::genRandomFloat() * 30);
 				bActiveMeteors++;
 				return;
 			}
@@ -195,6 +196,7 @@ void MeteoroidManager::genNewMeteoroid(int t, Vector2 pos, Vector2 vel){
 				sMeteoroids[i].isActive = true;
 				sMeteoroids[i].transform.setPosition(pos);
 				sMeteoroids[i].transform.setVelocity(vel);
+				sMeteoroids[i].transform.setRotation(Random::genRandomFloat() * 30);
 				sActiveMeteors++;
 				return;
 			}
