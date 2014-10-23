@@ -35,6 +35,7 @@ void MeteoroidManager::init(){
 
 void MeteoroidManager::update(Ship& ship){
 	pShip = &ship;
+	speed += 0.00001;
 
 	//// spawning new meteoroids ////
 	if (bActiveMeteors < 3) spawnMeteoroid(1);
@@ -93,10 +94,10 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 
 						Vector2 *vel = &bMeteoroids[i].transform.velocity;
 						vel->rotate(20 + 40 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
-						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
+						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel);
 						*vel = bMeteoroids[i].transform.velocity;
 						vel->rotate(-20 - 40 * Random::genRandomFloat()); vel->normalize(); *vel *= speed * 2;
-						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel); 	//TODO: random velocity
+						genNewMeteoroid(0, bMeteoroids[i].transform.position + *vel, *vel);
 						delete vel;
 					}
 				}

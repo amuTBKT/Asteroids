@@ -18,7 +18,8 @@
 
 class MeteoroidManager {
 public:
-	int capacity, sActiveMeteors, bActiveMeteors, speed;
+	int capacity, sActiveMeteors, bActiveMeteors;
+	float speed;
 	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
 	Ship* pShip;
 	static ExplosionManager *expManager;

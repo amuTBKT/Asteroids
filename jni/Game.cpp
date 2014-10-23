@@ -3,6 +3,7 @@
 #include <GLES/gl.h>
 #include "controller/GameController.h"
 #include "core/GLOBALVAR.h"
+#include "models/Hud.h"
 
 jint JNI_OnLoad(JavaVM* pVM, void* resource);
 void nativeSurfaceCreated(JNIEnv* env, jclass clazz);
@@ -12,12 +13,13 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
-bool GLOBAL_VAR::debugPhysics = true;
+bool GLOBAL_VAR::debugPhysics = false;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
 float GameController::shipNSpeed = 5, GameController::shipBSpeed = 1.5;
 MeteoroidManager* GameController::meteoroidManager;
 ExplosionManager* MeteoroidManager::expManager;
+Hud hud;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -74,13 +76,15 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 
-	GameController::meteoroidManager-> genNewMeteoroid(1, Vector2(-100, 240), Vector2(1.5, 0));
+	hud.init();
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	GameController::update();
+
+	hud.render();
 }
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){

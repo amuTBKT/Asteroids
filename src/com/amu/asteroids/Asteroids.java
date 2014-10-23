@@ -4,11 +4,9 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.view.Display;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -75,7 +73,7 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 		brakeButton.setY(height - 160);
 		addContentView(brakeButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 	}
-
+	
 	public void onClick(View view) {
 		renderer.OnTouchEvent(view.getId());
 	}

@@ -181,7 +181,9 @@ obj/local/armeabi/objs/Asteroids/Game.o: jni/Game.cpp \
  jni/controller/../models/Bullet.h jni/controller/ExplosionManager.h \
  jni/controller/../particles/Explosion.h \
  jni/controller/../particles/../core/Vector2.h \
- jni/controller/../particles/../core/Random.h jni/core/GLOBALVAR.h
+ jni/controller/../particles/../core/Random.h jni/core/GLOBALVAR.h \
+ jni/models/Hud.h jni/models/Meter.h jni/models/Mesh.h \
+ jni/models/../core/Vector2.h jni/models/../core/GLOBALVAR.h
 
 C:/Android_Development_Tools/ndk/platforms/android-19/arch-arm/usr/include/jni.h:
 
@@ -556,3 +558,13 @@ jni/controller/../particles/../core/Vector2.h:
 jni/controller/../particles/../core/Random.h:
 
 jni/core/GLOBALVAR.h:
+
+jni/models/Hud.h:
+
+jni/models/Meter.h:
+
+jni/models/Mesh.h:
+
+jni/models/../core/Vector2.h:
+
+jni/models/../core/GLOBALVAR.h:
