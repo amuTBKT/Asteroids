@@ -13,7 +13,7 @@
 
 class Hud {
 public:
-	Meter meter;
+	Meter *meter;
 
 	Hud();
 	virtual ~Hud();

@@ -13,18 +13,23 @@
 
 class Meter {
 public:
-	Mesh *border, *bar;
 	Vector2 position;
 
-	Meter();
+	Meter(float);
 	virtual ~Meter();
 
 	void init();
+	void useMeter();
+	void fillMeter();
+	bool isEmpty();
 	void render();
 
 private:
+	Mesh *border, *bar;
+	float scaleX, scaleY, value;
+	bool usingMeter;
+
 	void crateMesh(float scale){
-		float scaleX = 2.5 * scale, scaleY = scale / 2;
 		float borderData[12] = 	{
 									-scaleX, -scaleY, 0,
 									-scaleX,  scaleY, 0,

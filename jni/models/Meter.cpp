@@ -7,23 +7,44 @@
 
 #include "Meter.h"
 
-Meter::Meter() {
+Meter::Meter(float scale) {
+	scaleX = 2.5 * scale;
+	scaleY = scale / 2;
+	value = 0;
+	usingMeter = false;
 	bar = 0;
 	border = 0;
 }
 
 void Meter::render(){
+	if (value >= 100) value = 100;
+	else if (!usingMeter) value += 0.1;
+	else if (usingMeter) value -= 0.1;
+	if (value <= 0) value = 0;
+
 	glPushMatrix();
 	glTranslatef(position.x, position.y, 0);
 	border->render(GL_LINE_LOOP);
-	glTranslatef(50, 0, 0);
-	glScalef(0.5, 1, 0);
+	glTranslatef(scaleX, 0, 0);
+	glScalef(value / 100, 1, 0);
 	bar->render(GL_TRIANGLES);
 	glPopMatrix();
 }
 
+bool Meter::isEmpty(){
+	return (int) value == 0;
+}
+
+void Meter::useMeter(){
+	usingMeter = true;
+}
+
+void Meter::fillMeter(){
+	usingMeter = false;
+}
+
 void Meter::init(){
-	crateMesh(20);
+	crateMesh(scaleY * 2);
 }
 
 Meter::~Meter() {

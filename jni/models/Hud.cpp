@@ -8,16 +8,16 @@
 #include "Hud.h"
 
 Hud::Hud() {
-
+	meter = new Meter(20);
 }
 
 void Hud::init(){
-	meter.init();
-	meter.position.set(854 - 60, 480 - 30);
+	meter->init();
+	meter->position.set(854 - 60, 480 - 30);
 }
 
 void Hud::render(){
-	meter.render();
+	meter->render();
 }
 
 Hud::~Hud() {

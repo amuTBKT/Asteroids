@@ -58,10 +58,17 @@ void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 	if (i == 1) GameController::ship->transform.velocity.rotate(3);
 	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
 	if (i == 4) {
-		GameController::slowShip();
+		if (!hud.meter->isEmpty()){
+			GameController::slowShip();
+		}
+		else {
+			GameController::accelerateShip();
+		}
+		hud.meter->useMeter();
 	}
 	if (i == 5) {
 		GameController::accelerateShip();
+		hud.meter->fillMeter();
 	}
 }
 
