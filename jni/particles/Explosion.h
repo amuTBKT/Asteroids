@@ -15,7 +15,7 @@
 class Explosion {
 public:
 	int numParticles;
-	float time, rotation;
+	float time, rotation, size;
 	Vector2 position;
 	Vector2 particles[20];
 	bool isActive;
@@ -23,6 +23,7 @@ public:
 	Explosion();
 	virtual ~Explosion();
 
+	void init();
 	void render();
 	void reset();
 };

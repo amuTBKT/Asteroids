@@ -51,6 +51,13 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
+	if (!GameController::ship->isActive){
+		if (i == 4) {
+			GameController::ship->isActive = true;
+		}
+		return;
+	}
+
 	if (i == 1) GameController::ship->transform.velocity.rotate(3);
 	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
 	if (i == 3) {
@@ -79,7 +86,7 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 
 	Ship ship(10);
 	ship.transform.setPosition(Vector2(50, 240));
-	ship.transform.setVelocity(Vector2(5, 0));
+//	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
 }
 

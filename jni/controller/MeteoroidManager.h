@@ -21,7 +21,8 @@ public:
 	int capacity, sActiveMeteors, bActiveMeteors;
 	float speed;
 	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
-	Ship* pShip;
+	Ship *pShip;
+	Explosion *shipExp;
 	ExplosionManager *expManager;
 
 	// for communicating with HuD //
@@ -53,6 +54,11 @@ private:
 			return true;
 		}
 		return false;
+	}
+	void resetShip(){
+		pShip->transform.position.set(50, 240);
+		pShip->transform.velocity.set(0, 0);
+		pShip->isActive = false;
 	}
 };
 

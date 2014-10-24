@@ -12,9 +12,12 @@ Explosion::Explosion() {
 	time = 0;
 	rotation = 0;
 	isActive = false;
+	size = 8;
+}
 
+void Explosion::init(){
 	for (int i = 0; i < numParticles; i++){
-		particles[i] = Vector2(Random::genRandomFloat() * 8 * cosf(2 * M_PI * i / numParticles), Random::genRandomFloat() * 8 * sinf(2 * M_PI * i / numParticles));
+		particles[i] = Vector2(Random::genRandomFloat() * size * cosf(2 * M_PI * i / numParticles), Random::genRandomFloat() * size * sinf(2 * M_PI * i / numParticles));
 	}
 }
 

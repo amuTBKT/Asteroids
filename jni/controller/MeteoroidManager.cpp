@@ -14,6 +14,7 @@ MeteoroidManager::MeteoroidManager() {
 	bActiveMeteors = 0;
 	pShip = 0;
 	expManager = 0;
+	shipExp = 0;
 }
 
 void MeteoroidManager::init(){
@@ -32,6 +33,10 @@ void MeteoroidManager::init(){
 		bMeteoroids.push_back(m);
 	}
 	expManager = new ExplosionManager();
+	shipExp = new Explosion();
+	shipExp->numParticles = 20;
+	shipExp->size = 10;
+	shipExp->init();
 }
 
 void MeteoroidManager::update(Ship& ship){
@@ -73,15 +78,20 @@ void MeteoroidManager::update(Ship& ship){
 	////////////////////////////////////////////////////////
 
 	expManager->update();
+	if (shipExp->isActive){
+		shipExp->render();
+	}
 }
 
 bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity / 2; i++){
 		if (bMeteoroids[i].isActive){
 			//// checking for collision with ship ////
-			if (bMeteoroids[i].collider.testSphere(pShip->collider) && !GLOBAL_VAR::PAUSE_GAME){
-				glClearColor(Random::genRandomFloat(), 0, 0, 1);
-//				GLOBAL_VAR::PAUSE_GAME = true;
+			if (bMeteoroids[i].collider.testSphere(pShip->collider) && pShip->isActive){
+//				glClearColor(Random::genRandomFloat(), 0, 0, 1);
+				shipExp->position = pShip->transform.position;
+				shipExp->isActive = true;
+				resetShip();
 				decLife = true;
 			}
 
@@ -111,9 +121,11 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			//// checking for collision with ship ////
-			if (sMeteoroids[i].collider.testSphere(pShip->collider) && !GLOBAL_VAR::PAUSE_GAME){
-				glClearColor(Random::genRandomFloat(), 0, 0, 1);
-//				GLOBAL_VAR::PAUSE_GAME = true;
+			if (sMeteoroids[i].collider.testSphere(pShip->collider) && pShip->isActive){
+//				glClearColor(Random::genRandomFloat(), 0, 0, 1);
+				shipExp->position = pShip->transform.position;
+				shipExp->isActive = true;
+				resetShip();
 				decLife = true;
 			}
 

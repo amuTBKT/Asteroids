@@ -11,6 +11,7 @@ Ship::Ship(int scale) {
 	createMesh(scale);
 	collider.setBounds(2 * scale, 2 * scale);
 	bulletManager = BulletManager();
+	isActive = false;
 }
 
 void Ship::update(){

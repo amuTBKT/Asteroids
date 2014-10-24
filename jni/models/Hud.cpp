@@ -26,7 +26,7 @@ void Hud::render(){
 	}
 
 	meter->render();
-//	lStatus->render();
+	lStatus->render();
 }
 
 Hud::~Hud() {

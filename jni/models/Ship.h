@@ -15,6 +15,7 @@
 class Ship : public MovingEntity {
 public:
 	BulletManager bulletManager;
+	bool isActive;
 
 	Ship(int);
 	virtual ~Ship();

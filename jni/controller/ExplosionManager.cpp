@@ -10,6 +10,7 @@
 ExplosionManager::ExplosionManager() {
 	for (int i = 0; i < 10; i++){
 		explosions[i] = Explosion();
+		explosions[i].init();
 	}
 }
 
