@@ -30,16 +30,19 @@ public class Asteroids extends Activity implements OnClickListener, OnTouchListe
 		glSurfaceView = new GLSurfaceView(this);
 		renderer = new CustomRenderer();
 		glSurfaceView.setRenderer(renderer);
+		glSurfaceView.setPreserveEGLContextOnPause(true);
 		setContentView(glSurfaceView);
 		
 		setButtons();
 	}
 	
 	protected void onPause() {
+		glSurfaceView.onPause();
 		super.onPause();
 	}
 
 	protected void onResume() {
+		glSurfaceView.onResume();
 		super.onResume();
 	}
 
@@ -51,7 +54,7 @@ public class Asteroids extends Activity implements OnClickListener, OnTouchListe
 		int width = metrics.widthPixels, height = metrics.heightPixels;
 		
 		rCWButton = new Button(this);
-		rCWButton.setText(" > ");
+		rCWButton.setText(" >> ");
 		rCWButton.setOnTouchListener(this);
 		rCWButton.setId(2);
 		rCWButton.setX(160);
@@ -59,7 +62,7 @@ public class Asteroids extends Activity implements OnClickListener, OnTouchListe
 		addContentView(rCWButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		
 		rCCWButton = new Button(this);
-		rCCWButton.setText(" < ");
+		rCCWButton.setText(" << ");
 		rCCWButton.setOnTouchListener(this);
 		rCCWButton.setId(1);
 		rCCWButton.setX(40);
@@ -67,18 +70,18 @@ public class Asteroids extends Activity implements OnClickListener, OnTouchListe
 		addContentView(rCCWButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		
 		fireButton = new Button(this);
-		fireButton.setText(" X ");
+		fireButton.setText(" SHOOT ");
 		fireButton.setOnClickListener(this);
 		fireButton.setId(3);
-		fireButton.setX(width - 100);
+		fireButton.setX(width - 140);
 		fireButton.setY(height - 80);
 		addContentView(fireButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
 		brakeButton = new Button(this);
-		brakeButton.setText(" () ");
+		brakeButton.setText(" PADEL ");
 		brakeButton.setOnTouchListener(this);
 		brakeButton.setId(4);
-		brakeButton.setX(width - 100);
+		brakeButton.setX(width - 140);
 		brakeButton.setY(height - 160);
 		addContentView(brakeButton, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 	}
