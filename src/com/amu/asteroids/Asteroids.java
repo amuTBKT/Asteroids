@@ -1,18 +1,19 @@
 package com.amu.asteroids;
 
+import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class Asteroids extends ActionBarActivity implements android.view.View.OnClickListener, OnTouchListener {
+public class Asteroids extends Activity implements OnClickListener, OnTouchListener {
 
 	GLSurfaceView glSurfaceView;
 	CustomRenderer renderer;
@@ -34,6 +35,14 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 		setButtons();
 	}
 	
+	protected void onPause() {
+		super.onPause();
+	}
+
+	protected void onResume() {
+		super.onResume();
+	}
+
 	private void setButtons(){
 //		Display display = getWindowManager().getDefaultDisplay();
 //		int width = display.getWidth(), height = display.getHeight();
