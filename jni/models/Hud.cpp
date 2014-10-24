@@ -9,15 +9,19 @@
 
 Hud::Hud() {
 	meter = new Meter(20);
+	lStatus = new LifeStatus(10);
 }
 
 void Hud::init(){
 	meter->init();
-	meter->position.set(854 - 60, 480 - 30);
+	meter->position.set(GLOBAL_VAR::SCREEN_WIDTH - 60, GLOBAL_VAR::SCREEN_HEIGHT - 30);
+	lStatus->init();
+	lStatus->position.set(10, GLOBAL_VAR::SCREEN_HEIGHT - 30);
 }
 
 void Hud::render(){
 	meter->render();
+	lStatus->render();
 }
 
 Hud::~Hud() {

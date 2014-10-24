@@ -80,8 +80,8 @@ public class Asteroids extends ActionBarActivity implements android.view.View.On
 
 	public boolean onTouch(View view, MotionEvent event) {
 		if (view.getId() == 4){
-			if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE) renderer.OnTouchEvent(view.getId());
 			if (event.getAction() == MotionEvent.ACTION_UP) renderer.OnTouchEvent(5);
+			else renderer.OnTouchEvent(view.getId());
 		}
 		else {
 			renderer.OnTouchEvent(view.getId());

@@ -12,6 +12,11 @@ public class CustomRenderer implements Renderer {
 	}
 	
 	public void onDrawFrame(GL10 gl) {
+		try {
+			Thread.sleep(1000 / 120);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		nativeDrawFrame();
 	}
 

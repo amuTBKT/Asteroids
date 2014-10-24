@@ -22,7 +22,7 @@ public:
 	float speed;
 	std::vector<Meteoroid> sMeteoroids, bMeteoroids;
 	Ship* pShip;
-	static ExplosionManager *expManager;
+	ExplosionManager *expManager;
 
 	MeteoroidManager();
 	virtual ~MeteoroidManager();

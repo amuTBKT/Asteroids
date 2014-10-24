@@ -13,6 +13,7 @@ MeteoroidManager::MeteoroidManager() {
 	sActiveMeteors = 0;
 	bActiveMeteors = 0;
 	pShip = 0;
+	expManager = 0;
 }
 
 void MeteoroidManager::init(){

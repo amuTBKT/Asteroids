@@ -18,7 +18,6 @@ Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
 float GameController::shipNSpeed = 5, GameController::shipBSpeed = 1.5;
 MeteoroidManager* GameController::meteoroidManager;
-ExplosionManager* MeteoroidManager::expManager;
 Hud hud;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
@@ -82,8 +81,6 @@ void nativeSurfaceCreated(JNIEnv* env, jclass clazz){
 	ship.transform.setPosition(Vector2(50, 240));
 	ship.transform.setVelocity(Vector2(5, 0));
 	GameController::setShip(ship);
-
-	hud.init();
 }
 
 void nativeDrawFrame(JNIEnv* env, jclass clazz){
@@ -96,4 +93,5 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 
 void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height){
 	GameController::updateCamera(width, height);
+	hud.init();
 }

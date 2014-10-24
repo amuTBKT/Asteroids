@@ -9,11 +9,13 @@
 #define HUD_H_
 
 #include "Meter.h"
+#include "LifeStatus.h"
 #include "../core/GLOBALVAR.h"
 
 class Hud {
 public:
 	Meter *meter;
+	LifeStatus *lStatus;
 
 	Hud();
 	virtual ~Hud();
