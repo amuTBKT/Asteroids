@@ -79,18 +79,16 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity / 2; i++){
 		if (bMeteoroids[i].isActive){
 			//// checking for collision with ship ////
-			if (bMeteoroids[i].collider.testAABB(pShip->collider)){
-				if (bMeteoroids[i].collider.testSphere(pShip->collider)){
-					glClearColor(Random::genRandomFloat(), 0, 0, 1);
-					GLOBAL_VAR::PAUSE_GAME = true;
-					decLife = true;
-				}
+			if (bMeteoroids[i].collider.testSphere(pShip->collider)){
+				glClearColor(Random::genRandomFloat(), 0, 0, 1);
+				GLOBAL_VAR::PAUSE_GAME = true;
+				decLife = true;
 			}
 
 			//// checking for collision with bullets ////
 			for (int j = 0; j < bVector.size(); j++){
 				if (bVector[j].isActive){
-					if (bMeteoroids[i].collider.testAABB(bVector[j].collider)){
+					if (bMeteoroids[i].collider.testSphere(bVector[j].collider)){
 						bMeteoroids[i].isActive = false;
 						bActiveMeteors--;
 						bVector[j].isActive = false;
@@ -113,18 +111,16 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			//// checking for collision with ship ////
-			if (sMeteoroids[i].collider.testAABB(pShip->collider)){
-				if (sMeteoroids[i].collider.testSphere(pShip->collider)){
-					glClearColor(Random::genRandomFloat(), 0, 0, 1);
-					GLOBAL_VAR::PAUSE_GAME = true;
-					decLife = true;
-				}
+			if (sMeteoroids[i].collider.testSphere(pShip->collider)){
+				glClearColor(Random::genRandomFloat(), 0, 0, 1);
+				GLOBAL_VAR::PAUSE_GAME = true;
+				decLife = true;
 			}
 
 			//// checking for collision with bullets ////
 			for (int j = 0; j < bVector.size(); j++){
 				if (bVector[j].isActive){
-					if (sMeteoroids[i].collider.testAABB(bVector[j].collider)){
+					if (sMeteoroids[i].collider.testSphere(bVector[j].collider)){
 						sMeteoroids[i].isActive = false;
 						sActiveMeteors--;
 						bVector[j].isActive = false;
