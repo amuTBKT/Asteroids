@@ -10,7 +10,6 @@
 
 #include "Mesh.h"
 #include "../core/Vector2.h"
-#include "../controller/GameController.h"
 
 class LifeStatus {
 public:

@@ -50,6 +50,15 @@ bool Collider::testAABB(const Collider& collider){
 	return true;
 }
 
+bool Collider::testSphere(const Collider& collider){
+	float thresholdDis = bounds.width / 2 + collider.bounds.width / 2;
+	Vector2 v = position - collider.position;
+	if (v.getLengthSQR() > thresholdDis * thresholdDis) return false;
+
+	// there is an overlap
+	return true;
+}
+
 void Collider::render(){
 	GLfloat points[] =	{
 							position.x - bounds.width / 2, position.y - bounds.height / 2, 0, 1, 0, 0, 1,

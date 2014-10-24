@@ -60,8 +60,8 @@ void GameController::accelerateShip(){
 }
 
 void GameController::update(){
-	ship->update();
 	meteoroidManager->update(*ship);
+	ship->update();
 	meteoroidManager->checkForCollison(ship->bulletManager.bVector);
 }
 

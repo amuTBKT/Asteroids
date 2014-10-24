@@ -36,6 +36,7 @@ public:
 	bool inBounds(const Vector2&);
 	bool inBounds(float, float);
 	bool testAABB(const Collider&);
+	bool testSphere(const Collider&);
 };
 
 #endif /* COLLIDER_H_ */

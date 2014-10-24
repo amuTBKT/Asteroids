@@ -20,6 +20,11 @@ void Hud::init(){
 }
 
 void Hud::render(){
+	if (MeteoroidManager::decLife){
+		lStatus->kill();
+		MeteoroidManager::decLife = false;
+	}
+
 	meter->render();
 	lStatus->render();
 }

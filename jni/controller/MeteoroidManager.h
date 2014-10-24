@@ -24,6 +24,10 @@ public:
 	Ship* pShip;
 	ExplosionManager *expManager;
 
+	// for communicating with HuD //
+	static bool decLife;
+	////////////////////////////////
+
 	MeteoroidManager();
 	virtual ~MeteoroidManager();
 

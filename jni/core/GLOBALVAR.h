@@ -14,6 +14,7 @@ class GLOBAL_VAR {
 public:
 	static int SCREEN_WIDTH, SCREEN_HEIGHT;
 	static Camera* camera;
+	static bool PAUSE_GAME, RESUME_GAME;
 	static bool debugPhysics;
 };
 

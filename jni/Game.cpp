@@ -13,12 +13,15 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
+bool GLOBAL_VAR::PAUSE_GAME = true, GLOBAL_VAR::RESUME_GAME = false;
 bool GLOBAL_VAR::debugPhysics = false;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
 float GameController::shipNSpeed = 5, GameController::shipBSpeed = 1.5;
 MeteoroidManager* GameController::meteoroidManager;
+bool MeteoroidManager::decLife = false;
 Hud hud;
+int counter = 0;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -68,6 +71,10 @@ void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 	if (i == 5) {
 		GameController::accelerateShip();
 		hud.meter->fillMeter();
+	}
+	if (counter == 0){
+		GLOBAL_VAR::PAUSE_GAME = false;
+		counter = 1;
 	}
 }
 

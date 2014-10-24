@@ -11,6 +11,7 @@
 #include "Meter.h"
 #include "LifeStatus.h"
 #include "../core/GLOBALVAR.h"
+#include "../controller/MeteoroidManager.h"
 
 class Hud {
 public:

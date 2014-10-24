@@ -24,6 +24,10 @@ void LifeStatus::kill(){
 	if (life <= 0) life = 0;
 }
 
+bool LifeStatus::isDead(){
+	return life == 0;
+}
+
 void LifeStatus::render(){
 	glPushMatrix();
 	glTranslatef(position.x, position.y, 0);
