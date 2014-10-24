@@ -19,10 +19,12 @@ public:
 	virtual ~Meter();
 
 	void init();
-	void useMeter();
+	void startUsingMeter();
 	void fillMeter();
+	void useMeter(float);
 	bool isEmpty();
 	void render();
+	void update();
 
 private:
 	Mesh *border, *bar;

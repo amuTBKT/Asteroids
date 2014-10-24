@@ -24,17 +24,12 @@ void GameController::updateCamera(float width, float height){
 	GLOBAL_VAR::SCREEN_WIDTH = width;
 	GLOBAL_VAR::SCREEN_HEIGHT = height;
 	glViewport(0, 0, width, height);
-	if (GLOBAL_VAR::camera == 0){
-		GLOBAL_VAR::camera = new Camera(width, height);
-		GLOBAL_VAR::camera->transform.setPosition(Vector2(width / 2, height / 2));
-		GLOBAL_VAR::camera->update();
-	}
-	else {
-		GLOBAL_VAR::camera->width = width;
-		GLOBAL_VAR::camera->height = height;
-		GLOBAL_VAR::camera->transform.setPosition(Vector2(width / 2, height / 2));
-		GLOBAL_VAR::camera->update();
-	}
+
+	if (GLOBAL_VAR::camera != 0) delete GLOBAL_VAR::camera;
+	GLOBAL_VAR::camera = new Camera(width, height);
+	GLOBAL_VAR::camera->transform.setPosition(Vector2(width / 2, height / 2));
+	GLOBAL_VAR::camera->update();
+
 }
 
 Camera& GameController::getCamera(){
@@ -49,14 +44,14 @@ Ship& GameController::getShip(){
 	return *ship;
 }
 
-void GameController::slowShip(){
+void GameController::slowShip(float s){
 	ship->transform.velocity.normalize();
-	ship->transform.velocity *= shipBSpeed;
+	ship->transform.velocity *= s;
 }
 
-void GameController::accelerateShip(){
+void GameController::accelerateShip(float s){
 	ship->transform.velocity.normalize();
-	ship->transform.velocity *= shipNSpeed;
+	ship->transform.velocity *= s;
 }
 
 void GameController::update(){

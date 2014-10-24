@@ -79,9 +79,9 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity / 2; i++){
 		if (bMeteoroids[i].isActive){
 			//// checking for collision with ship ////
-			if (bMeteoroids[i].collider.testSphere(pShip->collider)){
+			if (bMeteoroids[i].collider.testSphere(pShip->collider) && !GLOBAL_VAR::PAUSE_GAME){
 				glClearColor(Random::genRandomFloat(), 0, 0, 1);
-				GLOBAL_VAR::PAUSE_GAME = true;
+//				GLOBAL_VAR::PAUSE_GAME = true;
 				decLife = true;
 			}
 
@@ -111,9 +111,9 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 	for (int i = 0; i < capacity; i++){
 		if (sMeteoroids[i].isActive){
 			//// checking for collision with ship ////
-			if (sMeteoroids[i].collider.testSphere(pShip->collider)){
+			if (sMeteoroids[i].collider.testSphere(pShip->collider) && !GLOBAL_VAR::PAUSE_GAME){
 				glClearColor(Random::genRandomFloat(), 0, 0, 1);
-				GLOBAL_VAR::PAUSE_GAME = true;
+//				GLOBAL_VAR::PAUSE_GAME = true;
 				decLife = true;
 			}
 
@@ -136,9 +136,9 @@ bool MeteoroidManager::checkForCollison(std::vector<Bullet> &bVector){
 }
 
 void MeteoroidManager::genCirclePattern(Vector2 pos){
-	float radius = GLOBAL_VAR::SCREEN_HEIGHT / 2;
 	float numMeteors = 5;
 	for (int i = 0; i < numMeteors; i++){
+		float radius = Random::genRandomNumber(GLOBAL_VAR::SCREEN_HEIGHT / 2, GLOBAL_VAR::SCREEN_HEIGHT);
 		float x = GLOBAL_VAR::SCREEN_WIDTH / 2 + radius * cosf(2 * M_PI * i / numMeteors);
 		float y = GLOBAL_VAR::SCREEN_HEIGHT / 2 + radius * sinf(2 * M_PI * i / numMeteors);
 		Vector2 speed = Vector2(pos.x - x, pos.y - y);

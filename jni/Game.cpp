@@ -13,15 +13,13 @@ void nativeSurfaceChanged(JNIEnv* env, jclass clazz, int width, int height);
 
 // gameplay variables
 int GLOBAL_VAR::SCREEN_WIDTH, GLOBAL_VAR::SCREEN_HEIGHT;
-bool GLOBAL_VAR::PAUSE_GAME = true, GLOBAL_VAR::RESUME_GAME = false;
-bool GLOBAL_VAR::debugPhysics = true;
+bool GLOBAL_VAR::PAUSE_GAME = false, GLOBAL_VAR::RESUME_GAME = false;
+bool GLOBAL_VAR::debugPhysics = false;
 Camera* GLOBAL_VAR::camera;
 Ship* GameController::ship;
-float GameController::shipNSpeed = 5, GameController::shipBSpeed = 1.5;
 MeteoroidManager* GameController::meteoroidManager;
 bool MeteoroidManager::decLife = false;
 Hud hud;
-int counter = 0;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -53,28 +51,23 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 }
 
 void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
-	if (i == 3) {
-		GameController::ship->shoot();
-//		GameController::meteoroidManager->genCirclePattern(Vector2(400, 240));
-	}
 	if (i == 1) GameController::ship->transform.velocity.rotate(3);
 	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
+	if (i == 3) {
+		GameController::ship->shoot();
+	}
 	if (i == 4) {
 		if (!hud.meter->isEmpty()){
-			GameController::slowShip();
+			GameController::slowShip(1.5);
 		}
 		else {
-			GameController::accelerateShip();
+			GameController::accelerateShip(5);
 		}
-		hud.meter->useMeter();
+		hud.meter->startUsingMeter();
 	}
 	if (i == 5) {
-		GameController::accelerateShip();
+		GameController::accelerateShip(5);
 		hud.meter->fillMeter();
-	}
-	if (counter == 0){
-		GLOBAL_VAR::PAUSE_GAME = false;
-		counter = 1;
 	}
 }
 
@@ -94,7 +87,6 @@ void nativeDrawFrame(JNIEnv* env, jclass clazz){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	GameController::update();
-
 	hud.render();
 }
 

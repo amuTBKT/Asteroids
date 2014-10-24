@@ -59,6 +59,6 @@ void Mesh::render(int render_type){
 }
 
 Mesh::~Mesh() {
-//	glDeleteBuffers(1, &vbo);
+	glDeleteBuffers(1, &vbo);
 }
 

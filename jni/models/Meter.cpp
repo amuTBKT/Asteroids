@@ -17,13 +17,10 @@ Meter::Meter(float scale) {
 }
 
 void Meter::render(){
-	if (!usingMeter) value += 0.1;
-	else if (usingMeter) value -= 0.1;
+	if (!usingMeter) value += 0.01 + value / 1000;
+	else if (usingMeter) value -= 0.3;
 
-	//// clamp value between [0, 100] ////
-	if (value >= 100) value = 100;
-	if (value <= 0) value = 0;
-	//////////////////////////////////////
+	update();
 
 	glPushMatrix();
 	glTranslatef(position.x, position.y, 0);
@@ -34,12 +31,24 @@ void Meter::render(){
 	glPopMatrix();
 }
 
+void Meter::update(){
+	//// clamp value between [0, 100] ////
+	if (value >= 100) value = 100;
+	if (value <= 0) value = 0;
+	//////////////////////////////////////
+}
+
 bool Meter::isEmpty(){
 	return (int) value == 0;
 }
 
-void Meter::useMeter(){
+void Meter::startUsingMeter(){
 	usingMeter = true;
+}
+
+void Meter::useMeter(float m){
+	value -= m;
+	update();
 }
 
 void Meter::fillMeter(){
