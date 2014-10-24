@@ -30,11 +30,12 @@ private:
 	bool usingMeter;
 
 	void crateMesh(float scale){
+		float borderOffset = scaleY / 5;
 		float borderData[12] = 	{
-									-scaleX, -scaleY, 0,
-									-scaleX,  scaleY, 0,
-									 scaleX,  scaleY, 0,
-									 scaleX, -scaleY, 0
+									-scaleX - borderOffset, -scaleY - borderOffset, 0,
+									-scaleX - borderOffset,  scaleY + borderOffset, 0,
+									 scaleX + borderOffset,  scaleY + borderOffset, 0,
+									 scaleX + borderOffset, -scaleY - borderOffset, 0
 								};
 		border = new Mesh();
 		border->setVertices(&borderData[0], sizeof(borderData) / sizeof(float), false);

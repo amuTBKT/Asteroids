@@ -17,10 +17,13 @@ Meter::Meter(float scale) {
 }
 
 void Meter::render(){
-	if (value >= 100) value = 100;
-	else if (!usingMeter) value += 0.1;
+	if (!usingMeter) value += 0.1;
 	else if (usingMeter) value -= 0.1;
+
+	//// clamp value between [0, 100] ////
+	if (value >= 100) value = 100;
 	if (value <= 0) value = 0;
+	//////////////////////////////////////
 
 	glPushMatrix();
 	glTranslatef(position.x, position.y, 0);
