@@ -22,6 +22,7 @@ void MovingEntity::update(){
 
 	// render collider
 	if (GLOBAL_VAR::debugPhysics){
+		collider.renderAsSphere();
 		collider.render();
 	}
 }

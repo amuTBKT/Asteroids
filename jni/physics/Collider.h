@@ -29,6 +29,7 @@ public:
 	} cWCameraBound;
 
 	void render();
+	void renderAsSphere();
 
 	void setBounds(float, float);
 	void translate(const Vector2&);
