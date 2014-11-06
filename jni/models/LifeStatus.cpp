@@ -21,7 +21,7 @@ void LifeStatus::init(){
 
 void LifeStatus::kill(){
 	life -= 1;
-	if (life <= 0) life = maxLife; // not keeping track of scores
+	if (life <= 0) life = maxLife; // loop gameplay
 }
 
 bool LifeStatus::isDead(){

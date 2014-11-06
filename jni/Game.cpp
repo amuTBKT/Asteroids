@@ -20,6 +20,7 @@ Ship* GameController::ship;
 MeteoroidManager* GameController::meteoroidManager;
 bool MeteoroidManager::decLife = false;
 Hud hud;
+int ACTION_SHOOT = 3, ACTION_ROTATE_CW = 2, ACTION_ROTATE_CCW = 1, ACTION_ACCELERATE = 4;
 
 jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 	JNIEnv* env;
@@ -52,18 +53,18 @@ jint JNI_OnLoad(JavaVM* pVM, void* reserved){
 
 void nativeOnTouchEvent(JNIEnv* env, jclass clazz, int i){
 	if (!GameController::ship->isActive){
-		if (i == 4) {
+		if (i == ACTION_ACCELERATE) {
 			GameController::ship->isActive = true;
 		}
 		return;
 	}
 
-	if (i == 1) GameController::ship->transform.velocity.rotate(3);
-	if (i == 2) GameController::ship->transform.velocity.rotate(-3);
-	if (i == 3) {
+	if (i == ACTION_ROTATE_CCW) GameController::ship->transform.velocity.rotate(3);
+	if (i == ACTION_ROTATE_CW) GameController::ship->transform.velocity.rotate(-3);
+	if (i == ACTION_SHOOT) {
 		GameController::ship->shoot();
 	}
-	if (i == 4) {
+	if (i == ACTION_ACCELERATE) {
 		if (!hud.meter->isEmpty()){
 			GameController::slowShip(1.5);
 		}

@@ -18,7 +18,7 @@ Meter::Meter(float scale) {
 
 void Meter::render(){
 	if (!usingMeter) value += 0.01 + value / 1000;
-	else if (usingMeter) value -= 0.3;
+	else if (usingMeter) value -= 0.2;
 
 	update();
 

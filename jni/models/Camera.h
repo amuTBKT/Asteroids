@@ -24,7 +24,7 @@ public:
 	Collider getBottomBound();
 	Collider getTopBound();
 private:
-	Collider screen_bounds[4];
+	Collider screen_bounds[4]; // screen rect bounds
 };
 
 #endif /* CAMERA_H_ */

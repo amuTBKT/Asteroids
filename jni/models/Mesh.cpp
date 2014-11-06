@@ -53,7 +53,7 @@ void Mesh::render(int render_type){
 
 	glDrawArrays(render_type, 0, draws);
 
-	if (stride > 0)	glDisableClientState(GL_COLOR_ARRAY); // disable color array if vbo has color data
+	if (stride > 0)	glDisableClientState(GL_COLOR_ARRAY); // disable color array if vbo has color data (if color array was enabled)
 	glDisableClientState(GL_VERTEX_ARRAY);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

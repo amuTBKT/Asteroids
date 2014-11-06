@@ -35,6 +35,7 @@ void Ship::createMesh(int scale){
 	data[6] = -scaleX / 2;		data[7]  = 0;			data[8]  = 0;
 	data[9] = -scaleX;			data[10] = -scaleY;		data[11] = 0;
 
+//	for loading ship geometry (from sdcard)
 //	char file[] = "/sdcard/ship.txt";
 //	std::string dataString = FileLoader::loadFile(file);
 //	if (dataString != "ERROR") glClearColor(1, 0, 0, 1);
